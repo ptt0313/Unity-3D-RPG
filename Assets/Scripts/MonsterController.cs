@@ -16,7 +16,6 @@ public class MonsterController : MonoBehaviour
         nvAgent = this.gameObject.GetComponent<NavMeshAgent>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         nvAgent.destination = playerTransform.position;

@@ -6,6 +6,7 @@ public class JumpStateBehaviour : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Debug.Log("Enter Jump State");
+        animator.SetBool("Action", true);
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -24,6 +25,7 @@ public class JumpStateBehaviour : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Debug.Log("Exit Jump State");
-        
+        animator.SetBool("Action", false);
+
     }
 }

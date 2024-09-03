@@ -3,8 +3,7 @@ using UnityEngine;
 public class RunningStateBehaviour : StateMachineBehaviour
 {
     bool isMove;
-
-
+    
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Debug.Log("Enter Running State");
@@ -17,9 +16,13 @@ public class RunningStateBehaviour : StateMachineBehaviour
         {
             animator.SetTrigger("Idle");
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             animator.SetTrigger("Jump");
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            animator.SetTrigger("Dodge");
         }
     }
 

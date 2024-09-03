@@ -23,9 +23,9 @@
 //        switch (curState)
 //        {
 //            case State.Idle:
-//                if(CanSeePlayer())
+//                if (CanSeePlayer())
 //                {
-//                    if(CanAttackPlayer())
+//                    if (CanAttackPlayer())
 //                    {
 //                        ChageState(State.Attack);
 //                    }
@@ -36,9 +36,9 @@
 //                }
 //                break;
 //            case State.Move:
-//                if(CanSeePlayer())
+//                if (CanSeePlayer())
 //                {
-//                    if(CanAttackPlayer())
+//                    if (CanAttackPlayer())
 //                    {
 //                        ChageState(State.Attack);
 //                    }
@@ -49,9 +49,9 @@
 //                }
 //                break;
 //            case State.Attack:
-//                if(CanSeePlayer())
+//                if (CanSeePlayer())
 //                {
-//                    if(!CanAttackPlayer())
+//                    if (!CanAttackPlayer())
 //                    {
 //                        ChageState(State.Move);
 //                    }
@@ -67,7 +67,7 @@
 //    private void ChageState(State nextState)
 //    {
 //        curState = nextState;
-//        switch(curState)
+//        switch (curState)
 //        {
 //            case State.Idle:
 //                fsm.ChageState(new IdleState(this));

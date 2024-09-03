@@ -8,7 +8,10 @@ public class Monster : MonoBehaviour
     {
         Idle,
         Move,
-        Attack
+        Attack,
+        Sturn,
+        Die,
+        Hit
     }
     State state;
 
@@ -23,11 +26,15 @@ public class Monster : MonoBehaviour
         {
             case State.Idle:
                 break;
-
             case State.Move:
                 break;
-
             case State.Attack:
+                break;
+            case State.Hit:
+                break;
+            case State.Die: 
+                break;
+            case State.Sturn:
                 break;
         }
 

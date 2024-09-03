@@ -17,9 +17,13 @@ public class IdleStateBehaviour : StateMachineBehaviour
         {
             animator.SetTrigger("Run");
         }
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.C))
         {
             animator.SetTrigger("Jump");
+        }
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            animator.SetTrigger("Dodge");
         }
     }
 

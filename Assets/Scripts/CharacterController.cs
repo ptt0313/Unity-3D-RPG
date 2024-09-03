@@ -14,6 +14,7 @@ public class CharacterController : MonoBehaviour
     private Transform cameraTransform;
     private Animator animator;
     public Vector2 input;
+    private bool isAction;
     void Awake()
     {
         animator = GetComponent<Animator>();
@@ -22,9 +23,8 @@ public class CharacterController : MonoBehaviour
     {
         cameraTransform = Camera.main.transform;
     }
-    void Update()
+    private void Move()
     {
-        
         input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         Vector2 inputDir = input.normalized;
         if (inputDir != Vector2.zero)//움직임을 멈췄을 때 다시 처음 각도로 돌아가는걸 막기위함
@@ -36,7 +36,7 @@ public class CharacterController : MonoBehaviour
         currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedVelocity, smoothMoveTime);
         //현재스피드에서 타겟스피드까지 smoothMoveTime 동안 변한다
         transform.Translate(transform.forward * currentSpeed * Time.deltaTime, Space.World);
-        if(input != Vector2.zero)
+        if (input != Vector2.zero)
         {
             animator.SetBool("Move", true);
         }
@@ -44,5 +44,14 @@ public class CharacterController : MonoBehaviour
         {
             animator.SetBool("Move", false);
         }
+    }
+    void Update()
+    {
+        isAction = animator.GetBool("Action");
+        if (isAction == false)
+        {
+            Move();
+        }
+        
     }
 }
