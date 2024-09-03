@@ -10,12 +10,6 @@ public class JumpStateBehaviour : StateMachineBehaviour
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
-    }
-
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        Debug.Log("Exit Jump State");
         isMove = animator.GetBool("Move");
         if (isMove)
         {
@@ -25,5 +19,11 @@ public class JumpStateBehaviour : StateMachineBehaviour
         {
             animator.SetTrigger("Idle");
         }
+    }
+
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        Debug.Log("Exit Jump State");
+        
     }
 }
