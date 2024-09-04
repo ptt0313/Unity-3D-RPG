@@ -12,12 +12,15 @@ public class MonsterController : MonoBehaviour
     void Start()
     {
         transform = this.gameObject.GetComponent<Transform>();
-        playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
         nvAgent = this.gameObject.GetComponent<NavMeshAgent>();
     }
 
     void Update()
     {
-        nvAgent.destination = playerTransform.position;
+        playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
+        if(Vector3.Distance(transform.position,playerTransform.position) < 10.0f)
+        {
+            nvAgent.destination = playerTransform.position;
+        }
     }
 }
