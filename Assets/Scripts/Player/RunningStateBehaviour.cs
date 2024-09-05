@@ -24,6 +24,10 @@ public class RunningStateBehaviour : StateMachineBehaviour
         {
             animator.SetTrigger("Dodge");
         }
+        if(Input.GetMouseButtonDown(0))
+        {
+            animator.SetTrigger("Draw");
+        }
     }
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

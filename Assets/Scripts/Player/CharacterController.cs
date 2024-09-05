@@ -15,6 +15,8 @@ public class CharacterController : MonoBehaviour
     private Animator animator;
     public Vector2 input;
     private bool isAction;
+    private bool isArmed = false;
+    [SerializeField] GameObject[] Weapons;
     void Awake()
     {
         animator = GetComponent<Animator>();
@@ -47,11 +49,21 @@ public class CharacterController : MonoBehaviour
     }
     void Update()
     {
+        isArmed = animator.GetBool("Armed");
         isAction = animator.GetBool("Action");
         if (isAction == false)
         {
             Move();
         }
-        
+        if(isArmed == true)
+        {
+            Weapons[1].SetActive(true);
+            Weapons[0].SetActive(false);
+        }
+        else
+        {
+            Weapons[1].SetActive(false);
+            Weapons[0].SetActive(true);
+        }
     }
 }

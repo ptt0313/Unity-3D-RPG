@@ -17,7 +17,10 @@ public class MainCamera : MonoBehaviour
     //위 5개의 value는 개발자의 취향껏 알아서 설정해주자
     private Vector3 targetRotation;
     private Vector3 currentVel;
-
+    private void Start()
+    {
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+    }
     void LateUpdate()//Player가 움직이고 그 후 카메라가 따라가야 하므로 LateUpdate
     {
         Yaxis = Yaxis + Input.GetAxis("Mouse X") * rotSensitive;//마우스 좌우움직임을 입력받아서 카메라의 Y축을 회전시킨다

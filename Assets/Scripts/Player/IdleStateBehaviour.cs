@@ -3,7 +3,7 @@ using UnityEngine;
 public class IdleStateBehaviour : StateMachineBehaviour
 {
     bool isMove;
-
+    bool isArmed;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Debug.Log("Enter Idle State");
@@ -24,6 +24,11 @@ public class IdleStateBehaviour : StateMachineBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
             animator.SetTrigger("Dodge");
+        }
+        if(Input.GetMouseButtonDown(0))
+        {
+            animator.SetBool("Armed", true);
+            animator.SetTrigger("Draw");
         }
     }
 
