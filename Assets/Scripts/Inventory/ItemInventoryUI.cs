@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -5,26 +6,30 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ItemInventoryUI : MonoBehaviour, IPointerEnterHandler
+public class ItemInventoryUI : MonoBehaviour, IPointerEnterHandler,IPointerExitHandler
 {
     public TextMeshProUGUI itemIconNameText;
     public TextMeshProUGUI itemNameText;
     public TextMeshProUGUI itemDescriptionText;
     public Image itemIconImage;
     public Image itemBigImage;
-    public TextMeshProUGUI countitemText;
+    public TextMeshProUGUI countItemText;
     public ItemData currentItemData;
-
+    
     public void OnPointerEnter(PointerEventData eventData)
     {
-        //HilightItem();
+        InventoryManager.Instance.hlightItem.SetActive(true);
+    }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        InventoryManager.Instance.hlightItem.SetActive(false);
     }
     public void OnMouseDown()
     {
         if (currentItemData.type == ItemType.POTION)
         {
             Debug.Log("포션 먹는다");
-            InventoryManager.inventoryManager.Remove(currentItemData);
+            InventoryManager.Instance.Remove(currentItemData);
             // 포션은 소비아이템, 갯수가 0이되면 사라진다
         }
         ChangeWeapon();
@@ -39,7 +44,9 @@ public class ItemInventoryUI : MonoBehaviour, IPointerEnterHandler
             return;
         }
         //FindObjectOfType<Player>().ActivateItem(currentItemData);
-        InventoryManager.inventoryManager.gameObject.SetActive(false);
+        InventoryManager.Instance.gameObject.SetActive(false);
         // 인벤토리에서 해당 무기를 누르면 그것으로 교체하는 함수
     }
+
+    
 }

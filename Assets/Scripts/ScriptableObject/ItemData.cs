@@ -13,10 +13,11 @@ public class ItemData : ScriptableObject
     public Vector3 position;
     public int id;
     public ItemType type;
-    public string name;
+    public string _name;
     public string description;
     public int value;
     public Sprite icon;
     public Sprite bigImage;
     public int rarerity;
+    public int price;
 }

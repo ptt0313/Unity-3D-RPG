@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
   position: {x: 0, y: 0, z: 0}
-  id: 0
+  id: 21
   type: 0
-  name: 
-  description: 
+  name: "\uAC15\uCCA0\uAC80"
+  description: "\uAC15\uCCA0\uB85C \uB9CC\uB4E0 \uAC80\uC785\uB2C8\uB2E4."
   value: 0
-  icon: {fileID: 0}
-  bigImage: {fileID: 0}
+  icon: {fileID: 21300000, guid: da3489a989b315644b2918cb9df15709, type: 3}
+  bigImage: {fileID: 21300000, guid: d31aa8412a4d374458c912d11686642a, type: 3}
+  rarerity: 2
+  price: 500
