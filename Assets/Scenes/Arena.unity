@@ -417,7 +417,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fdbb2e184aa953e4886db2e2000a30f1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1168052615074388985, guid: fdbb2e184aa953e4886db2e2000a30f1, type: 3}
       propertyPath: m_IsActive
@@ -503,47 +503,8 @@ PrefabInstance:
     - {fileID: 2226256450759356391, guid: fdbb2e184aa953e4886db2e2000a30f1, type: 3}
     - {fileID: 2550463727306718371, guid: fdbb2e184aa953e4886db2e2000a30f1, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4880099508911529307, guid: fdbb2e184aa953e4886db2e2000a30f1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1530814332}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdbb2e184aa953e4886db2e2000a30f1, type: 3}
---- !u!1 &1530814331 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4880099508911529307, guid: fdbb2e184aa953e4886db2e2000a30f1, type: 3}
-  m_PrefabInstance: {fileID: 1530814330}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1530814332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1530814331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AgentTypeID: 0
-  m_CollectObjects: 0
-  m_Size: {x: 10, y: 10, z: 10}
-  m_Center: {x: 0, y: 2, z: 0}
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_UseGeometry: 0
-  m_DefaultArea: 0
-  m_GenerateLinks: 0
-  m_IgnoreNavMeshAgent: 1
-  m_IgnoreNavMeshObstacle: 1
-  m_OverrideTileSize: 0
-  m_TileSize: 256
-  m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
-  m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 91dbfa9af6dc528428450e1004ee1df1, type: 2}
-  m_BuildHeightMesh: 0
 --- !u!1 &1798563249
 GameObject:
   m_ObjectHideFlags: 0
