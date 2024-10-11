@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,10 +15,10 @@ public class InventoryManager : Singleton<InventoryManager>
     public List<ItemInventoryUI> ItemInventoryUISlots;
     public delegate void OnItemChanged();
     public static event OnItemChanged onItemChagedCallback;
-    [SerializeField] public GameObject hlightItem;
+    [SerializeField] public GameObject hilightItem;
     [SerializeField] Image hilightItemImage;
-    [SerializeField] Text hilightItemName;
-    [SerializeField] Text hilightItemDescription;
+    [SerializeField] TextMeshProUGUI hilightItemName;
+    [SerializeField] TextMeshProUGUI hilightItemDescription;
 
     private void Start()
     {
@@ -90,9 +91,7 @@ public class InventoryManager : Singleton<InventoryManager>
                 {
                     // 아이템 먹은 만큼 슬롯 활성화하고 UI 업데이트
                     ItemInventoryUISlots[i].gameObject.SetActive(true);
-                    ItemInventoryUISlots[i].itemIconNameText.text = items[i]._name;
                     ItemInventoryUISlots[i].itemNameText.text = items[i]._name;
-                    ItemInventoryUISlots[i].itemDescriptionText.text = items[i].description;
                     ItemInventoryUISlots[i].itemIconImage.sprite = items[i].icon;
                     ItemInventoryUISlots[i].itemBigImage.sprite = items[i].bigImage;
                     ItemInventoryUISlots[i].countItemText.text = $"{items[i].value}";
@@ -102,5 +101,10 @@ public class InventoryManager : Singleton<InventoryManager>
             }
         }
     }
-    
+    public void HilightItem(ItemData itemData)
+    {
+        hilightItemImage.sprite = itemData.bigImage;
+        hilightItemDescription.text = itemData.description;
+        hilightItemName.text = itemData._name;
+    }
 }

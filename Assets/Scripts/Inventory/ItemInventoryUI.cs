@@ -8,9 +8,7 @@ using UnityEngine.UI;
 
 public class ItemInventoryUI : MonoBehaviour, IPointerEnterHandler,IPointerExitHandler
 {
-    public TextMeshProUGUI itemIconNameText;
     public TextMeshProUGUI itemNameText;
-    public TextMeshProUGUI itemDescriptionText;
     public Image itemIconImage;
     public Image itemBigImage;
     public TextMeshProUGUI countItemText;
@@ -18,11 +16,12 @@ public class ItemInventoryUI : MonoBehaviour, IPointerEnterHandler,IPointerExitH
     
     public void OnPointerEnter(PointerEventData eventData)
     {
-        InventoryManager.Instance.hlightItem.SetActive(true);
+        InventoryManager.Instance.hilightItem.SetActive(true);
+        InventoryManager.Instance.HilightItem(currentItemData);
     }
     public void OnPointerExit(PointerEventData eventData)
     {
-        InventoryManager.Instance.hlightItem.SetActive(false);
+        InventoryManager.Instance.hilightItem.SetActive(false);
     }
     public void OnMouseDown()
     {

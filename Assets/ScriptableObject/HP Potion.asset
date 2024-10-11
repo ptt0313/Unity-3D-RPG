@@ -16,7 +16,7 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   id: 0
   type: 2
-  name: "\uD3EC\uC158"
+  _name: "\uCCB4\uB825\uD3EC\uC158"
   description: "\uCCB4\uB825\uC744 \uD68C\uBCF5\uC2DC\uCF1C\uC90D\uB2C8\uB2E4."
   value: 0
   icon: {fileID: 21300000, guid: 4e8b35477a7fb5a46870c1973a523722, type: 3}
