@@ -23,7 +23,7 @@ public class Controller : MonoBehaviour
     {
         cameraTransform = Camera.main.transform;
     }
-    void Update()
+    void FixedUpdate()
     {
        
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
