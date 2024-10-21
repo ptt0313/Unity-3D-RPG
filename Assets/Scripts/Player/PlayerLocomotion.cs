@@ -7,6 +7,7 @@ namespace yonguk
 {
     public class PlayerLocomotion : MonoBehaviour
     {
+        PlayerManager playerManager;
         Transform cameraObject;
         InputHandler inputHandler;
         Vector3 moveDirection;
@@ -27,6 +28,7 @@ namespace yonguk
 
         void Start()
         {
+            playerManager = GetComponent<PlayerManager>();
             rigidbody = GetComponent<Rigidbody>();
             inputHandler = GetComponent<InputHandler>();
             animatorHandler = GetComponent<AnimatorHandler>();
@@ -35,15 +37,6 @@ namespace yonguk
             animatorHandler.Initialize();
         }
 
-        public void Update()
-        {
-            float delta = Time.deltaTime;
-
-            inputHandler.TickInput(delta);
-            HandleMovement(delta);
-            
-            HandleRollingAndSprinting(delta);
-        }
 
         #region movement
         Vector3 normaVector;

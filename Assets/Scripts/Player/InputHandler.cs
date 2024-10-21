@@ -14,27 +14,19 @@ namespace yonguk
 
         public bool b_Input;
         public bool rollFlag;
-        public bool isInteracting;
+
+        public bool rb_Input;
+        public bool lb_Input;
 
         PlayerControls inputActions;
-        CameraHandler cameraHandler;
+        PlayerAttacker playerAttacker;
 
         Vector2 movementInput;
         Vector2 cameraInput;
 
         private void Awake()
         {
-            cameraHandler = CameraHandler.Instance;
-        }
-        private void FixedUpdate()
-        {
-            float delta = Time.fixedDeltaTime;
-
-            if(cameraHandler != null)
-            {
-                cameraHandler.FollowTarget(delta);
-                cameraHandler.HandleCameraRotation(delta, mouseX, mouseY);
-            }
+            playerAttacker = GetComponent<PlayerAttacker>();
         }
         public void OnEnable()
         {
@@ -57,6 +49,7 @@ namespace yonguk
         {
             MoveInput(delta);
             HandleRollInput(delta);
+            HandleAttackInput(delta);
         }
         private void MoveInput(float delta)
         {
@@ -76,6 +69,20 @@ namespace yonguk
                 rollFlag = true;
             }
         }
+        private void HandleAttackInput(float delta)
+        {
+            inputActions.PlayerActions.RB.performed += i => rb_Input = true;
+            inputActions.PlayerActions.LB.performed += i => lb_Input = true;
+            if(rb_Input)
+            {
+                playerAttacker.RightAttack();
+            }
+            if(lb_Input)
+            {
+                playerAttacker.LeftAttack();
+            }
+        }
+
     }
 
 }
