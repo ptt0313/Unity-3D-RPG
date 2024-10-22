@@ -51,5 +51,6 @@ public class PlayerManager : MonoBehaviour
     {
         inputHandler.rollFlag = false;
         inputHandler.rb_Input = false;
+        inputHandler.lb_Input = false;
     }
 }
