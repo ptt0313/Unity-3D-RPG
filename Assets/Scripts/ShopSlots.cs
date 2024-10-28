@@ -15,9 +15,9 @@ public class ShopSlots : MonoBehaviour
 
     public void BuyItem()
     {
-        if(GameManager.Instance.gold >= currentItemData.price)
+        if(PlayerInfomationManager.Instance.playerState.gold >= currentItemData.price)
         {
-             GameManager.Instance.gold -= currentItemData.price;
+            PlayerInfomationManager.Instance.playerState.gold -= currentItemData.price;
             InventoryManager.Instance.Add(currentItemData);
             InventoryManager.Instance.ListItem();
         }

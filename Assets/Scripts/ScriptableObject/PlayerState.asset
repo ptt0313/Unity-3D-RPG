@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3eb4aa5f9367b4087894cd1d069699, type: 3}
+  m_Name: PlayerState
+  m_EditorClassIdentifier: 
+  level: 1
+  hp: 100
+  maxHp: 100
+  stamina: 100
+  maxStamina: 100
+  attackPoint: 10
+  defencePoint: 10
+  currentExp: 0
+  maxExp: 100
+  gold: 100

@@ -19,7 +19,6 @@ public class InventoryManager : Singleton<InventoryManager>
     [SerializeField] Image hilightItemImage;
     [SerializeField] TextMeshProUGUI hilightItemName;
     [SerializeField] TextMeshProUGUI hilightItemDescription;
-    Cursor cursor;
     private void Start()
     {
         ListItem();

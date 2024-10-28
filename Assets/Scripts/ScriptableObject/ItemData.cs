@@ -20,4 +20,5 @@ public class ItemData : ScriptableObject
     public Sprite bigImage;
     public int rarerity;
     public int price;
+    public int status;
 }
