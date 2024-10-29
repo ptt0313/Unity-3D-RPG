@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a3eb4aa5f9367b4087894cd1d069699, type: 3}
   m_Name: PlayerState
   m_EditorClassIdentifier: 
+  items: []
   level: 1
   hp: 100
   maxHp: 100
@@ -19,6 +20,8 @@ MonoBehaviour:
   maxStamina: 100
   attackPoint: 10
   defencePoint: 10
+  currentWeapon: {fileID: 0}
+  currentArmor: {fileID: 0}
   currentExp: 0
   maxExp: 100
-  gold: 100
+  gold: 50

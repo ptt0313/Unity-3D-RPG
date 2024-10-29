@@ -14,8 +14,7 @@ public class ItemInventoryUI : MonoBehaviour, IPointerEnterHandler,IPointerExitH
     public Image itemBigImage;
     public TextMeshProUGUI countItemText;
     public ItemData currentItemData;
-    private float currentWeaponStatus = 0f;
-    private float currentArmorStatus = 0f;
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         InventoryManager.Instance.hilightItem.transform.position = eventData.position;
@@ -32,6 +31,11 @@ public class ItemInventoryUI : MonoBehaviour, IPointerEnterHandler,IPointerExitH
         {
             Debug.Log("포션 마신다!");
             InventoryManager.Instance.Remove(currentItemData);
+            PlayerInfomationManager.Instance.playerState.hp += 50;
+            if(PlayerInfomationManager.Instance.playerState.hp >= PlayerInfomationManager.Instance.playerState.maxHp)
+            {
+                PlayerInfomationManager.Instance.playerState.hp = PlayerInfomationManager.Instance.playerState.maxHp;
+            }
             // 포션은 소비아이템, 갯수가 0이되면 사라진다
         }
         ChangeWeapon(eventData);
@@ -41,44 +45,66 @@ public class ItemInventoryUI : MonoBehaviour, IPointerEnterHandler,IPointerExitH
 
     public void ChangeWeapon(PointerEventData eventData)
     {
-        if(currentItemData.type == ItemType.WEAPON)
+        if (currentItemData == null)
         {
-            if(currentWeaponStatus == 0f)
+            return;
+        }
+        if (currentItemData.type == ItemType.WEAPON)
+        {
+            // 장착 해제
+            if(PlayerInfomationManager.Instance.playerState.currentWeapon == currentItemData)
             {
+                PlayerInfomationManager.Instance.playerState.currentWeapon = null;
+                PlayerInfomationManager.Instance.weaponEquipment.sprite = null;
+                PlayerInfomationManager.Instance.playerState.attackPoint -= currentItemData.status;
+            }
+            // 장착중인 장비가 없을때 장비 장착
+            else if (PlayerInfomationManager.Instance.playerState.currentWeapon == null)
+            {
+                PlayerInfomationManager.Instance.playerState.currentWeapon = currentItemData;
                 PlayerInfomationManager.Instance.weaponEquipment.sprite = currentItemData.bigImage;
                 PlayerInfomationManager.Instance.playerState.attackPoint += currentItemData.status;
-                currentWeaponStatus = currentItemData.status;
             }
+            // 장착중인 장비가 있을때 장비 교체
             else
             {
+                PlayerInfomationManager.Instance.playerState.attackPoint -= PlayerInfomationManager.Instance.playerState.currentWeapon.status;
+                PlayerInfomationManager.Instance.playerState.currentWeapon = currentItemData;
                 PlayerInfomationManager.Instance.weaponEquipment.sprite = currentItemData.bigImage;
                 PlayerInfomationManager.Instance.playerState.attackPoint += currentItemData.status;
-                PlayerInfomationManager.Instance.playerState.attackPoint -= currentWeaponStatus;
-                currentWeaponStatus = currentItemData.status;
             }
             Debug.Log("무기 장착");
         }
         else if(currentItemData.type == ItemType.ARMOR)
         {
-            if(currentArmorStatus == 0f)
+            // 장착 해제
+            if(PlayerInfomationManager.Instance.playerState.currentArmor == currentItemData)
             {
-                PlayerInfomationManager.Instance.ArmorEquipment.sprite = currentItemData.bigImage;
-                PlayerInfomationManager.Instance.playerState.defencePoint += currentItemData.status;
-                currentArmorStatus = currentItemData.status;
+                PlayerInfomationManager.Instance.playerState.currentArmor = null;
+                PlayerInfomationManager.Instance.armorEquipment.sprite = null;
+                PlayerInfomationManager.Instance.playerState.defencePoint -= currentItemData.status;
             }
+            // 장착중인 장비가 없을때 장비 장착
+            else if(PlayerInfomationManager.Instance.playerState.currentArmor == null)
+            {
+                PlayerInfomationManager.Instance.playerState.currentArmor = currentItemData;
+                PlayerInfomationManager.Instance.armorEquipment.sprite = currentItemData.bigImage;
+                PlayerInfomationManager.Instance.playerState.defencePoint += currentItemData.status;
+            }
+            // 장착중인 장비가 있을때 장비 교체
             else
             {
-                PlayerInfomationManager.Instance.ArmorEquipment.sprite = currentItemData.bigImage;
+                PlayerInfomationManager.Instance.playerState.defencePoint -= PlayerInfomationManager.Instance.playerState.currentArmor.status;
+                PlayerInfomationManager.Instance.playerState.currentArmor = currentItemData;
+                PlayerInfomationManager.Instance.armorEquipment.sprite = currentItemData.bigImage;
                 PlayerInfomationManager.Instance.playerState.defencePoint += currentItemData.status;
-                PlayerInfomationManager.Instance.playerState.defencePoint -= currentArmorStatus;
-                currentArmorStatus = currentItemData.status;
             }
             Debug.Log("방어구 장착");
         }
-        if (currentItemData == null)
-        {
-            return;
-        }
+
+        PlayerInfomationManager.Instance.UpdateStat();
+
+        
         // 인벤토리에서 해당 장비를 누르면 장착
     }
 

@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerState", menuName = "Player / State")]
 public class BasePlayerState : ScriptableObject
 {
+    public List<ItemData> items = new List<ItemData>();
+    
     public int level;
 
     public float hp;
@@ -15,6 +17,10 @@ public class BasePlayerState : ScriptableObject
 
     public float attackPoint;
     public float defencePoint;
+
+    public ItemData currentWeapon;
+    public ItemData currentArmor;
+
 
     public float currentExp;
     public float maxExp;

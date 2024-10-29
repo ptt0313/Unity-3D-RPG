@@ -17,10 +17,18 @@ public class PlayerInfomationManager : Singleton<PlayerInfomationManager>
     [SerializeField] TextMeshProUGUI attackPoint;
     [SerializeField] TextMeshProUGUI defencePoint;
     [SerializeField] public Image weaponEquipment;
-    [SerializeField] public Image ArmorEquipment;
+    [SerializeField] public Image armorEquipment;
     void Start()
     {
         goldText.text = playerState.gold.ToString();
+        if(playerState.currentWeapon != null)
+        {
+            weaponEquipment.sprite = playerState.currentWeapon.bigImage;
+        }
+        if(playerState.currentArmor != null)
+        {
+            armorEquipment.sprite = playerState.currentArmor.bigImage;
+        }
     }
 
     void Update()
@@ -42,7 +50,7 @@ public class PlayerInfomationManager : Singleton<PlayerInfomationManager>
     {
         goldText.text = playerState.gold.ToString();
     }
-    void UpdateStat()
+    public void UpdateStat()
     {
         level.text = "레벨 : " + playerState.level.ToString();
         exp.text = "경험치 : " + playerState.currentExp + " / " + (playerState.maxExp * playerState.level * 2.5);

@@ -1,15 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 [System.Serializable]
 
 public class InventoryManager : Singleton<InventoryManager>
 {
-    public List<ItemData> items = new List<ItemData>();
-    int maxInventorySlots = 16;
     [SerializeField] public GameObject inventory;
     public Transform itemContect;
     public List<ItemInventoryUI> ItemInventoryUISlots;
@@ -38,17 +35,16 @@ public class InventoryManager : Singleton<InventoryManager>
     }
     public void Add(ItemData newItem)
     {
-        ItemData existingItem = items.Find(item => item._name == newItem._name);
+        ItemData existingItem = PlayerInfomationManager.Instance.playerState.items.Find(item => item._name == newItem._name);
         if (existingItem != null)
         {
             existingItem.value += 1;
             // 같은 아이템이면 카운트 +1
         }
-
         else
         {
             newItem.value = 1;
-            items.Add(newItem);
+            PlayerInfomationManager.Instance.playerState.items.Add(newItem);
             // 새로운 아이템이면 추가
         }
         onItemChagedCallback?.Invoke(); // 아이템 변경 이벤트 발생
@@ -56,11 +52,11 @@ public class InventoryManager : Singleton<InventoryManager>
 
     public void Remove(ItemData item)
     {
-        ItemData itemToRemove = items.Find(i => i._name == item._name);
+        ItemData itemToRemove = PlayerInfomationManager.Instance.playerState.items.Find(i => i._name == item._name);
         if (itemToRemove != null && itemToRemove.value > 0)
         {
             itemToRemove.value -= 1;
-            int index = items.IndexOf(itemToRemove);
+            int index = PlayerInfomationManager.Instance.playerState.items.IndexOf(itemToRemove);
             ItemInventoryUISlots[index].countItemText.text = itemToRemove.value.ToString();
             Debug.Log("포션이 깎여야함");
 
@@ -68,7 +64,7 @@ public class InventoryManager : Singleton<InventoryManager>
             {
                 Debug.Log("포션이 0이 되어야 함");
                 ItemInventoryUISlots[index].gameObject.SetActive(false);
-                items.Remove(itemToRemove);
+                PlayerInfomationManager.Instance.playerState.items.Remove(itemToRemove);
             }
 
             onItemChagedCallback?.Invoke();
@@ -86,15 +82,15 @@ public class InventoryManager : Singleton<InventoryManager>
             if (!child.gameObject.activeSelf)
             // 빈 슬롯 상태에서
             {
-                for (int i = 0; i < items.Count; i++)
+                for (int i = 0; i < PlayerInfomationManager.Instance.playerState.items.Count; i++)
                 {
                     // 아이템 먹은 만큼 슬롯 활성화하고 UI 업데이트
                     ItemInventoryUISlots[i].gameObject.SetActive(true);
-                    ItemInventoryUISlots[i].itemNameText.text = items[i]._name;
-                    ItemInventoryUISlots[i].itemIconImage.sprite = items[i].icon;
-                    ItemInventoryUISlots[i].itemBigImage.sprite = items[i].bigImage;
-                    ItemInventoryUISlots[i].countItemText.text = $"{items[i].value}";
-                    ItemInventoryUISlots[i].currentItemData = items[i];
+                    ItemInventoryUISlots[i].itemNameText.text = PlayerInfomationManager.Instance.playerState.items[i]._name;
+                    ItemInventoryUISlots[i].itemIconImage.sprite = PlayerInfomationManager.Instance.playerState.items[i].icon;
+                    ItemInventoryUISlots[i].itemBigImage.sprite = PlayerInfomationManager.Instance.playerState.items[i].bigImage;
+                    ItemInventoryUISlots[i].countItemText.text = $"{PlayerInfomationManager.Instance.playerState.items[i].value}";
+                    ItemInventoryUISlots[i].currentItemData = PlayerInfomationManager.Instance.playerState.items[i];
                     // 슬롯에 커렌트 아이템을 넣어 이 아이템이 무엇인지 알게 해준다
                 }
             }
@@ -105,6 +101,5 @@ public class InventoryManager : Singleton<InventoryManager>
         hilightItemImage.sprite = itemData.bigImage;
         hilightItemDescription.text = itemData.description;
         hilightItemName.text = itemData._name;
-
     }
 }

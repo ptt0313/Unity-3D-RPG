@@ -7,6 +7,7 @@ public class Shop : MonoBehaviour
     List<ItemData> shopItems = new List<ItemData>();
     public List<ShopSlots> shopSlots;
     [SerializeField] ItemData armor;
+    [SerializeField] ItemData armor2;
     [SerializeField] ItemData weapon;
     [SerializeField] ItemData weapon2;
     [SerializeField] ItemData potion;
@@ -16,9 +17,11 @@ public class Shop : MonoBehaviour
     private void Start()
     {
         shopItems.Add(armor);
+        shopItems.Add(armor2);
         shopItems.Add(weapon);
         shopItems.Add(weapon2);
         shopItems.Add(potion);
+        
         ListItem();
     }
     public void ListItem()

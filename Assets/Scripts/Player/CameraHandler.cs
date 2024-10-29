@@ -33,12 +33,16 @@ namespace yonguk
         public float minimumCollisionOffSet = 0.2f;
        
 
-        private void Awake()
+        private new void Awake()
         {
             Instance = this;
             myTransform = transform;
             defaultPosition = cameraTransform.localPosition.z;
             ignoreLayers = ~(1 << 8 | 1 << 9 | 1 << 10);
+        }
+        private void Start()
+        {
+            targetTransform = GameObject.FindGameObjectWithTag("Player").transform;
         }
 
         public void FollowTarget(float delta)
