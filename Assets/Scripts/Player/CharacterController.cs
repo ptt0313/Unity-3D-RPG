@@ -2,21 +2,18 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
-    [SerializeField]//인스펙터에서만 참조 가능하게
-    private float smoothRotationTime;//target 각도로 회전하는데 걸리는 시간
-    [SerializeField]
-    private float smoothMoveTime;//target 속도로 바뀌는데 걸리는 시간
-    private float moveSpeed = 10f;//움직이는 속도
-    private float rotationVelocity;//The current velocity, this value is modified by the function every time you call it.
-    private float speedVelocity;//The current velocity, this value is modified by the function every time you call it.
-    private float currentSpeed;
+    [SerializeField] private float rotationTime;//target 각도로 회전하는데 걸리는 시간
+    [SerializeField] private float moveTime;//target 속도로 바뀌는데 걸리는 시간
+    [SerializeField] private float moveSpeed = 5f;//움직이는 속도
+    private float rotationVelocity; //회전 속도
+    private float speedVelocity; // 속도
+    private float currentSpeed; // 현재 속도
     private float targetSpeed;
     private Transform cameraTransform;
     private Animator animator;
     public Vector2 input;
-    private bool isAction;
-    private bool isArmed = false;
-    [SerializeField] GameObject[] Weapons;
+    private bool isInteracting;
+    private bool isAttacking;
     void Awake()
     {
         animator = GetComponent<Animator>();
@@ -29,41 +26,56 @@ public class CharacterController : MonoBehaviour
     {
         input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         Vector2 inputDir = input.normalized;
-        if (inputDir != Vector2.zero)//움직임을 멈췄을 때 다시 처음 각도로 돌아가는걸 막기위함
+        // 캐릭터가 움직인 방향을 바라보도록 설정
+        if (inputDir != Vector2.zero)
         {
             float rotation = Mathf.Atan2(inputDir.x, inputDir.y) * Mathf.Rad2Deg + cameraTransform.eulerAngles.y;
-            transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, rotation, ref rotationVelocity, smoothRotationTime);
+            transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, rotation, ref rotationVelocity, rotationTime);
         }
+
+        // targetSpeed 는 속도 * 방향의 크기
         targetSpeed = moveSpeed * inputDir.magnitude;
-        currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedVelocity, smoothMoveTime);
-        //현재스피드에서 타겟스피드까지 smoothMoveTime 동안 변한다
+
+        //currentSpeed에서 targetSpeed까지 moveTime동안 변환
+        currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedVelocity, moveTime);
+
+
         transform.Translate(transform.forward * currentSpeed * Time.deltaTime, Space.World);
+
         if (input != Vector2.zero)
         {
-            animator.SetBool("Move", true);
+            animator.SetTrigger("Run");
         }
         else
         {
-            animator.SetBool("Move", false);
+            animator.SetTrigger("Idle");
         }
+        
+    }
+    private void Attack()
+    {
+        if (isInteracting == false && Input.GetMouseButtonDown(0))
+        {
+            animator.SetBool("isInteracting", true);
+            animator.SetBool("isAttacking", true);
+            animator.Play("Attack");
+        }
+        else if (isAttacking == true && Input.GetMouseButtonDown(0))
+        {
+            animator.SetBool("isInteracting", true);
+            animator.Play("Attack2");
+            animator.SetBool("isAttacking", false);
+        }
+
     }
     void Update()
     {
-        isArmed = animator.GetBool("Armed");
-        isAction = animator.GetBool("Action");
-        if (isAction == false)
+        isInteracting = animator.GetBool("isInteracting");
+        isAttacking = animator.GetBool("isAttacking");
+        if (isInteracting == false)
         {
             Move();
-        }
-        if(isArmed == true)
-        {
-            Weapons[1].SetActive(true);
-            Weapons[0].SetActive(false);
-        }
-        else
-        {
-            Weapons[1].SetActive(false);
-            Weapons[0].SetActive(true);
+            Attack();
         }
     }
 }
