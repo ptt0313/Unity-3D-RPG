@@ -58,7 +58,14 @@ public class CharacterController : MonoBehaviour
             animator.SetBool("isInteracting", true);
             animator.Play("Attack");
         }
-
+    }
+    private void Roll()
+    {
+        if(isInteracting == false && Input.GetKeyDown(KeyCode.Space))
+        {
+            animator.SetBool("isInteracting", true);
+            animator.Play("Roll");
+        }   
     }
     void Update()
     {
@@ -67,6 +74,7 @@ public class CharacterController : MonoBehaviour
         {
             Move();
             Attack();
+            Roll();
         }
     }
 }
