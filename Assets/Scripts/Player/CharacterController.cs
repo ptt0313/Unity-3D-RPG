@@ -13,7 +13,6 @@ public class CharacterController : MonoBehaviour
     private Animator animator;
     public Vector2 input;
     private bool isInteracting;
-    private bool isAttacking;
     void Awake()
     {
         animator = GetComponent<Animator>();
@@ -57,21 +56,13 @@ public class CharacterController : MonoBehaviour
         if (isInteracting == false && Input.GetMouseButtonDown(0))
         {
             animator.SetBool("isInteracting", true);
-            animator.SetBool("isAttacking", true);
             animator.Play("Attack");
-        }
-        else if (isAttacking == true && Input.GetMouseButtonDown(0))
-        {
-            animator.SetBool("isInteracting", true);
-            animator.Play("Attack2");
-            animator.SetBool("isAttacking", false);
         }
 
     }
     void Update()
     {
         isInteracting = animator.GetBool("isInteracting");
-        isAttacking = animator.GetBool("isAttacking");
         if (isInteracting == false)
         {
             Move();
