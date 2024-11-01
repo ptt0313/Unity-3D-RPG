@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fea22d936f2f34a9847c1cbf4beeb8, type: 3}
+  m_Name: Spider
+  m_EditorClassIdentifier: 
+  Hp: 300
+  AttackPoint: 80
+  DefencePoint: 40
+  rewardExp: 150
+  rewardGold: 150

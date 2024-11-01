@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 350f05f9a2387c74fb0e9365a746c853
+guid: 4f007a717b2951640898efc8afc5bb45
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -8,7 +8,7 @@ MonoImporter:
   - animator: {instanceID: 0}
   - player: {instanceID: 0}
   - playerWeapon: {instanceID: 0}
-  - playerState: {fileID: 11400000, guid: b0902b29a915c6049b9a53bb9d454fec, type: 2}
+  - status: {fileID: 11400000, guid: 22add4e5f7581a8408598029a288777c, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -43,11 +43,11 @@ public class CharacterController : MonoBehaviour
 
         if (input != Vector2.zero)
         {
-            animator.SetTrigger("Run");
+            animator.Play("Run");
         }
         else
         {
-            animator.SetTrigger("Idle");
+            animator.Play("Idle");
         }
         
     }

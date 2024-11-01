@@ -6,6 +6,8 @@ using UnityEngine;
 public class ComboAttack : StateMachineBehaviour
 {
     private bool isCombo = false;
+    
+
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         isCombo = false;

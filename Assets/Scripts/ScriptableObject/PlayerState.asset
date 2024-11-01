@@ -18,7 +18,7 @@ MonoBehaviour:
   maxHp: 100
   stamina: 100
   maxStamina: 100
-  attackPoint: 10
+  attackPoint: 30
   defencePoint: 10
   currentWeapon: {fileID: 0}
   currentArmor: {fileID: 0}

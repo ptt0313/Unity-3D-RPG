@@ -17,18 +17,20 @@ public class Monster : MonoBehaviour
 {
     [SerializeField] NavMeshAgent navMeshAgent;
     [SerializeField] Animator animator;
-    [SerializeField] GameObject destination;
+    [SerializeField] protected GameObject player;
+    [SerializeField] protected Collider playerWeapon;
+    [SerializeField] protected BasePlayerState playerState;
 
-    private State state;
-    private void Awake()
+    State state;
+
+    void Start()
     {
         animator = GetComponent<Animator>();
         navMeshAgent = GetComponent<NavMeshAgent>();
-    }
-    void Start()
-    {
+
         state = State.Idle;
-        destination = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerWeapon = GameObject.Find("LongSwordMesh").GetComponent<Collider>();
     }
 
     void Update()
@@ -41,60 +43,65 @@ public class Monster : MonoBehaviour
                 break;
             case State.Attack: Attack();
                 break;
-            case State.Hit: Hit();
-                break;
-            case State.Die: Die();
-                break;
+
         }
 
     }
 
-    private void Die()
+    protected void Die()
     {
+        state = State.Die;
         animator.Play("Die");
+        StartCoroutine(Remove());
     }
 
-    private void Hit()
-    {
-        animator.Play("Hit");
-    }
 
-    private void Attack()
+    protected void Attack()
     {
-        navMeshAgent.isStopped = true;
         animator.SetTrigger("Attack");
-        transform.LookAt(new Vector3(destination.transform.position.x, transform.position.y, destination.transform.position.z));
-        if (Vector3.Distance(transform.position, destination.transform.position) >= 2)
+        navMeshAgent.SetDestination(transform.position);
+        transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
+        if (Vector3.Distance(transform.position, player.transform.position) >= 2)
         {
             state = State.Move;
         }
     }
 
-    private void Move()
+    protected void Move()
     {
-        navMeshAgent.isStopped = false;
         animator.SetTrigger("Move");
-        navMeshAgent.SetDestination(destination.transform.position);
-        transform.LookAt(new Vector3(destination.transform.position.x, transform.position.y, destination.transform.position.z));
-        if (Vector3.Distance(transform.position, destination.transform.position) < 2)
+        navMeshAgent.SetDestination(player.transform.position);
+        transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
+        if (Vector3.Distance(transform.position, player.transform.position) < 2)
         {
             state = State.Attack;
         }
-        else if(Vector3.Distance(transform.position, destination.transform.position) >= 15)
+        else if(Vector3.Distance(transform.position, player.transform.position) >= 15)
         {
             state = State.Idle;
         }
     }
 
-    private void Idle()
+    protected void Idle()
     {
-        if (Vector3.Distance(transform.position, destination.transform.position) < 15)
+        navMeshAgent.SetDestination(transform.position);
+        animator.SetTrigger("Idle");
+        if (Vector3.Distance(transform.position, player.transform.position) < 15)
         {
             state = State.Move;
         }
     }
-    private void OnParticleTrigger()
+    
+    //protected void OnTriggerEnter(Collider other)
+    //{
+    //    if (other == playerWeapon && player.GetComponent<Animator>().GetBool("isAttacking") == true)
+    //    {
+    //        Debug.Log("Hit");
+    //    }
+    //}
+    IEnumerator Remove()
     {
-        Debug.Log("파티클 충돌");
+        yield return new WaitForSeconds(10);
+        gameObject.SetActive(false);
     }
 }

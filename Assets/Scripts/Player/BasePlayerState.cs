@@ -9,14 +9,14 @@ public class BasePlayerState : ScriptableObject
     
     public int level;
 
-    public float hp;
-    public float maxHp;
+    public int hp;
+    public int maxHp;
 
-    public float stamina;
-    public float maxStamina;
+    public int stamina;
+    public int maxStamina;
 
-    public float attackPoint;
-    public float defencePoint;
+    public int attackPoint;
+    public int defencePoint;
 
     public ItemData currentWeapon;
     public ItemData currentArmor;
@@ -25,5 +25,5 @@ public class BasePlayerState : ScriptableObject
     public float currentExp;
     public float maxExp;
 
-    public float gold;
+    public int gold;
 }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 350f05f9a2387c74fb0e9365a746c853
+guid: 36b86bbd75adc8d4cb75d574e9d4cb72
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -9,6 +9,7 @@ MonoImporter:
   - player: {instanceID: 0}
   - playerWeapon: {instanceID: 0}
   - playerState: {fileID: 11400000, guid: b0902b29a915c6049b9a53bb9d454fec, type: 2}
+  - monsterStatus: {fileID: 11400000, guid: 8f88a2218c9e5ce47b92ddec17a82c4d, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
