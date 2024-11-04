@@ -20,7 +20,7 @@ public class PlayerSpawnManager : Singleton<PlayerSpawnManager>
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
-    private void Awake()
+    private void Start()
     {
         Instantiate(playerCharacter,spawnPosition.position,Quaternion.identity);
     }

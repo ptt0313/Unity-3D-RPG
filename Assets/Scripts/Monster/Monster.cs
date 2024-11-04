@@ -9,9 +9,7 @@ using UnityEngine.AI;
         Idle,
         Move,
         Attack,
-        Sturn,
         Die,
-        Hit
     }
 public class Monster : MonoBehaviour
 {
@@ -91,14 +89,7 @@ public class Monster : MonoBehaviour
             state = State.Move;
         }
     }
-    
-    //protected void OnTriggerEnter(Collider other)
-    //{
-    //    if (other == playerWeapon && player.GetComponent<Animator>().GetBool("isAttacking") == true)
-    //    {
-    //        Debug.Log("Hit");
-    //    }
-    //}
+
     IEnumerator Remove()
     {
         yield return new WaitForSeconds(10);

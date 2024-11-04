@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Playables;
 
 public class Spider : Monster
 {
     [SerializeField] BaseMonsterStatus monsterStatus;
+
+    private Animator animator;
+
     [SerializeField] int hp;
     [SerializeField] int attack;
     [SerializeField] int defence;
@@ -18,13 +20,19 @@ public class Spider : Monster
         defence = monsterStatus.DefencePoint;
         rewardExp = monsterStatus.rewardExp;
         rewardGold = monsterStatus.rewardGold;
+        animator = GetComponent<Animator>();
     }
     private void OnTriggerEnter(Collider other)
     {
         if (player.GetComponent<Animator>().GetBool("isAttacking") == true && other == playerWeapon)
         {
-            Debug.Log("hit");
+            animator.Play("Hit");
             hp -= playerState.attackPoint - defence;
+        }
+        if (player.GetComponent<Animator>().GetBool("isRolling") == false && animator.GetBool("isAttacking") == true && other.CompareTag("Player"))
+        {
+            player.GetComponent<Animator>().Play("Hit");
+            playerState.hp -= attack - playerState.defencePoint;
         }
     }
     private void LateUpdate()

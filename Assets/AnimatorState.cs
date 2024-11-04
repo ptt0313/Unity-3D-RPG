@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackState : MonoBehaviour
+public class AnimatorState : MonoBehaviour
 {
     Animator animator;
     private void Awake()
@@ -18,5 +18,12 @@ public class AttackState : MonoBehaviour
     {
         animator.SetBool("isAttacking", false);
     }
-
+    void OnRollJudgement()
+    {
+        animator.SetBool("isRolling", true);
+    }
+    void OffRollJudgement()
+    {
+        animator.SetBool("isRolling", false);
+    }
 }
