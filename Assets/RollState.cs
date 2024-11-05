@@ -59,7 +59,6 @@ public class RollState : StateMachineBehaviour
     {
         // 상태에서 나가면 이동 종료
         isMoving = false;
-        animator.SetBool("isInteracting", false);
 
     }
 }

@@ -1,7 +1,11 @@
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class CharacterController : MonoBehaviour
 {
+    [SerializeField] BasePlayerState playerState;
+    [SerializeField] GameObject playerHitBox;
+
     [SerializeField] private float rotationTime;//target 각도로 회전하는데 걸리는 시간
     [SerializeField] private float moveTime;//target 속도로 바뀌는데 걸리는 시간
     [SerializeField] private float moveSpeed = 5f;//움직이는 속도
@@ -43,19 +47,27 @@ public class CharacterController : MonoBehaviour
 
         if (input != Vector2.zero)
         {
-            animator.Play("Run");
-        }
-        else
-        {
-            animator.Play("Idle");
+            animator.SetTrigger("Run");
         }
         
+        else
+        {
+            animator.SetTrigger("Idle");
+        }
+
+    }
+    private void Die()
+    {
+        if (playerState.hp <= 0)
+        {
+            animator.Play("Die");
+            playerHitBox.SetActive(false);
+        }
     }
     private void Attack()
     {
         if (isInteracting == false && Input.GetMouseButtonDown(0))
         {
-            animator.SetBool("isInteracting", true);
             animator.Play("Attack");
         }
     }
@@ -63,7 +75,6 @@ public class CharacterController : MonoBehaviour
     {
         if(isInteracting == false && Input.GetKeyDown(KeyCode.Space))
         {
-            animator.SetBool("isInteracting", true);
             animator.Play("Roll");
         }   
     }
@@ -76,5 +87,6 @@ public class CharacterController : MonoBehaviour
             Attack();
             Roll();
         }
+        Die();
     }
 }

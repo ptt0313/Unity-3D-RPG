@@ -14,10 +14,11 @@ using UnityEngine.AI;
 public class Monster : MonoBehaviour
 {
     [SerializeField] NavMeshAgent navMeshAgent;
-    [SerializeField] Animator animator;
+    [SerializeField] protected Animator animator;
     [SerializeField] protected GameObject player;
     [SerializeField] protected Collider playerWeapon;
     [SerializeField] protected BasePlayerState playerState;
+    [SerializeField] protected Collider playerHitBox;
 
     State state;
 
@@ -29,6 +30,7 @@ public class Monster : MonoBehaviour
         state = State.Idle;
         player = GameObject.FindGameObjectWithTag("Player");
         playerWeapon = GameObject.Find("LongSwordMesh").GetComponent<Collider>();
+        playerHitBox = player.GetComponent<CapsuleCollider>();
     }
 
     void Update()
@@ -41,7 +43,8 @@ public class Monster : MonoBehaviour
                 break;
             case State.Attack: Attack();
                 break;
-
+            case State.Die: Die();
+                break;
         }
 
     }

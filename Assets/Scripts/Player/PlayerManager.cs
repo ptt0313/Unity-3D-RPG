@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    [SerializeField] BasePlayerState playerState;
     private Animator animator;
 
     private void Awake()
@@ -13,10 +12,7 @@ public class PlayerManager : MonoBehaviour
     }
     private void Update()
     {
-        if(playerState.hp <= 0)
-        {
-            animator.Play("Die");
-        }
+
     }
 
 }

@@ -10,7 +10,6 @@ public class Wolf : Monster
     [SerializeField] int defence;
     [SerializeField] int rewardExp;
     [SerializeField] int rewardGold;
-    Animator animator;
     void Awake()
     {
         hp = monsterStatus.Hp;
@@ -18,8 +17,6 @@ public class Wolf : Monster
         defence = monsterStatus.DefencePoint;
         rewardExp = monsterStatus.rewardExp;
         rewardGold = monsterStatus.rewardGold;
-        animator = GetComponent<Animator>();
-        animator.SetInteger("AttackPoint", monsterStatus.AttackPoint);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -28,7 +25,7 @@ public class Wolf : Monster
             animator.Play("Hit");
             hp -= playerState.attackPoint - defence;
         }
-        if (player.GetComponent<Animator>().GetBool("isRolling") == false && animator.GetBool("isAttacking") == true &&other == player)
+        if (player.GetComponent<Animator>().GetBool("isRolling") == false && animator.GetBool("isAttacking") == true &&other == playerHitBox)
         {
             player.GetComponent<Animator>().Play("Hit");
             playerState.hp -= attack - playerState.defencePoint;

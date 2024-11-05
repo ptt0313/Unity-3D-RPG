@@ -6,8 +6,6 @@ public class Spider : Monster
 {
     [SerializeField] BaseMonsterStatus monsterStatus;
 
-    private Animator animator;
-
     [SerializeField] int hp;
     [SerializeField] int attack;
     [SerializeField] int defence;
@@ -20,7 +18,6 @@ public class Spider : Monster
         defence = monsterStatus.DefencePoint;
         rewardExp = monsterStatus.rewardExp;
         rewardGold = monsterStatus.rewardGold;
-        animator = GetComponent<Animator>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -29,7 +26,7 @@ public class Spider : Monster
             animator.Play("Hit");
             hp -= playerState.attackPoint - defence;
         }
-        if (player.GetComponent<Animator>().GetBool("isRolling") == false && animator.GetBool("isAttacking") == true && other.CompareTag("Player"))
+        if (player.GetComponent<Animator>().GetBool("isRolling") == false && animator.GetBool("isAttacking") == true && other == playerHitBox)
         {
             player.GetComponent<Animator>().Play("Hit");
             playerState.hp -= attack - playerState.defencePoint;
