@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Playables;
 
 public class CharacterController : MonoBehaviour
 {
@@ -17,6 +16,7 @@ public class CharacterController : MonoBehaviour
     private Animator animator;
     public Vector2 input;
     private bool isInteracting;
+
     void Awake()
     {
         animator = GetComponent<Animator>();
@@ -88,5 +88,6 @@ public class CharacterController : MonoBehaviour
             Roll();
         }
         Die();
+        
     }
 }

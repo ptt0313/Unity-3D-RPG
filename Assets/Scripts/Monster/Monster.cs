@@ -30,7 +30,7 @@ public class Monster : MonoBehaviour
         state = State.Idle;
         player = GameObject.FindGameObjectWithTag("Player");
         playerWeapon = GameObject.Find("LongSwordMesh").GetComponent<Collider>();
-        playerHitBox = player.GetComponent<CapsuleCollider>();
+        playerHitBox = GameObject.FindGameObjectWithTag("Hit Box").GetComponent<Collider>();
     }
 
     void Update()

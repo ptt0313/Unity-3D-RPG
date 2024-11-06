@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerSpawnManager : Singleton<PlayerSpawnManager>
 {
-    [SerializeField] GameObject playerCharacter;
     Transform spawnPosition;
+
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -15,13 +15,12 @@ public class PlayerSpawnManager : Singleton<PlayerSpawnManager>
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         spawnPosition = GameObject.FindGameObjectWithTag("Spawn Position").transform;
+        Instantiate(Resources.Load("unitychan"), spawnPosition);
+        Instantiate(Resources.Load("Virtual Camera"));
     }
     private void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
-    private void Start()
-    {
-        Instantiate(playerCharacter,spawnPosition.position,Quaternion.identity);
-    }
+
 }
