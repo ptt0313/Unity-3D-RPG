@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class MonsterSpawnManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] List<Transform> monsterSpawnPoint;
+    [SerializeField] GameObject monsterPrefab;
+    int random;
+    
+    IEnumerator SpawnMonster()
     {
-        
-    }
+        yield return new WaitForSeconds(15f);
 
-    // Update is called once per frame
-    void Update()
+        random = Random.Range(0,monsterSpawnPoint.Count);
+
+        Instantiate(monsterPrefab,monsterSpawnPoint[random]);
+    }
+    private void Start()
     {
-        
+        StartCoroutine(SpawnMonster());
     }
 }

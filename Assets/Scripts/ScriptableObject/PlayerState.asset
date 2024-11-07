@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items: []
   level: 1
-  hp: 1000
+  hp: 100
   maxHp: 100
   stamina: 100
   maxStamina: 100
@@ -24,4 +24,4 @@ MonoBehaviour:
   currentArmor: {fileID: 0}
   currentExp: 0
   maxExp: 100
-  gold: 50
+  gold: 500
