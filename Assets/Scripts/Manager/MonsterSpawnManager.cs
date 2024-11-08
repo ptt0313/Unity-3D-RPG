@@ -10,11 +10,15 @@ public class MonsterSpawnManager : MonoBehaviour
     
     IEnumerator SpawnMonster()
     {
-        yield return new WaitForSeconds(15f);
+        while (true)
+        {
+            yield return new WaitForSeconds(15f);
 
-        random = Random.Range(0,monsterSpawnPoint.Count);
+            random = Random.Range(0,monsterSpawnPoint.Count);
 
-        Instantiate(monsterPrefab,monsterSpawnPoint[random]);
+            Instantiate(monsterPrefab,monsterSpawnPoint[random]);
+
+        }
     }
     private void Start()
     {

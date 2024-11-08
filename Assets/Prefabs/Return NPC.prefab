@@ -248,6 +248,7 @@ GameObject:
   - component: {fileID: 8742389117392836000}
   - component: {fileID: 2059839444511575531}
   - component: {fileID: 4353824050730888603}
+  - component: {fileID: -4514955751905531505}
   m_Layer: 0
   m_Name: Return NPC
   m_TagString: Untagged
@@ -336,3 +337,15 @@ MonoBehaviour:
   interactionNPC: {fileID: 0}
   player: {fileID: 0}
   _name: {fileID: 8866443304871360628}
+--- !u!114 &-4514955751905531505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8586922938447399549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d698af0bde1962459238b3b501b1516, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

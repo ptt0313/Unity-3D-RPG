@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RollState : StateMachineBehaviour
 {
-    public float RollDistance = 3;  // 캐릭터가 뒤로 이동할 거리
+    public float RollDistance = 3;  // 캐릭터가 이동할 거리
     public float moveDuration = 1f;      // 이동 지속 시간
 
     private Vector3 startPosition;       // 이동 시작 위치

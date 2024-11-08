@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items: []
   level: 1
-  hp: 100
+  hp: 7
   maxHp: 100
   stamina: 100
   maxStamina: 100

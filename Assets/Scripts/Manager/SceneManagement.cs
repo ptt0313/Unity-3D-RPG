@@ -7,17 +7,9 @@ using UnityEngine.UI;
 public class SceneManagement : Singleton<SceneManagement>
 {
     [SerializeField] Image screenImage;
-    public void OnClickTown()
+    public void StartLoadScene(int num)
     {
-        SceneManagement.Instance.StartCoroutine(AsyncLoad(0));
-    }
-    public void OnClickForest()
-    {
-        SceneManagement.Instance.StartCoroutine(AsyncLoad(1));
-    }
-    public void OnClickDungeon()
-    {
-        SceneManagement.Instance.StartCoroutine(AsyncLoad(2));
+        Instance.StartCoroutine(AsyncLoad(num));
     }
     private void OnEnable()
     {
