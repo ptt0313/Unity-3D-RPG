@@ -1,9 +1,9 @@
-#Unity 3D RPG
+# Unity 3D RPG
 ---
-##1. 개발 기간
+## 1. 개발 기간
 약 1.5개월
 
-##2. 개발 환경
+## 2. 개발 환경
 1. Unity 2022
 2. Visual Studio 2022
    
