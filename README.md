@@ -9,7 +9,7 @@
 ---
 ## 3. 핵심 시스템
 
-### 플레이어 이동
+### 1. 플레이어 이동
 <details><summary>접기/펼치기</summary>
 플레이어의 이동은 유니티의 Input System을 사용해서 만들었습니다.
 먼저 GetAxisRaw를 사용하여 Horizontal과 Vertical의 값을 Vector2로 가져옵니다.
@@ -52,7 +52,7 @@ private void Move()
 
 </details>
 
-### 카메라 작동
+### 2. 카메라 작동
 <details><summary>접기/펼치기</summary>
 씬을 보여줄수 있는 카메라는 시네머신 카메라의 버추얼 카메라를 사용했습니다.
 버추얼 카메라를 사용하여 플레이어를 따라오는 카메라를 쉽게 구현할수 있었으며 
@@ -60,7 +60,7 @@ private void Move()
 (유니티 시네머신 카메라 인스펙터 사진 첨부)  
 </details>
 
-### 플레이어 애니메이션
+### 3. 플레이어 애니메이션
 <details><summary>접기/펼치기</summary>
 플레이어의 애니메이션은 플레이어 매니저에서 현재 상태에 따라 애니메이션이 나오도록 구현했습니다.
 공격,구르기,달리기 등의 애니메이션이 플레이어의 입력값에 따라 실행될 경우
@@ -109,7 +109,7 @@ void Update()
 ```
 </details>
 
-### 스크립터블 오브젝트
+### 4. 스크립터블 오브젝트
 <details><summary>접기/펼치기</summary>
 게임내에서 데이터를 저장하는 용도로 스크립터블 오브젝트를 사용했습니다.
 스크립터블 오브젝트는 데이터를 중복으로 생성하는 것을 방지하여 프로젝트의 메모리를 줄이는데 이점으로 발생합니다.
@@ -117,7 +117,7 @@ void Update()
   
 <details>
 
-### 아이템 데이터
+### 5. 아이템 데이터
 <details><summary>접기/펼치기</summary>
 아이템 데이터는 스크립터블 오브젝트를 사용하여 각 아이템의 타입과 아이템의 정보들을 저장했습니다.
 (HP포션의 스크립터블 오브젝트 사진 첨부)
@@ -147,14 +147,261 @@ public class ItemData : ScriptableObject
 ```
 <details>
 
-### 인벤토리
+### 6. 인벤토리
 <details><summary>접기/펼치기</summary>
+인벤토리는 싱글톤 패턴을 통해 인벤토리 매니저로 클래스를 관리했습니다.
+인벤토리를 열때마다 인벤토리 칸의 각 아이템의 정보를 업데이트하고
+아이템에 마우스 커서를 가져다댈시 아이템의 정보가 하이라이트창에서 따로 표시가 되게 했습니다.
+    (인벤토리와 하이라이트창 첨부)
+    <details><summary>코드 보기</summary>
+        
+        ```
+    public class InventoryManager : Singleton<InventoryManager>
+    {
+    [SerializeField] public GameObject inventory;
+    public Transform itemContect;
+    public List<ItemInventoryUI> ItemInventoryUISlots;
+    public delegate void OnItemChanged();
+    public static event OnItemChanged onItemChagedCallback;
+    [SerializeField] public GameObject hilightItem;
+    [SerializeField] Image hilightItemImage;
+    [SerializeField] TextMeshProUGUI hilightItemName;
+    [SerializeField] TextMeshProUGUI hilightItemDescription;
+    private void Start()
+    {
+        ListItem();
+        // 시작 할 때 아이템이 있으면 인벤토리 UI 업데이트 
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            bool isActive = !inventory.activeSelf;
+            inventory.SetActive(isActive); // 인벤토리 UI 활성화/비활성화 토글
+                                           // 인벤토리가 활성화되면 마우스 커서를 표시하고, 그렇지 않으면 숨깁니다.
+            Cursor.visible = isActive;
+            // 인벤토리가 활성화되면 마우스 커서를 잠그지 않고, 그렇지 않으면 잠급니다.
+            Cursor.lockState = isActive ? CursorLockMode.None : CursorLockMode.Locked;
+        }
+    }
+    public void Add(ItemData newItem)
+    {
+        ItemData existingItem = PlayerInfomationManager.Instance.playerState.items.Find(item => item._name == newItem._name);
+        if (existingItem != null)
+        {
+            existingItem.value += 1;
+            // 같은 아이템이면 카운트 +1
+        }
+        else
+        {
+            newItem.value = 1;
+            PlayerInfomationManager.Instance.playerState.items.Add(newItem);
+            // 새로운 아이템이면 추가
+        }
+        onItemChagedCallback?.Invoke(); // 아이템 변경 이벤트 발생
+    }
 
+    public void Remove(ItemData item)
+    {
+        ItemData itemToRemove = PlayerInfomationManager.Instance.playerState.items.Find(i => i._name == item._name);
+        if (itemToRemove != null && itemToRemove.value > 0)
+        {
+            itemToRemove.value -= 1;
+            int index = PlayerInfomationManager.Instance.playerState.items.IndexOf(itemToRemove);
+            ItemInventoryUISlots[index].countItemText.text = itemToRemove.value.ToString();
+            Debug.Log("포션 사용");
+
+            if (itemToRemove.value == 0)
+            {
+                Debug.Log("포션 사라짐");
+                ItemInventoryUISlots[index].gameObject.SetActive(false);
+                PlayerInfomationManager.Instance.playerState.items.Remove(itemToRemove);
+            }
+
+            onItemChagedCallback?.Invoke();
+        }
+    }
+    public void ListItem()
+    {
+        foreach (Transform child in itemContect)
+        {
+            child.gameObject.SetActive(false);
+            // 빈 슬롯 다 지우고
+        }
+        foreach (Transform child in itemContect)
+        {
+            if (!child.gameObject.activeSelf)
+            // 빈 슬롯 상태에서
+            {
+                for (int i = 0; i < PlayerInfomationManager.Instance.playerState.items.Count; i++)
+                {
+                    // 아이템 먹은 만큼 슬롯 활성화하고 UI 업데이트
+                    ItemInventoryUISlots[i].gameObject.SetActive(true);
+                    ItemInventoryUISlots[i].itemNameText.text = PlayerInfomationManager.Instance.playerState.items[i]._name;
+                    ItemInventoryUISlots[i].itemIconImage.sprite = PlayerInfomationManager.Instance.playerState.items[i].icon;
+                    ItemInventoryUISlots[i].itemBigImage.sprite = PlayerInfomationManager.Instance.playerState.items[i].bigImage;
+                    ItemInventoryUISlots[i].countItemText.text = $"{PlayerInfomationManager.Instance.playerState.items[i].value}";
+                    ItemInventoryUISlots[i].currentItemData = PlayerInfomationManager.Instance.playerState.items[i];
+                    // 슬롯에 커렌트 아이템을 넣어 이 아이템이 무엇인지 알게 해준다
+                }
+            }
+        }
+    }
+    public void HilightItem(ItemData itemData)
+    {
+        hilightItemImage.sprite = itemData.bigImage;
+        hilightItemDescription.text = itemData.description;
+        hilightItemName.text = itemData._name;
+    }
+        ```
+    <details>
+<details>
+
+### 인벤토리 슬롯
+<details><summary>접기/펼치기</summary>
+인벤토리 슬롯은 인벤토리 칸마다의 기능을 구현했습니다.
+IPointerEnterHandler,IPointerExitHandler,IPointerClickHandler 3개의 인터페이스를 상속받았습니다.
+IPointerEnterHandler,IPointerExitHandler의 기능으로 슬롯에 커서를 가져다댈시 인벤토리 매니저에 해당 아이템의 정보를 전달함으로써 아이템 정보창이 열리게 닫히게 됩니다.
+IPointerClickHandler의 경우 아이템 사용 및 장비의 장착 해제를 구현했습니다.
+
+<details><summary>코드 보기</summary>
+
+    ```
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        InventoryManager.Instance.hilightItem.transform.position = eventData.position;
+        InventoryManager.Instance.hilightItem.SetActive(true);
+        InventoryManager.Instance.HilightItem(currentItemData);
+    }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        InventoryManager.Instance.hilightItem.SetActive(false);
+    }
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (currentItemData.type == ItemType.POTION)
+        {
+            Debug.Log("포션 마신다!");
+            InventoryManager.Instance.Remove(currentItemData);
+            PlayerInfomationManager.Instance.playerState.hp += 50;
+            if(PlayerInfomationManager.Instance.playerState.hp >= PlayerInfomationManager.Instance.playerState.maxHp)
+            {
+                PlayerInfomationManager.Instance.playerState.hp = PlayerInfomationManager.Instance.playerState.maxHp;
+            }
+            // 포션은 소비아이템, 갯수가 0이되면 사라진다
+        }
+        ChangeWeapon(eventData);
+        // 무기와 방어구는 계속 인벤토리에 있으면서 교체
+        Time.timeScale = 1.0f;
+    }
+
+    public void ChangeWeapon(PointerEventData eventData)
+    {
+        if (currentItemData == null)
+        {
+            return;
+        }
+        if (currentItemData.type == ItemType.WEAPON)
+        {
+            // 장착 해제
+            if(PlayerInfomationManager.Instance.playerState.currentWeapon == currentItemData)
+            {
+                PlayerInfomationManager.Instance.playerState.currentWeapon = null;
+                PlayerInfomationManager.Instance.weaponEquipment.sprite = null;
+                PlayerInfomationManager.Instance.playerState.attackPoint -= currentItemData.status;
+            }
+            // 장착중인 장비가 없을때 장비 장착
+            else if (PlayerInfomationManager.Instance.playerState.currentWeapon == null)
+            {
+                PlayerInfomationManager.Instance.playerState.currentWeapon = currentItemData;
+                PlayerInfomationManager.Instance.weaponEquipment.sprite = currentItemData.bigImage;
+                PlayerInfomationManager.Instance.playerState.attackPoint += currentItemData.status;
+            }
+            // 장착중인 장비가 있을때 장비 교체
+            else
+            {
+                PlayerInfomationManager.Instance.playerState.attackPoint -= PlayerInfomationManager.Instance.playerState.currentWeapon.status;
+                PlayerInfomationManager.Instance.playerState.currentWeapon = currentItemData;
+                PlayerInfomationManager.Instance.weaponEquipment.sprite = currentItemData.bigImage;
+                PlayerInfomationManager.Instance.playerState.attackPoint += currentItemData.status;
+            }
+            Debug.Log("무기 장착");
+        }
+        else if(currentItemData.type == ItemType.ARMOR)
+        {
+            // 장착 해제
+            if(PlayerInfomationManager.Instance.playerState.currentArmor == currentItemData)
+            {
+                PlayerInfomationManager.Instance.playerState.currentArmor = null;
+                PlayerInfomationManager.Instance.armorEquipment.sprite = null;
+                PlayerInfomationManager.Instance.playerState.defencePoint -= currentItemData.status;
+            }
+            // 장착중인 장비가 없을때 장비 장착
+            else if(PlayerInfomationManager.Instance.playerState.currentArmor == null)
+            {
+                PlayerInfomationManager.Instance.playerState.currentArmor = currentItemData;
+                PlayerInfomationManager.Instance.armorEquipment.sprite = currentItemData.bigImage;
+                PlayerInfomationManager.Instance.playerState.defencePoint += currentItemData.status;
+            }
+            // 장착중인 장비가 있을때 장비 교체
+            else
+            {
+                PlayerInfomationManager.Instance.playerState.defencePoint -= PlayerInfomationManager.Instance.playerState.currentArmor.status;
+                PlayerInfomationManager.Instance.playerState.currentArmor = currentItemData;
+                PlayerInfomationManager.Instance.armorEquipment.sprite = currentItemData.bigImage;
+                PlayerInfomationManager.Instance.playerState.defencePoint += currentItemData.status;
+            }
+            Debug.Log("방어구 장착");
+        }
+
+        PlayerInfomationManager.Instance.UpdateStat();
+
+        
+        // 인벤토리에서 해당 장비를 누르면 장착
+    }
+
+
+    ```
+<details>
 <details>
 
 ### UI 핸들러
 <details><summary>접기/펼치기</summary>
+UI 핸들러는 인벤토리,상점,플레이어 정보창 등 UI를 드래그 앤 드랍으로 위치를 옮길수 있는 기능입니다.
 
+<details><summary>코드 보기</summary>
+    
+    ```
+    public class InventoryHandler : MonoBehaviour, IPointerDownHandler, IDragHandler
+    
+    [SerializeField]
+    private Transform targetTransform; // 이동될 UI
+
+    private Vector2 beginPoint;
+    private Vector2 moveBegin;
+
+    private void Awake()
+    {
+        // 이동 대상 UI를 지정하지 않은 경우, 자동으로 부모로 초기화
+        if (targetTransform == null)
+            targetTransform = transform.parent;
+    }
+
+    // 드래그 시작 위치 지정
+    void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
+    {
+        beginPoint = targetTransform.position;
+        moveBegin = eventData.position;
+    }
+    
+    // 드래그 : 마우스 커서 위치로 이동
+    void IDragHandler.OnDrag(PointerEventData eventData)
+    {
+        targetTransform.position = beginPoint + (eventData.position - moveBegin);
+    }
+
+    ```
+<details>
 <details>
 
 
