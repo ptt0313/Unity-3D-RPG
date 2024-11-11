@@ -49,7 +49,6 @@ private void Move()
         animator.Play("Idle");
     }
 ```
-
 </details>
 
 2. 카메라 작동
@@ -107,7 +106,6 @@ void Update()
     
 }
 ```
-
 </details>
 
 4. 스크립터블 오브젝트
@@ -154,7 +152,8 @@ public class ItemData : ScriptableObject
 인벤토리를 열때마다 인벤토리 칸의 각 아이템의 정보를 업데이트하고
 아이템에 마우스 커서를 가져다댈시 아이템의 정보가 하이라이트창에서 따로 표시가 되게 했습니다.
 (인벤토리와 하이라이트창 첨부)
-    <details><summary>코드 보기</summary>
+    
+<details><summary>코드 보기</summary>
         
         ```
     public class InventoryManager : Singleton<InventoryManager>
