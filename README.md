@@ -9,7 +9,7 @@
 ---
 ## 3. 핵심 시스템
 
-1. 플레이어 이동
+### 1. 플레이어 이동
 <details><summary>접기/펼치기</summary>
 플레이어의 이동은 유니티의 Input System을 사용해서 만들었습니다.
 먼저 GetAxisRaw를 사용하여 Horizontal과 Vertical의 값을 Vector2로 가져옵니다.
@@ -51,7 +51,7 @@ private void Move()
 ```
 </details>
 
-2. 카메라 작동
+### 2. 카메라 작동
 <details><summary>접기/펼치기</summary>
 씬을 보여줄수 있는 카메라는 시네머신 카메라의 버추얼 카메라를 사용했습니다.
 버추얼 카메라를 사용하여 플레이어를 따라오는 카메라를 쉽게 구현할수 있었으며 
@@ -59,7 +59,7 @@ private void Move()
 (유니티 시네머신 카메라 인스펙터 사진 첨부)  
 </details>
 
-3. 플레이어 애니메이션
+### 3. 플레이어 애니메이션
 <details><summary>접기/펼치기</summary>
 플레이어의 애니메이션은 플레이어 매니저에서 현재 상태에 따라 애니메이션이 나오도록 구현했습니다.
 공격,구르기,달리기 등의 애니메이션이 플레이어의 입력값에 따라 실행될 경우
@@ -108,7 +108,7 @@ void Update()
 ```
 </details>
 
-4. 스크립터블 오브젝트
+### 4. 스크립터블 오브젝트
 <details><summary>접기/펼치기</summary>
 게임내에서 데이터를 저장하는 용도로 스크립터블 오브젝트를 사용했습니다.
 스크립터블 오브젝트는 데이터를 중복으로 생성하는 것을 방지하여 프로젝트의 메모리를 줄이는데 이점으로 발생합니다.
@@ -116,7 +116,7 @@ void Update()
   
 <details>
 
-5. 아이템 데이터
+### 5. 아이템 데이터
 <details><summary>접기/펼치기</summary>
 아이템 데이터는 스크립터블 오브젝트를 사용하여 각 아이템의 타입과 아이템의 정보들을 저장했습니다.
 (HP포션의 스크립터블 오브젝트 사진 첨부)
@@ -146,7 +146,7 @@ public class ItemData : ScriptableObject
 ```
 <details>
 
-6. 인벤토리
+### 6. 인벤토리
 <details><summary>접기/펼치기</summary>
 인벤토리는 싱글톤 패턴을 통해 인벤토리 매니저로 클래스를 관리했습니다.
 인벤토리를 열때마다 인벤토리 칸의 각 아이템의 정보를 업데이트하고
@@ -257,7 +257,7 @@ public class ItemData : ScriptableObject
     <details>
 <details>
 
-7. 인벤토리 슬롯
+### 7. 인벤토리 슬롯
 <details><summary>접기/펼치기</summary>
 인벤토리 슬롯은 인벤토리 칸마다의 기능을 구현했습니다.
 IPointerEnterHandler,IPointerExitHandler,IPointerClickHandler 3개의 인터페이스를 상속받았습니다.
@@ -365,7 +365,7 @@ IPointerClickHandler의 경우 아이템 사용 및 장비의 장착 해제를 �
 <details>
 <details>
 
-8. UI 핸들러
+### 8. UI 핸들러
 <details><summary>접기/펼치기</summary>
 UI 핸들러는 인벤토리,상점,플레이어 정보창 등 UI를 드래그 앤 드랍으로 위치를 옮길수 있는 기능입니다.
 
@@ -405,17 +405,17 @@ UI 핸들러는 인벤토리,상점,플레이어 정보창 등 UI를 드래그 �
 <details>
 
 
-9. 몬스터 상태 패턴
+### 9. 몬스터 상태 패턴
 <details><summary>접기/펼치기</summary>
 
 <details>
 
-10. 비동기 씬 로드
+### 10. 비동기 씬 로드
 <details><summary>접기/펼치기</summary>
 
 <details>
 
-11. 파티클 재생
+### 11. 파티클 재생
 <details><summary>접기/펼치기</summary>
   
 <details>
