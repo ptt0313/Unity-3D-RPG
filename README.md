@@ -371,7 +371,7 @@ IPointerClickHandler의 경우 아이템 사용 및 장비의 장착 해제를 �
 ### 8. UI 핸들러
 <details><summary>접기/펼치기</summary>
 UI 핸들러는 인벤토리,상점,플레이어 정보창 등 UI를 드래그 앤 드랍으로 위치를 옮길수 있는 기능입니다.
-
+IPointerDownHandler, IDragHandler를 인터페이스로 상속받아 구현했습니다.
 <details><summary>코드 보기</summary>
     
 ```C#
@@ -411,9 +411,14 @@ UI 핸들러는 인벤토리,상점,플레이어 정보창 등 UI를 드래그 �
 ### 9. 몬스터 상태 패턴
 <details><summary>접기/펼치기</summary>
 몬스터의 기본이 되는 스크립트를 만들면서 상태 패턴을 사용했습니다.
-각각의 싱태마다 조건을 달리하며 몬스터의 상태를 관리할수 있고 유지 관리가 쉬워지는 장점이 있습니다.
+각각의 상태마다 조건을 달리하며 몬스터의 상태를 관리할 수 있고 유지,관리가 쉬워지는 장점이 있습니다.
 이후 몬스터마다 해당 스크립트를 상속받은 뒤 각 몬스터의 정보는 스크립터블 오브젝트를 통해 가져왔습니다.
+이때 스크립터블 오브젝트에 몬스터의 정보를 스크립터블 오브젝트에 바로 연결할 경우
+해당 스크립터블 오브젝트를 상속받는 다른 몬스터에게도 영향이 가기 때문에
+몬스터의 변수를 따로 선언하여 스크립터블 오브젝트의 데이터를 넣어줬습니다.
 상속과 상태패턴,스크립터블 오브젝트를 통해 여러 종류의 몬스터를 구현하기 쉽도록 설계했습니다.
+
+
 <details><summary>상태패턴 코드</summary>
     
 ```C#
@@ -562,6 +567,90 @@ UI 핸들러는 인벤토리,상점,플레이어 정보창 등 UI를 드래그 �
 
 ### 10. 비동기 씬 로드
 <details><summary>접기/펼치기</summary>
+유니티에서는 비동기 씬 로드를 위해서 AasyncOperation 함수를 지원하고 있습니다.
+AasyncOperation는 코루틴을 이용해서 비동기적 로드를 구현할 수 있게 해줍니다.
+이를 이용하여 비동기 씬 로드를 구현했습니다.
+<details><summary>접기/펼치기</summary>
+    
+```
+public class SceneManagement : Singleton<SceneManagement>
+{
+    [SerializeField] Image screenImage;
+    public void StartLoadScene(int num)
+    {
+        Instance.StartCoroutine(AsyncLoad(num));
+    }
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    public IEnumerator FadeIn()
+    {
+        screenImage.gameObject.SetActive(true);
+        Color color = screenImage.color;
+        color.a = 1f;
+        while (color.a > 0f)
+        {
+            color.a -= Time.deltaTime;
+            screenImage.color = color;
+            if (color.a <= 0)
+            {
+                screenImage.gameObject.SetActive(false);
+            }
+        }
+        yield return null;
+    }
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("SceneLoaded");
+        StartCoroutine(FadeIn());
+    }
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+
+    }
+    public IEnumerator AsyncLoad(int index)
+    {
+        screenImage.gameObject.SetActive(true);
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(index);
+        asyncOperation.allowSceneActivation = false;
+        // <asyncOperation.allowSceneActivation>
+        // 장면이 준비된 즉시 장면이 활성화되는 것을 허용하는 변수입니다.
+        Color color = screenImage.color;
+        color.a = 0;
+
+        // <asyncOperation.isDone>
+        // 해당 동작이 완료되었는지를 나타내는 변수입니다.(읽기전용)
+        while (asyncOperation.isDone == false)
+        {
+            color.a += Time.deltaTime;
+
+            screenImage.color = color;
+
+            // <asyncOperation.progress>
+            // 작업의 진행 상태를 나타내는 변수입니다.(읽기전용)
+            if (asyncOperation.progress >= 0.9f)
+            {
+                color.a = Mathf.Lerp(color.a, 1f, Time.deltaTime);
+
+                screenImage.color = color;
+                if (color.a >= 1.0f)
+                {
+                    asyncOperation.allowSceneActivation = true;
+                    Debug.Log("SceneLoad");
+                    yield break;
+                }
+            }
+
+            yield return null;
+        }
+
+    }
+```
+
+</details>
 
 </details>
 
