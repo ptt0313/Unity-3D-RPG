@@ -410,7 +410,154 @@ UI 핸들러는 인벤토리,상점,플레이어 정보창 등 UI를 드래그 �
 
 ### 9. 몬스터 상태 패턴
 <details><summary>접기/펼치기</summary>
+몬스터의 기본이 되는 스크립트를 만들면서 상태 패턴을 사용했습니다.
+각각의 싱태마다 조건을 달리하며 몬스터의 상태를 관리할수 있고 유지 관리가 쉬워지는 장점이 있습니다.
+이후 몬스터마다 해당 스크립트를 상속받은 뒤 각 몬스터의 정보는 스크립터블 오브젝트를 통해 가져왔습니다.
+상속과 상태패턴,스크립터블 오브젝트를 통해 여러 종류의 몬스터를 구현하기 쉽도록 설계했습니다.
+<details><summary>상태패턴 코드</summary>
+    
+```C#
+    enum State
+    {
+        Idle,
+        Move,
+        Attack,
+        Die,
+    }
+    public class Monster : MonoBehaviour
+    {
+        [SerializeField] NavMeshAgent navMeshAgent;
+        [SerializeField] protected Animator animator;
+        [SerializeField] protected GameObject player;
+        [SerializeField] protected Collider playerWeapon;
+        [SerializeField] protected BasePlayerState playerState;
+        [SerializeField] protected Collider playerHitBox;
+    
+        State state;
+    
+        void Start()
+        {
+            animator = GetComponent<Animator>();
+            navMeshAgent = GetComponent<NavMeshAgent>();
+    
+            state = State.Idle;
+            player = GameObject.FindGameObjectWithTag("Player");
+            playerWeapon = GameObject.Find("LongSwordMesh").GetComponent<Collider>();
+            playerHitBox = GameObject.FindGameObjectWithTag("Hit Box").GetComponent<Collider>();
+        }
+    
+        void Update()
+        {
+            switch (state)
+            {
+                case State.Idle: Idle();
+                    break;
+                case State.Move: Move();
+                    break;
+                case State.Attack: Attack();
+                    break;
+                case State.Die: Die();
+                    break;
+            }
+    
+        }
+    
+        protected void Die()
+        {
+            state = State.Die;
+            animator.Play("Die");
+            StartCoroutine(Remove());
+        }
+    
+    
+        protected void Attack()
+        {
+            animator.SetTrigger("Attack");
+            navMeshAgent.SetDestination(transform.position);
+            transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
+            if (Vector3.Distance(transform.position, player.transform.position) >= 2)
+            {
+                state = State.Move;
+            }
+        }
+    
+        protected void Move()
+        {
+            animator.SetTrigger("Move");
+            navMeshAgent.SetDestination(player.transform.position);
+            transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
+            if (Vector3.Distance(transform.position, player.transform.position) < 2)
+            {
+                state = State.Attack;
+            }
+            else if(Vector3.Distance(transform.position, player.transform.position) >= 15)
+            {
+                state = State.Idle;
+            }
+        }
+    
+        protected void Idle()
+        {
+            navMeshAgent.SetDestination(transform.position);
+            animator.SetTrigger("Idle");
+            if (Vector3.Distance(transform.position, player.transform.position) < 15)
+            {
+                state = State.Move;
+            }
+        }
+    
+        IEnumerator Remove()
+        {
+            yield return new WaitForSeconds(10);
+            gameObject.SetActive(false);
+        }
+    }
+ ```
+</details>
+<details><summary>몬스터 코드</summary>
 
+```C#
+    public class Spider : Monster
+{
+    [SerializeField] BaseMonsterStatus monsterStatus;
+
+    [SerializeField] int hp;
+    [SerializeField] int attack;
+    [SerializeField] int defence;
+    [SerializeField] int rewardExp;
+    [SerializeField] int rewardGold;
+    void Awake()
+    {
+        hp = monsterStatus.Hp;
+        attack = monsterStatus.AttackPoint;
+        defence = monsterStatus.DefencePoint;
+        rewardExp = monsterStatus.rewardExp;
+        rewardGold = monsterStatus.rewardGold;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (player.GetComponent<Animator>().GetBool("isAttacking") == true && other == playerWeapon)
+        {
+            animator.Play("Hit");
+            hp -= playerState.attackPoint - defence;
+        }
+        if (player.GetComponent<Animator>().GetBool("isRolling") == false && animator.GetBool("isAttacking") == true && other == playerHitBox)
+        {
+            player.GetComponent<Animator>().Play("Hit");
+            playerState.hp -= attack - playerState.defencePoint;
+        }
+    }
+    private void LateUpdate()
+    {
+        if (hp <= 0)
+        {
+            Die();
+        }
+    }
+}
+```
+
+</details>
 </details>
 
 ### 10. 비동기 씬 로드
