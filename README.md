@@ -19,7 +19,7 @@
 Input의 입력이 없을 경우 캐릭터는 제자리에 서있는 애니메이션을 플레이하고
 입력이 있을 경우 해당 방향으로 움직이며 달리는 애니메이션이 플레이됩니다.
 
-```
+```C#
 private void Move()
 {
     input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
@@ -68,7 +68,7 @@ private void Move()
 다른 애니메이션이 재생되지 못하도록 플레이어의 상태를 애니메이션 컨트롤러의 bool값으로 넣어 StateMachineBehaviour를 통해 관리했습니다.
 (플레이어 애니메이터 컨트롤러 사진 첨부)
 
-```
+```C#
 private void Die()
 {
     if (playerState.hp <= 0 && isDie == false)
@@ -117,14 +117,14 @@ void Update()
 스크립터블 오브젝트는 데이터를 중복으로 생성하는 것을 방지하여 프로젝트의 메모리를 줄이는데 이점으로 발생합니다.
 또한 빌드후 스크립터블 오브젝트는 데이터를 수정할 수 없고 스크립터블 오브젝트는 에셋으로 관리되기에 에셋 업데이트를 통해 수정이 가능합니다.
   
-<details>
+</details>
 
 ### 5. 아이템 데이터
 <details><summary>접기/펼치기</summary>
 아이템 데이터는 스크립터블 오브젝트를 사용하여 각 아이템의 타입과 아이템의 정보들을 저장했습니다.
 (HP포션의 스크립터블 오브젝트 사진 첨부)
   
-```
+```C#
 public enum ItemType
 {
     WEAPON,
@@ -159,7 +159,7 @@ public class ItemData : ScriptableObject
     
 <details><summary>코드 보기</summary>
         
-```
+```C#
 public class InventoryManager : Singleton<InventoryManager>
 {
 [SerializeField] public GameObject inventory;
@@ -258,8 +258,8 @@ public void HilightItem(ItemData itemData)
     hilightItemName.text = itemData._name;
 }
  ```
-<details>
-<details>
+</details>
+</details>
 
 ### 7. 인벤토리 슬롯
 <details><summary>접기/펼치기</summary>
@@ -270,7 +270,7 @@ IPointerClickHandler의 경우 아이템 사용 및 장비의 장착 해제를 �
 
 <details><summary>코드 보기</summary>
 
-```
+```C#
     public void OnPointerEnter(PointerEventData eventData)
     {
         InventoryManager.Instance.hilightItem.transform.position = eventData.position;
@@ -365,8 +365,8 @@ IPointerClickHandler의 경우 아이템 사용 및 장비의 장착 해제를 �
     }
 
 ```
-<details>
-<details>
+</details>
+</details>
 
 ### 8. UI 핸들러
 <details><summary>접기/펼치기</summary>
@@ -374,7 +374,7 @@ UI 핸들러는 인벤토리,상점,플레이어 정보창 등 UI를 드래그 �
 
 <details><summary>코드 보기</summary>
     
-```
+```C#
     public class InventoryHandler : MonoBehaviour, IPointerDownHandler, IDragHandler
     
     [SerializeField]
