@@ -148,7 +148,7 @@ public class ItemData : ScriptableObject
 }
 ```
 
-<details>
+</details>
 
 ### 6. 인벤토리
 <details><summary>접기/펼치기</summary>
@@ -404,21 +404,21 @@ UI 핸들러는 인벤토리,상점,플레이어 정보창 등 UI를 드래그 �
     }
 
  ```
-<details>
-<details>
+</details>
+</details>
 
 
 ### 9. 몬스터 상태 패턴
 <details><summary>접기/펼치기</summary>
 
-<details>
+</details>
 
 ### 10. 비동기 씬 로드
 <details><summary>접기/펼치기</summary>
 
-<details>
+</details>
 
 ### 11. 파티클 재생
 <details><summary>접기/펼치기</summary>
   
-<details>
+</details>
