@@ -18,6 +18,7 @@
 
 Input의 입력이 없을 경우 캐릭터는 제자리에 서있는 애니메이션을 플레이하고
 입력이 있을 경우 해당 방향으로 움직이며 달리는 애니메이션이 플레이됩니다.
+
 ```
 private void Move()
 {
@@ -49,6 +50,7 @@ private void Move()
         animator.Play("Idle");
     }
 ```
+
 </details>
 
 ### 2. 카메라 작동
@@ -106,6 +108,7 @@ void Update()
     
 }
 ```
+
 </details>
 
 ### 4. 스크립터블 오브젝트
@@ -144,6 +147,7 @@ public class ItemData : ScriptableObject
     public int status;
 }
 ```
+
 <details>
 
 ### 6. 인벤토리
@@ -155,106 +159,106 @@ public class ItemData : ScriptableObject
     
 <details><summary>코드 보기</summary>
         
-        ```
-    public class InventoryManager : Singleton<InventoryManager>
+```
+public class InventoryManager : Singleton<InventoryManager>
+{
+[SerializeField] public GameObject inventory;
+public Transform itemContect;
+public List<ItemInventoryUI> ItemInventoryUISlots;
+public delegate void OnItemChanged();
+public static event OnItemChanged onItemChagedCallback;
+[SerializeField] public GameObject hilightItem;
+[SerializeField] Image hilightItemImage;
+[SerializeField] TextMeshProUGUI hilightItemName;
+[SerializeField] TextMeshProUGUI hilightItemDescription;
+private void Start()
+{
+    ListItem();
+    // 시작 할 때 아이템이 있으면 인벤토리 UI 업데이트 
+}
+private void Update()
+{
+    if (Input.GetKeyDown(KeyCode.I))
     {
-    [SerializeField] public GameObject inventory;
-    public Transform itemContect;
-    public List<ItemInventoryUI> ItemInventoryUISlots;
-    public delegate void OnItemChanged();
-    public static event OnItemChanged onItemChagedCallback;
-    [SerializeField] public GameObject hilightItem;
-    [SerializeField] Image hilightItemImage;
-    [SerializeField] TextMeshProUGUI hilightItemName;
-    [SerializeField] TextMeshProUGUI hilightItemDescription;
-    private void Start()
-    {
-        ListItem();
-        // 시작 할 때 아이템이 있으면 인벤토리 UI 업데이트 
+        bool isActive = !inventory.activeSelf;
+        inventory.SetActive(isActive); // 인벤토리 UI 활성화/비활성화 토글
+                                       // 인벤토리가 활성화되면 마우스 커서를 표시하고, 그렇지 않으면 숨깁니다.
+        Cursor.visible = isActive;
+        // 인벤토리가 활성화되면 마우스 커서를 잠그지 않고, 그렇지 않으면 잠급니다.
+        Cursor.lockState = isActive ? CursorLockMode.None : CursorLockMode.Locked;
     }
-    private void Update()
+}
+public void Add(ItemData newItem)
+{
+    ItemData existingItem = PlayerInfomationManager.Instance.playerState.items.Find(item => item._name == newItem._name);
+    if (existingItem != null)
     {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            bool isActive = !inventory.activeSelf;
-            inventory.SetActive(isActive); // 인벤토리 UI 활성화/비활성화 토글
-                                           // 인벤토리가 활성화되면 마우스 커서를 표시하고, 그렇지 않으면 숨깁니다.
-            Cursor.visible = isActive;
-            // 인벤토리가 활성화되면 마우스 커서를 잠그지 않고, 그렇지 않으면 잠급니다.
-            Cursor.lockState = isActive ? CursorLockMode.None : CursorLockMode.Locked;
-        }
+        existingItem.value += 1;
+        // 같은 아이템이면 카운트 +1
     }
-    public void Add(ItemData newItem)
+    else
     {
-        ItemData existingItem = PlayerInfomationManager.Instance.playerState.items.Find(item => item._name == newItem._name);
-        if (existingItem != null)
-        {
-            existingItem.value += 1;
-            // 같은 아이템이면 카운트 +1
-        }
-        else
-        {
-            newItem.value = 1;
-            PlayerInfomationManager.Instance.playerState.items.Add(newItem);
-            // 새로운 아이템이면 추가
-        }
-        onItemChagedCallback?.Invoke(); // 아이템 변경 이벤트 발생
+        newItem.value = 1;
+        PlayerInfomationManager.Instance.playerState.items.Add(newItem);
+        // 새로운 아이템이면 추가
     }
+    onItemChagedCallback?.Invoke(); // 아이템 변경 이벤트 발생
+}
 
-    public void Remove(ItemData item)
+public void Remove(ItemData item)
+{
+    ItemData itemToRemove = PlayerInfomationManager.Instance.playerState.items.Find(i => i._name == item._name);
+    if (itemToRemove != null && itemToRemove.value > 0)
     {
-        ItemData itemToRemove = PlayerInfomationManager.Instance.playerState.items.Find(i => i._name == item._name);
-        if (itemToRemove != null && itemToRemove.value > 0)
-        {
-            itemToRemove.value -= 1;
-            int index = PlayerInfomationManager.Instance.playerState.items.IndexOf(itemToRemove);
-            ItemInventoryUISlots[index].countItemText.text = itemToRemove.value.ToString();
-            Debug.Log("포션 사용");
+        itemToRemove.value -= 1;
+        int index = PlayerInfomationManager.Instance.playerState.items.IndexOf(itemToRemove);
+        ItemInventoryUISlots[index].countItemText.text = itemToRemove.value.ToString();
+        Debug.Log("포션 사용");
 
-            if (itemToRemove.value == 0)
+        if (itemToRemove.value == 0)
+        {
+            Debug.Log("포션 사라짐");
+            ItemInventoryUISlots[index].gameObject.SetActive(false);
+            PlayerInfomationManager.Instance.playerState.items.Remove(itemToRemove);
+        }
+
+        onItemChagedCallback?.Invoke();
+    }
+}
+public void ListItem()
+{
+    foreach (Transform child in itemContect)
+    {
+        child.gameObject.SetActive(false);
+        // 빈 슬롯 다 지우고
+    }
+    foreach (Transform child in itemContect)
+    {
+        if (!child.gameObject.activeSelf)
+        // 빈 슬롯 상태에서
+        {
+            for (int i = 0; i < PlayerInfomationManager.Instance.playerState.items.Count; i++)
             {
-                Debug.Log("포션 사라짐");
-                ItemInventoryUISlots[index].gameObject.SetActive(false);
-                PlayerInfomationManager.Instance.playerState.items.Remove(itemToRemove);
-            }
-
-            onItemChagedCallback?.Invoke();
-        }
-    }
-    public void ListItem()
-    {
-        foreach (Transform child in itemContect)
-        {
-            child.gameObject.SetActive(false);
-            // 빈 슬롯 다 지우고
-        }
-        foreach (Transform child in itemContect)
-        {
-            if (!child.gameObject.activeSelf)
-            // 빈 슬롯 상태에서
-            {
-                for (int i = 0; i < PlayerInfomationManager.Instance.playerState.items.Count; i++)
-                {
-                    // 아이템 먹은 만큼 슬롯 활성화하고 UI 업데이트
-                    ItemInventoryUISlots[i].gameObject.SetActive(true);
-                    ItemInventoryUISlots[i].itemNameText.text = PlayerInfomationManager.Instance.playerState.items[i]._name;
-                    ItemInventoryUISlots[i].itemIconImage.sprite = PlayerInfomationManager.Instance.playerState.items[i].icon;
-                    ItemInventoryUISlots[i].itemBigImage.sprite = PlayerInfomationManager.Instance.playerState.items[i].bigImage;
-                    ItemInventoryUISlots[i].countItemText.text = $"{PlayerInfomationManager.Instance.playerState.items[i].value}";
-                    ItemInventoryUISlots[i].currentItemData = PlayerInfomationManager.Instance.playerState.items[i];
-                    // 슬롯에 커렌트 아이템을 넣어 이 아이템이 무엇인지 알게 해준다
-                }
+                // 아이템 먹은 만큼 슬롯 활성화하고 UI 업데이트
+                ItemInventoryUISlots[i].gameObject.SetActive(true);
+                ItemInventoryUISlots[i].itemNameText.text = PlayerInfomationManager.Instance.playerState.items[i]._name;
+                ItemInventoryUISlots[i].itemIconImage.sprite = PlayerInfomationManager.Instance.playerState.items[i].icon;
+                ItemInventoryUISlots[i].itemBigImage.sprite = PlayerInfomationManager.Instance.playerState.items[i].bigImage;
+                ItemInventoryUISlots[i].countItemText.text = $"{PlayerInfomationManager.Instance.playerState.items[i].value}";
+                ItemInventoryUISlots[i].currentItemData = PlayerInfomationManager.Instance.playerState.items[i];
+                // 슬롯에 커렌트 아이템을 넣어 이 아이템이 무엇인지 알게 해준다
             }
         }
     }
-    public void HilightItem(ItemData itemData)
-    {
-        hilightItemImage.sprite = itemData.bigImage;
-        hilightItemDescription.text = itemData.description;
-        hilightItemName.text = itemData._name;
-    }
-        ```
-    <details>
+}
+public void HilightItem(ItemData itemData)
+{
+    hilightItemImage.sprite = itemData.bigImage;
+    hilightItemDescription.text = itemData.description;
+    hilightItemName.text = itemData._name;
+}
+ ```
+<details>
 <details>
 
 ### 7. 인벤토리 슬롯
@@ -266,7 +270,7 @@ IPointerClickHandler의 경우 아이템 사용 및 장비의 장착 해제를 �
 
 <details><summary>코드 보기</summary>
 
-    ```
+```
     public void OnPointerEnter(PointerEventData eventData)
     {
         InventoryManager.Instance.hilightItem.transform.position = eventData.position;
@@ -360,8 +364,7 @@ IPointerClickHandler의 경우 아이템 사용 및 장비의 장착 해제를 �
         // 인벤토리에서 해당 장비를 누르면 장착
     }
 
-
-    ```
+```
 <details>
 <details>
 
@@ -371,7 +374,7 @@ UI 핸들러는 인벤토리,상점,플레이어 정보창 등 UI를 드래그 �
 
 <details><summary>코드 보기</summary>
     
-    ```
+```
     public class InventoryHandler : MonoBehaviour, IPointerDownHandler, IDragHandler
     
     [SerializeField]
@@ -400,7 +403,7 @@ UI 핸들러는 인벤토리,상점,플레이어 정보창 등 UI를 드래그 �
         targetTransform.position = beginPoint + (eventData.position - moveBegin);
     }
 
-    ```
+ ```
 <details>
 <details>
 
