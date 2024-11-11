@@ -53,7 +53,7 @@ private void Move()
 
 </details>
 
-### 2. 카메라 작동
+### 2. 시네머신 카메라
 <details><summary>접기/펼치기</summary>
 씬을 보여줄수 있는 카메라는 시네머신 카메라의 버추얼 카메라를 사용했습니다.
 버추얼 카메라를 사용하여 플레이어를 따라오는 카메라를 쉽게 구현할수 있었으며 
@@ -61,7 +61,7 @@ private void Move()
 (유니티 시네머신 카메라 인스펙터 사진 첨부)  
 </details>
 
-### 3. 플레이어 애니메이션
+### 3. 캐릭터 애니메이션
 <details><summary>접기/펼치기</summary>
 플레이어의 애니메이션은 플레이어 매니저에서 현재 상태에 따라 애니메이션이 나오도록 구현했습니다.
 공격,구르기,달리기 등의 애니메이션이 플레이어의 입력값에 따라 실행될 경우
@@ -368,7 +368,77 @@ IPointerClickHandler의 경우 아이템 사용 및 장비의 장착 해제를 �
 </details>
 </details>
 
-### 8. UI 핸들러
+### 8. 상점
+<details><summary>접기/펼치기</summary>
+상점은 스크롤바와 버티컬 레이아웃을 사용하여 아이템을 정렬한뒤
+각각의 아이템의 정보를 넣고 구매 버튼으로 아이템에 해당하는 가격을 지불하여
+인벤토리에 아이템이 추가되도록 구현했습니다.
+
+<details><summary>코드 보기</summary>
+
+```C#
+List<ItemData> shopItems = new List<ItemData>();
+public List<ShopSlots> shopSlots;
+[SerializeField] ItemData armor;
+[SerializeField] ItemData armor2;
+[SerializeField] ItemData weapon;
+[SerializeField] ItemData weapon2;
+[SerializeField] ItemData potion;
+public Transform itemContect;
+
+
+private void Start()
+{
+    shopItems.Add(armor);
+    shopItems.Add(armor2);
+    shopItems.Add(weapon);
+    shopItems.Add(weapon2);
+    shopItems.Add(potion);
+    
+    ListItem();
+}
+public void ListItem()
+{
+    foreach (Transform child in itemContect)
+    {
+        child.gameObject.SetActive(false);
+        // 빈 슬롯 다 지우고
+    }
+    foreach (Transform child in itemContect)
+    {
+        if (!child.gameObject.activeSelf)
+            //빈 슬롯 상태에서
+        {
+            for (int i = 0; i < shopItems.Count; i++)
+            {
+                // 아이템 먹은 만큼 슬롯 활성화하고 UI 업데이트
+                shopSlots[i].gameObject.SetActive(true);
+                shopSlots[i].itemNameText.text = shopItems[i]._name;
+                shopSlots[i].itemIconImage.sprite = shopItems[i].icon;
+                shopSlots[i].itemBigImage.sprite = shopItems[i].bigImage;
+                shopSlots[i].itemPrice.text = $"{shopItems[i].price}";
+                shopSlots[i].itemDescription.text = shopItems[i].description;
+                shopSlots[i].currentItemData = shopItems[i];
+                // 슬롯에 커렌트 아이템을 넣어 이 아이템이 무엇인지 알게 해준다
+            }
+        }
+    }
+}
+public void BuyItem()
+{
+    if(PlayerInfomationManager.Instance.playerState.gold >= currentItemData.price)
+    {
+        PlayerInfomationManager.Instance.playerState.gold -= currentItemData.price;
+        InventoryManager.Instance.Add(currentItemData);
+        InventoryManager.Instance.ListItem();
+    }
+}
+```
+
+</details>
+</details>
+
+### 9. UI 핸들러
 <details><summary>접기/펼치기</summary>
 UI 핸들러는 인벤토리,상점,플레이어 정보창 등 UI를 드래그 앤 드랍으로 위치를 옮길수 있는 기능입니다.
 IPointerDownHandler, IDragHandler를 인터페이스로 상속받아 구현했습니다.
@@ -408,7 +478,7 @@ IPointerDownHandler, IDragHandler를 인터페이스로 상속받아 구현했�
 </details>
 
 
-### 9. 몬스터 상태 패턴
+### 10. 몬스터 상태 패턴
 <details><summary>접기/펼치기</summary>
 몬스터의 기본이 되는 스크립트를 만들면서 상태 패턴을 사용했습니다.
 각각의 상태마다 조건을 달리하며 몬스터의 상태를 관리할 수 있고 유지,관리가 쉬워지는 장점이 있습니다.
@@ -565,7 +635,7 @@ IPointerDownHandler, IDragHandler를 인터페이스로 상속받아 구현했�
 </details>
 </details>
 
-### 10. 비동기 씬 로드
+### 11. 비동기 씬 로드
 <details><summary>접기/펼치기</summary>
 유니티에서는 비동기 씬 로드를 위해서 AasyncOperation 함수를 지원하고 있습니다.
 AasyncOperation는 코루틴을 이용해서 비동기적 로드를 구현할 수 있게 해줍니다.
@@ -654,7 +724,23 @@ public class SceneManagement : Singleton<SceneManagement>
 
 </details>
 
-### 11. 파티클 재생
+### 12. 파티클 재생
 <details><summary>접기/펼치기</summary>
-  
+파티클은 플레이어 캐릭터의 애니메이션 타이밍에 맞춰서 재생되도록 만들었습니다.
+공격을 휘두르는 애니메이션에 이벤트를 등록하여 해당 파티클의 함수명과 List 번호를 호출하여
+애니메이션이 동작중에 파티클이 같이 플레이 되도록 만들었습니다.
+(애니메이션 이벤트에 파티클 등록된 사진 첨부)
+
+```C#
+public class ParticleManager : Singleton<ParticleManager>
+{
+    [SerializeField] public ParticleSystem[] particleSystems;
+
+    void ParticlePlay(int num)
+    {
+        particleSystems[num].Play();
+    }
+}
+```
+
 </details>
