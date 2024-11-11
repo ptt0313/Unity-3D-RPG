@@ -1,9 +1,9 @@
 # Unity 3D RPG
 
-## 1. 개발 기간
-약 1개월
+## 1. 영상
+(유튜브 링크 첨부)
 
-## 2. 개발 환경
+## 2. 개발 환경 및 기간
 1. Unity 2022 3.31ver
 2. Visual Studio 2022
 ---
@@ -748,4 +748,27 @@ public class ParticleManager : Singleton<ParticleManager>
 }
 ```
 
+</details>
+
+## 4. 최적화 기능
+### 1. 오클루전 컬링
+
+### 2. LOD(Level of Detail)
+<details><summary>접기/펼치기</summary>
+LOD는 오브젝트를 카메라에서 렌더링하는 거리에 따라 여러 단계로 나눠서 렌더링하는 기술입니다.
+오브젝트가 카메라와 거리가 멀 경우 디테일한 렌더링이 요구되지 않기 때문에 낮은 텍스쳐로 렌더링을 하면서
+렌더링 속도를 향상시키는 기법입니다.
+
+(LOD 사용 예시 사진 첨부)    
+</details>
+
+### 3. GPU Instancing
+<details><summary>접기/펼치기</summary>
+
+GPU 인스턴싱은 유니티에서 드로아 콜을 줄이기 위해 사용하는 최적화 기법 중 하나입니다.
+씬내에서 같은 메시를 동시에 렌더링 하여 렌더링 속도를 향상시켜줍니다.
+
+메테리얼 인스펙터 창 하단의 어드밴스 옵션에서 GPU 인스턴싱을 사용할 수 있습니다.
+
+단, RenderPipe에서 SRP Batcher와 동시에 사용이 불가능하니 둘 중 하나만 사용할 수 있습니다.
 </details>
