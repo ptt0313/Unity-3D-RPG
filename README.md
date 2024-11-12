@@ -872,3 +872,13 @@ GPU 인스턴싱은 유니티에서 드로아 콜을 줄이기 위해 사용하�
 ![GPU인스턴싱](https://github.com/user-attachments/assets/021a1cac-4b49-426b-b232-2423e7be8c2a)
 
 </details>
+
+## 5. 추가 구현 예정
+
+### 1. 서버에 데이터를 저장,로드기능
+<details><summary>접기/펼치기</summary>
+유니티에서는 PlayerPrefs나 Json,스크립터블 오브젝트를 사용하여 데이터를 저장할 수 있습니다.
+이를 PlayFab SDK를 활용하여 PlayFab의 백엔드 서버와 연동하여 데이터를 저장,불러오기 기능을 구현할 예정입니다.
+
+예상 기간 : 24.11.18 ~ 24.11.30
+</details>
