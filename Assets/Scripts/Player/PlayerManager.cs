@@ -105,7 +105,7 @@ public class PlayerManager : MonoBehaviour
     }
     void Respawn()
     {
-        SceneManagement.Instance.StartLoadScene(0);
+        SceneManagement.Instance.StartLoadScene(1);
         SoundManager.Instance.PlayMusic("Town");
         PlayerInfomationManager.Instance.playerState.hp = 1;
         animator.Play("Idle");

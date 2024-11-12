@@ -12,16 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a3eb4aa5f9367b4087894cd1d069699, type: 3}
   m_Name: PlayerState
   m_EditorClassIdentifier: 
-  items: []
+  items:
+  - {fileID: 11400000, guid: 8671fc1e573332c45834932fdc19634f, type: 2}
+  - {fileID: 11400000, guid: aafe03c268324d344a70732ce5ef6ca0, type: 2}
+  - {fileID: 11400000, guid: b6c7dd832a66a2045b61f0ecc0740fe5, type: 2}
   level: 1
   hp: 100
   maxHp: 100
   stamina: 100
   maxStamina: 100
-  attackPoint: 30
-  defencePoint: 20
-  currentWeapon: {fileID: 0}
-  currentArmor: {fileID: 0}
+  attackPoint: 60
+  defencePoint: 50
+  currentWeapon: {fileID: 11400000, guid: 8671fc1e573332c45834932fdc19634f, type: 2}
+  currentArmor: {fileID: 11400000, guid: aafe03c268324d344a70732ce5ef6ca0, type: 2}
   currentExp: 0
   maxExp: 100
-  gold: 300
+  gold: 0

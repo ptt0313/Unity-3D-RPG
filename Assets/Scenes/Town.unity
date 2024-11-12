@@ -8,8 +8,8 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: 6c9792811fb08fb4882e17eb56f4bb8c
+  m_OcclusionCullingData: {fileID: 36300000, guid: 31e2d4e460d81144090f2c3746b4cd1f, type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: boat_02 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1200368573225118, guid: 571a69f902adb9846a5eabd744415ecc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4525129552197150, guid: 571a69f902adb9846a5eabd744415ecc, type: 3}
       propertyPath: m_RootOrder
       value: 41
@@ -203,6 +207,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1538739009629034, guid: d53d4d08ad7e9e549b78f75406b218c9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4269365529672502, guid: d53d4d08ad7e9e549b78f75406b218c9, type: 3}
       propertyPath: m_RootOrder
       value: 73
@@ -274,6 +282,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1631224986}
     m_Modifications:
+    - target: {fileID: 1716669688774322, guid: c57068ea1d574f0449f01d63f64f95ee, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4102996723996170, guid: c57068ea1d574f0449f01d63f64f95ee, type: 3}
       propertyPath: m_RootOrder
       value: 58
@@ -348,6 +360,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pine_a (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1058886637327582, guid: 4cc4a170ba1e7ae48a9688fe23ddbe89, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4311179899937836, guid: 4cc4a170ba1e7ae48a9688fe23ddbe89, type: 3}
       propertyPath: m_RootOrder
       value: 142
@@ -404,6 +420,10 @@ PrefabInstance:
     - target: {fileID: 1017104576938822, guid: 52b2dd90b973b4b4cae0206dc54205e3, type: 3}
       propertyPath: m_Name
       value: castle_wall_15m (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1017104576938822, guid: 52b2dd90b973b4b4cae0206dc54205e3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4501903411537258, guid: 52b2dd90b973b4b4cae0206dc54205e3, type: 3}
       propertyPath: m_RootOrder
@@ -479,6 +499,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrel_group (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1174801331850410, guid: 84573fa2e72500d49835406b46d71622, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4737221221444376, guid: 84573fa2e72500d49835406b46d71622, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -549,7 +573,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2
   m_IsActive: 1
 --- !u!23 &43644491
 MeshRenderer:
@@ -649,6 +673,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain_08 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1675079169142442, guid: ffbc74fb0bbcfde41861fd2317cf65e7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4101243545272836, guid: ffbc74fb0bbcfde41861fd2317cf65e7, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -723,6 +751,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: banner (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1905082359077414, guid: 195ee2530fc763341a03f3df4b50ed56, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4731890663447788, guid: 195ee2530fc763341a03f3df4b50ed56, type: 3}
       propertyPath: m_RootOrder
       value: 79
@@ -780,6 +812,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2088676570}
     m_Modifications:
+    - target: {fileID: 1017104576938822, guid: 52b2dd90b973b4b4cae0206dc54205e3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4501903411537258, guid: 52b2dd90b973b4b4cae0206dc54205e3, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -864,6 +900,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain_08 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1675079169142442, guid: ffbc74fb0bbcfde41861fd2317cf65e7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4101243545272836, guid: ffbc74fb0bbcfde41861fd2317cf65e7, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -938,6 +978,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fence (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1210640465679106, guid: 4d4f3743a7b39904aa665563fe459249, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4801404025615432, guid: 4d4f3743a7b39904aa665563fe459249, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1007,6 +1051,10 @@ PrefabInstance:
     - target: {fileID: 1549572522181326, guid: 5ecb87e016574fc409879b08c324c178, type: 3}
       propertyPath: m_Name
       value: port_wooden_bridge_b (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549572522181326, guid: 5ecb87e016574fc409879b08c324c178, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4775032223373926, guid: 5ecb87e016574fc409879b08c324c178, type: 3}
       propertyPath: m_RootOrder
@@ -1078,6 +1126,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 100000, guid: 2f906bf9b86990c46aa6003077fba317, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2f906bf9b86990c46aa6003077fba317, type: 3}
       propertyPath: m_RootOrder
       value: 69
@@ -1153,6 +1205,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrel_group (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1174801331850410, guid: 84573fa2e72500d49835406b46d71622, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4737221221444376, guid: 84573fa2e72500d49835406b46d71622, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1226,6 +1282,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1274427780239302, guid: 03b1309872253d94b8de63b29d7e1f1e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4797983681325758, guid: 03b1309872253d94b8de63b29d7e1f1e, type: 3}
       propertyPath: m_RootOrder
       value: 29
@@ -1294,6 +1354,10 @@ PrefabInstance:
     - target: {fileID: 1210640465679106, guid: 4d4f3743a7b39904aa665563fe459249, type: 3}
       propertyPath: m_Name
       value: fence (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1210640465679106, guid: 4d4f3743a7b39904aa665563fe459249, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4801404025615432, guid: 4d4f3743a7b39904aa665563fe459249, type: 3}
       propertyPath: m_RootOrder
@@ -1373,6 +1437,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: box (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1097295525789290, guid: 07a4904133d4b4142b6e071d776d66e4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4034821135538622, guid: 07a4904133d4b4142b6e071d776d66e4, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1451,6 +1519,10 @@ PrefabInstance:
     - target: {fileID: 1705617060535366, guid: a90ee5c6394650e4eb64c18fa8ac3928, type: 3}
       propertyPath: m_Name
       value: port_wooden_bridge_a_short (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705617060535366, guid: a90ee5c6394650e4eb64c18fa8ac3928, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4929407485943282, guid: a90ee5c6394650e4eb64c18fa8ac3928, type: 3}
       propertyPath: m_RootOrder
@@ -1559,6 +1631,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1593276013875166, guid: 6a09f0a2ff9b5e74190cfdbf69b6be22, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4717222801277990, guid: 6a09f0a2ff9b5e74190cfdbf69b6be22, type: 3}
       propertyPath: m_RootOrder
       value: 80
@@ -1628,6 +1704,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1631224986}
     m_Modifications:
+    - target: {fileID: 1135460308256296, guid: c469cf09f09915a42b708588a9ae16a4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4821116912132112, guid: c469cf09f09915a42b708588a9ae16a4, type: 3}
       propertyPath: m_RootOrder
       value: 46
@@ -1738,6 +1818,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain_07 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1858145983789274, guid: dee1f1bc8c892874aac53e339eb2157c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4197340716557962, guid: dee1f1bc8c892874aac53e339eb2157c, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -1816,6 +1900,10 @@ PrefabInstance:
     - target: {fileID: 1122152505045698, guid: dc1fcb109772d284485f64219c3a7f2a, type: 3}
       propertyPath: m_Name
       value: port_wooden_bridge_b_stairs (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122152505045698, guid: dc1fcb109772d284485f64219c3a7f2a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4111949821274582, guid: dc1fcb109772d284485f64219c3a7f2a, type: 3}
       propertyPath: m_RootOrder
@@ -1896,6 +1984,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pine_c (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1876142201406200, guid: f6a029b9b005e3b48ba76000f8c2b62a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4901453242022314, guid: f6a029b9b005e3b48ba76000f8c2b62a, type: 3}
       propertyPath: m_RootOrder
       value: 137
@@ -1952,6 +2044,10 @@ PrefabInstance:
     - target: {fileID: 1344927731099078, guid: 26d164a32bdfbdd4994ed8c78b1aed29, type: 3}
       propertyPath: m_Name
       value: terrain_05 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1344927731099078, guid: 26d164a32bdfbdd4994ed8c78b1aed29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4403990402549532, guid: 26d164a32bdfbdd4994ed8c78b1aed29, type: 3}
       propertyPath: m_RootOrder
@@ -2013,6 +2109,10 @@ PrefabInstance:
     - target: {fileID: 1705617060535366, guid: a90ee5c6394650e4eb64c18fa8ac3928, type: 3}
       propertyPath: m_Name
       value: port_wooden_bridge_a_short (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705617060535366, guid: a90ee5c6394650e4eb64c18fa8ac3928, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4929407485943282, guid: a90ee5c6394650e4eb64c18fa8ac3928, type: 3}
       propertyPath: m_RootOrder
@@ -2088,6 +2188,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fence_stick (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1818520758701248, guid: 83e1e9cc14b60df4c98cfd0ae8a818d8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4874726471669478, guid: 83e1e9cc14b60df4c98cfd0ae8a818d8, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2154,6 +2258,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1672089931692366, guid: d94818446e8bc164f9acdba29d3911d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4667033006216506, guid: d94818446e8bc164f9acdba29d3911d6, type: 3}
       propertyPath: m_RootOrder
       value: 57
@@ -2222,6 +2330,10 @@ PrefabInstance:
     - target: {fileID: 1724559523853822, guid: 193b5b75d0e6d874a87f6fdfa58d121d, type: 3}
       propertyPath: m_Name
       value: cliff_05 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1724559523853822, guid: 193b5b75d0e6d874a87f6fdfa58d121d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4413324714916812, guid: 193b5b75d0e6d874a87f6fdfa58d121d, type: 3}
       propertyPath: m_RootOrder
@@ -2302,6 +2414,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1625593755}
     m_Modifications:
+    - target: {fileID: 1025149723992568, guid: ac0b82ef4876a594ba785dd5e0eb94df, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4946449613594062, guid: ac0b82ef4876a594ba785dd5e0eb94df, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -2375,6 +2491,10 @@ PrefabInstance:
     - target: {fileID: 1310941924343414, guid: b9f2941615c218b4282635a3390d783c, type: 3}
       propertyPath: m_Name
       value: cliff_03 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1310941924343414, guid: b9f2941615c218b4282635a3390d783c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4711412620918398, guid: b9f2941615c218b4282635a3390d783c, type: 3}
       propertyPath: m_RootOrder
@@ -2488,6 +2608,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1804870530130026, guid: cdd6975bf4a38254ab60386c36a97a76, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4540349833189766, guid: cdd6975bf4a38254ab60386c36a97a76, type: 3}
       propertyPath: m_RootOrder
       value: 60
@@ -2553,6 +2677,10 @@ PrefabInstance:
     - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_Name
       value: port_wall_a (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4216007349902218, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_RootOrder
@@ -2632,6 +2760,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cliff_03 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1310941924343414, guid: b9f2941615c218b4282635a3390d783c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4711412620918398, guid: b9f2941615c218b4282635a3390d783c, type: 3}
       propertyPath: m_RootOrder
       value: 73
@@ -2705,6 +2837,10 @@ PrefabInstance:
     - target: {fileID: 1939841420551160, guid: de205966855be504a95152ab56d0896e, type: 3}
       propertyPath: m_Name
       value: dead_tree_f (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939841420551160, guid: de205966855be504a95152ab56d0896e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4048299260256856, guid: de205966855be504a95152ab56d0896e, type: 3}
       propertyPath: m_RootOrder
@@ -2830,6 +2966,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: port_wooden_bridge_b (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1549572522181326, guid: 5ecb87e016574fc409879b08c324c178, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4775032223373926, guid: 5ecb87e016574fc409879b08c324c178, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -2903,6 +3043,10 @@ PrefabInstance:
     - target: {fileID: 1210640465679106, guid: 4d4f3743a7b39904aa665563fe459249, type: 3}
       propertyPath: m_Name
       value: fence (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1210640465679106, guid: 4d4f3743a7b39904aa665563fe459249, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4801404025615432, guid: 4d4f3743a7b39904aa665563fe459249, type: 3}
       propertyPath: m_RootOrder
@@ -3055,6 +3199,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: port_wall_a (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4216007349902218, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -3129,6 +3277,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1372221035203834, guid: 6feceae911d87fa43973eb944d04162f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4357582649928072, guid: 6feceae911d87fa43973eb944d04162f, type: 3}
       propertyPath: m_RootOrder
       value: 44
@@ -3270,6 +3422,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain_standard (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1697450319673640, guid: 429b354257073ae40ad51c100a60a6be, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4469824444545462, guid: 429b354257073ae40ad51c100a60a6be, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -3338,6 +3494,10 @@ PrefabInstance:
     - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_Name
       value: port_wall_a (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4216007349902218, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_RootOrder
@@ -3450,6 +3610,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: boat_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1751408369645596, guid: c3f5eece0f81b3944990d6c0d91d442f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4035097881536878, guid: c3f5eece0f81b3944990d6c0d91d442f, type: 3}
       propertyPath: m_RootOrder
       value: 40
@@ -3519,6 +3683,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle_tower_round (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1356718791037878, guid: d4bbfcf82f1bd6f43a1ef19c811777fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4287106826267920, guid: d4bbfcf82f1bd6f43a1ef19c811777fa, type: 3}
       propertyPath: m_RootOrder
       value: 81
@@ -3584,6 +3752,10 @@ PrefabInstance:
     - target: {fileID: 1025149723992568, guid: ac0b82ef4876a594ba785dd5e0eb94df, type: 3}
       propertyPath: m_Name
       value: port_wooden_bridge_a (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025149723992568, guid: ac0b82ef4876a594ba785dd5e0eb94df, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4946449613594062, guid: ac0b82ef4876a594ba785dd5e0eb94df, type: 3}
       propertyPath: m_RootOrder
@@ -3655,6 +3827,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1625593755}
     m_Modifications:
+    - target: {fileID: 1705617060535366, guid: a90ee5c6394650e4eb64c18fa8ac3928, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4929407485943282, guid: a90ee5c6394650e4eb64c18fa8ac3928, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -3729,6 +3905,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: port_wooden_bridge_b (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1549572522181326, guid: 5ecb87e016574fc409879b08c324c178, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4775032223373926, guid: 5ecb87e016574fc409879b08c324c178, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -3799,6 +3979,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 950140230}
     m_Modifications:
+    - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4216007349902218, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -3877,6 +4061,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle_tower_round (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1356718791037878, guid: d4bbfcf82f1bd6f43a1ef19c811777fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4287106826267920, guid: d4bbfcf82f1bd6f43a1ef19c811777fa, type: 3}
       propertyPath: m_RootOrder
       value: 80
@@ -3947,6 +4135,10 @@ PrefabInstance:
     - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_Name
       value: port_wall_a (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4216007349902218, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_RootOrder
@@ -4071,6 +4263,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cliff_big_a (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1545783907101060, guid: dc129977b326a4e489f7b296c5c110c5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4488660275346138, guid: dc129977b326a4e489f7b296c5c110c5, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -4136,6 +4332,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2035572528}
     m_Modifications:
+    - target: {fileID: 1307057663251330, guid: 4dd10cce757d82345b46b93c96d330d9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4214719968254642, guid: 4dd10cce757d82345b46b93c96d330d9, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4209,6 +4409,10 @@ PrefabInstance:
     - target: {fileID: 1704131493938926, guid: 563c8921ad00daa4e91c88a663e8ab8e, type: 3}
       propertyPath: m_Name
       value: port_wall_corner_c (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1704131493938926, guid: 563c8921ad00daa4e91c88a663e8ab8e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4133159981152172, guid: 563c8921ad00daa4e91c88a663e8ab8e, type: 3}
       propertyPath: m_RootOrder
@@ -4284,6 +4488,10 @@ PrefabInstance:
     - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_Name
       value: port_wall_a (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4216007349902218, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_RootOrder
@@ -4363,6 +4571,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: port_wall_b (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1005178250782678, guid: c5042e1d4f5ffbe4c8df6e094869f4c2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4148390154443938, guid: c5042e1d4f5ffbe4c8df6e094869f4c2, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -4438,6 +4650,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: port_wall_corner_a (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1350702289086684, guid: b69752a82e7ff7e4e9cb774059c3cc75, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4656468585487302, guid: b69752a82e7ff7e4e9cb774059c3cc75, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4488,6 +4704,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1434488237}
     m_Modifications:
+    - target: {fileID: 1598071947681218, guid: 91f1d84678abb9c4898d530e4a3338ee, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4237610972782568, guid: 91f1d84678abb9c4898d530e4a3338ee, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4558,6 +4778,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1080326275983898, guid: ea0f28f0d6b1f3b44a3a939b1798f40d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4479073821956730, guid: ea0f28f0d6b1f3b44a3a939b1798f40d, type: 3}
       propertyPath: m_RootOrder
       value: 76
@@ -4614,6 +4838,10 @@ PrefabInstance:
     - target: {fileID: 1005178250782678, guid: c5042e1d4f5ffbe4c8df6e094869f4c2, type: 3}
       propertyPath: m_Name
       value: port_wall_b (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1005178250782678, guid: c5042e1d4f5ffbe4c8df6e094869f4c2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4148390154443938, guid: c5042e1d4f5ffbe4c8df6e094869f4c2, type: 3}
       propertyPath: m_RootOrder
@@ -4685,6 +4913,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: boat_02 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1200368573225118, guid: 571a69f902adb9846a5eabd744415ecc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4525129552197150, guid: 571a69f902adb9846a5eabd744415ecc, type: 3}
       propertyPath: m_RootOrder
       value: 35
@@ -4754,6 +4986,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2088676570}
     m_Modifications:
+    - target: {fileID: 1598071947681218, guid: 91f1d84678abb9c4898d530e4a3338ee, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4237610972782568, guid: 91f1d84678abb9c4898d530e4a3338ee, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -4832,6 +5068,10 @@ PrefabInstance:
     - target: {fileID: 1512402997361328, guid: a323c930711a463478f1cadd4a89ff53, type: 3}
       propertyPath: m_Name
       value: cliff_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512402997361328, guid: a323c930711a463478f1cadd4a89ff53, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4095121003954976, guid: a323c930711a463478f1cadd4a89ff53, type: 3}
       propertyPath: m_RootOrder
@@ -4912,6 +5152,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: boat_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1751408369645596, guid: c3f5eece0f81b3944990d6c0d91d442f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4035097881536878, guid: c3f5eece0f81b3944990d6c0d91d442f, type: 3}
       propertyPath: m_RootOrder
       value: 34
@@ -4969,6 +5213,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1532980270299680, guid: 684c41fa6c48007449e7839957a4a5da, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4572866294449566, guid: 684c41fa6c48007449e7839957a4a5da, type: 3}
       propertyPath: m_RootOrder
       value: 51
@@ -5037,6 +5285,10 @@ PrefabInstance:
     - target: {fileID: 1697430801981060, guid: 280948f6a746a8e4881e0cbf06959cbc, type: 3}
       propertyPath: m_Name
       value: port_wooden_bridge_a_corner (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697430801981060, guid: 280948f6a746a8e4881e0cbf06959cbc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4274309702161388, guid: 280948f6a746a8e4881e0cbf06959cbc, type: 3}
       propertyPath: m_RootOrder
@@ -5112,6 +5364,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: boat_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1751408369645596, guid: c3f5eece0f81b3944990d6c0d91d442f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4035097881536878, guid: c3f5eece0f81b3944990d6c0d91d442f, type: 3}
       propertyPath: m_RootOrder
       value: 36
@@ -5172,6 +5428,10 @@ PrefabInstance:
     - target: {fileID: 1705617060535366, guid: a90ee5c6394650e4eb64c18fa8ac3928, type: 3}
       propertyPath: m_Name
       value: port_wooden_bridge_a_short (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705617060535366, guid: a90ee5c6394650e4eb64c18fa8ac3928, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4929407485943282, guid: a90ee5c6394650e4eb64c18fa8ac3928, type: 3}
       propertyPath: m_RootOrder
@@ -5247,6 +5507,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: port_wall_corner_c (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1704131493938926, guid: 563c8921ad00daa4e91c88a663e8ab8e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4133159981152172, guid: 563c8921ad00daa4e91c88a663e8ab8e, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -5312,6 +5576,10 @@ PrefabInstance:
     - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_Name
       value: port_wall_a (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4216007349902218, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_RootOrder
@@ -5390,6 +5658,10 @@ PrefabInstance:
     - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_Name
       value: port_wall_a (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4216007349902218, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_RootOrder
@@ -5479,6 +5751,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: port_wooden_bridge_b (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1549572522181326, guid: 5ecb87e016574fc409879b08c324c178, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4775032223373926, guid: 5ecb87e016574fc409879b08c324c178, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -5552,6 +5828,10 @@ PrefabInstance:
     - target: {fileID: 1512402997361328, guid: a323c930711a463478f1cadd4a89ff53, type: 3}
       propertyPath: m_Name
       value: cliff_01 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512402997361328, guid: a323c930711a463478f1cadd4a89ff53, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4095121003954976, guid: a323c930711a463478f1cadd4a89ff53, type: 3}
       propertyPath: m_RootOrder
@@ -5627,7 +5907,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2
   m_IsActive: 1
 --- !u!23 &540580254
 MeshRenderer:
@@ -5732,6 +6012,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fence_stick (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1818520758701248, guid: 83e1e9cc14b60df4c98cfd0ae8a818d8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4874726471669478, guid: 83e1e9cc14b60df4c98cfd0ae8a818d8, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -5807,6 +6091,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain_standard (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1697450319673640, guid: 429b354257073ae40ad51c100a60a6be, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4469824444545462, guid: 429b354257073ae40ad51c100a60a6be, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -5881,6 +6169,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle_wall_10m (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1325387820616898, guid: cc7ebc849fa32c34f8182aecf45c5bd6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4925571132755200, guid: cc7ebc849fa32c34f8182aecf45c5bd6, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -5953,6 +6245,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1046579777761848, guid: c61dbe0b23dc6a848bea138dcdc5a014, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4139359070570760, guid: c61dbe0b23dc6a848bea138dcdc5a014, type: 3}
       propertyPath: m_RootOrder
       value: 52
@@ -6027,6 +6323,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1736254623067858, guid: f2bcea84332d3b5418c7fb64b9fc7d89, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4326252008067132, guid: f2bcea84332d3b5418c7fb64b9fc7d89, type: 3}
       propertyPath: m_RootOrder
       value: 83
@@ -6095,6 +6395,10 @@ PrefabInstance:
     - target: {fileID: 1107357078673850, guid: b7980771a74d0644ab032498d1948ca2, type: 3}
       propertyPath: m_Name
       value: cliff_04 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1107357078673850, guid: b7980771a74d0644ab032498d1948ca2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4694539055335532, guid: b7980771a74d0644ab032498d1948ca2, type: 3}
       propertyPath: m_RootOrder
@@ -6166,7 +6470,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2
   m_IsActive: 1
 --- !u!23 &595906398
 MeshRenderer:
@@ -6267,6 +6571,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1262254516111438, guid: b17928c38ad69b341854a1d83a2f64a7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4552302730195008, guid: b17928c38ad69b341854a1d83a2f64a7, type: 3}
       propertyPath: m_RootOrder
       value: 72
@@ -6396,6 +6704,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1434488237}
     m_Modifications:
+    - target: {fileID: 1017104576938822, guid: 52b2dd90b973b4b4cae0206dc54205e3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4501903411537258, guid: 52b2dd90b973b4b4cae0206dc54205e3, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -6466,6 +6778,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1189253214}
     m_Modifications:
+    - target: {fileID: 1361885322256504, guid: ca09ab545ccbe4346af61d072bc2b67f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4183534529756704, guid: ca09ab545ccbe4346af61d072bc2b67f, type: 3}
       propertyPath: m_RootOrder
       value: 143
@@ -6535,6 +6851,10 @@ PrefabInstance:
     - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_Name
       value: port_wall_a (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4216007349902218, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_RootOrder
@@ -6624,6 +6944,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle_tower_round (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1356718791037878, guid: d4bbfcf82f1bd6f43a1ef19c811777fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4287106826267920, guid: d4bbfcf82f1bd6f43a1ef19c811777fa, type: 3}
       propertyPath: m_RootOrder
       value: 82
@@ -6686,6 +7010,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 950140230}
     m_Modifications:
+    - target: {fileID: 1350702289086684, guid: b69752a82e7ff7e4e9cb774059c3cc75, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4656468585487302, guid: b69752a82e7ff7e4e9cb774059c3cc75, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -6744,6 +7072,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2035572528}
     m_Modifications:
+    - target: {fileID: 1005178250782678, guid: c5042e1d4f5ffbe4c8df6e094869f4c2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4148390154443938, guid: c5042e1d4f5ffbe4c8df6e094869f4c2, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -6813,6 +7145,10 @@ PrefabInstance:
     - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_Name
       value: port_wall_a (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4216007349902218, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_RootOrder
@@ -6888,6 +7224,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1235266061306044, guid: 4a24c2abcf3d91547bdeff629e1532c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4608479110816418, guid: 4a24c2abcf3d91547bdeff629e1532c3, type: 3}
       propertyPath: m_RootOrder
       value: 74
@@ -6955,6 +7295,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1625593755}
     m_Modifications:
+    - target: {fileID: 1122152505045698, guid: dc1fcb109772d284485f64219c3a7f2a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4111949821274582, guid: dc1fcb109772d284485f64219c3a7f2a, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -7029,6 +7373,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: port_wall_b (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1005178250782678, guid: c5042e1d4f5ffbe4c8df6e094869f4c2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4148390154443938, guid: c5042e1d4f5ffbe4c8df6e094869f4c2, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -7099,6 +7447,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain_03 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1738962427993832, guid: 3be38c9ef3e505c43a61e68ff07fecf0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4942541058147156, guid: 3be38c9ef3e505c43a61e68ff07fecf0, type: 3}
       propertyPath: m_RootOrder
       value: 54
@@ -7168,6 +7520,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1754544348}
     m_Modifications:
+    - target: {fileID: 100000, guid: bd72cb0da4523894aa69559d8ccd3a45, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bd72cb0da4523894aa69559d8ccd3a45, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -7233,6 +7589,10 @@ PrefabInstance:
     - target: {fileID: 1017104576938822, guid: 52b2dd90b973b4b4cae0206dc54205e3, type: 3}
       propertyPath: m_Name
       value: castle_wall_15m (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1017104576938822, guid: 52b2dd90b973b4b4cae0206dc54205e3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4501903411537258, guid: 52b2dd90b973b4b4cae0206dc54205e3, type: 3}
       propertyPath: m_RootOrder
@@ -7310,6 +7670,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: port_wall_a (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4216007349902218, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -7384,6 +7748,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 213926408}
     m_Modifications:
+    - target: {fileID: 1350702289086684, guid: b69752a82e7ff7e4e9cb774059c3cc75, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4656468585487302, guid: b69752a82e7ff7e4e9cb774059c3cc75, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -7445,6 +7813,10 @@ PrefabInstance:
     - target: {fileID: 1200368573225118, guid: 571a69f902adb9846a5eabd744415ecc, type: 3}
       propertyPath: m_Name
       value: boat_02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200368573225118, guid: 571a69f902adb9846a5eabd744415ecc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4525129552197150, guid: 571a69f902adb9846a5eabd744415ecc, type: 3}
       propertyPath: m_RootOrder
@@ -7515,6 +7887,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1405432569859698, guid: ed018072c2a086646b6a178812f1691f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4115926920497814, guid: ed018072c2a086646b6a178812f1691f, type: 3}
       propertyPath: m_RootOrder
       value: 48
@@ -7572,6 +7948,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1097295525789290, guid: 07a4904133d4b4142b6e071d776d66e4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4034821135538622, guid: 07a4904133d4b4142b6e071d776d66e4, type: 3}
       propertyPath: m_RootOrder
       value: 30
@@ -7629,6 +8009,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1446531704120262, guid: 2d336554bc95f6942a90d88547aeb1b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4031798082164398, guid: 2d336554bc95f6942a90d88547aeb1b8, type: 3}
       propertyPath: m_RootOrder
       value: 64
@@ -7686,6 +8070,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1856307242764454, guid: 792edc2a6feb36545babe0f211d63460, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4833948250300272, guid: 792edc2a6feb36545babe0f211d63460, type: 3}
       propertyPath: m_RootOrder
       value: 59
@@ -7748,6 +8136,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrel_group (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1174801331850410, guid: 84573fa2e72500d49835406b46d71622, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4737221221444376, guid: 84573fa2e72500d49835406b46d71622, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -7809,6 +8201,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1751408369645596, guid: c3f5eece0f81b3944990d6c0d91d442f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4035097881536878, guid: c3f5eece0f81b3944990d6c0d91d442f, type: 3}
       propertyPath: m_RootOrder
       value: 45
@@ -7881,6 +8277,10 @@ PrefabInstance:
     - target: {fileID: 1858145983789274, guid: dee1f1bc8c892874aac53e339eb2157c, type: 3}
       propertyPath: m_Name
       value: terrain_07 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858145983789274, guid: dee1f1bc8c892874aac53e339eb2157c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4197340716557962, guid: dee1f1bc8c892874aac53e339eb2157c, type: 3}
       propertyPath: m_RootOrder
@@ -7966,6 +8366,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fence_stick (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1818520758701248, guid: 83e1e9cc14b60df4c98cfd0ae8a818d8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4874726471669478, guid: 83e1e9cc14b60df4c98cfd0ae8a818d8, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -8036,6 +8440,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: port_wall_corner_c (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1704131493938926, guid: 563c8921ad00daa4e91c88a663e8ab8e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4133159981152172, guid: 563c8921ad00daa4e91c88a663e8ab8e, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -8098,6 +8506,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1319930702440686, guid: 55eac99f5049e5045a42f2528f476504, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4411153278471130, guid: 55eac99f5049e5045a42f2528f476504, type: 3}
       propertyPath: m_RootOrder
       value: 31
@@ -8212,6 +8624,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2088676570}
     m_Modifications:
+    - target: {fileID: 1598071947681218, guid: 91f1d84678abb9c4898d530e4a3338ee, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4237610972782568, guid: 91f1d84678abb9c4898d530e4a3338ee, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -8270,6 +8686,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 259597858}
     m_Modifications:
+    - target: {fileID: 1697450319673640, guid: 429b354257073ae40ad51c100a60a6be, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4469824444545462, guid: 429b354257073ae40ad51c100a60a6be, type: 3}
       propertyPath: m_RootOrder
       value: 47
@@ -8330,6 +8750,10 @@ PrefabInstance:
     - target: {fileID: 1818520758701248, guid: 83e1e9cc14b60df4c98cfd0ae8a818d8, type: 3}
       propertyPath: m_Name
       value: fence_stick (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1818520758701248, guid: 83e1e9cc14b60df4c98cfd0ae8a818d8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4874726471669478, guid: 83e1e9cc14b60df4c98cfd0ae8a818d8, type: 3}
       propertyPath: m_RootOrder
@@ -8402,6 +8826,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1326456288230474, guid: ac9b64784999bcd4e9a551ab29a2a527, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4751596192476956, guid: ac9b64784999bcd4e9a551ab29a2a527, type: 3}
       propertyPath: m_RootOrder
       value: 66
@@ -8467,6 +8895,10 @@ PrefabInstance:
     - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_Name
       value: port_wall_a (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4216007349902218, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_RootOrder
@@ -8546,6 +8978,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pine_a (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1058886637327582, guid: 4cc4a170ba1e7ae48a9688fe23ddbe89, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4311179899937836, guid: 4cc4a170ba1e7ae48a9688fe23ddbe89, type: 3}
       propertyPath: m_RootOrder
       value: 138
@@ -8602,6 +9038,10 @@ PrefabInstance:
     - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_Name
       value: port_wall_a (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4216007349902218, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_RootOrder
@@ -8680,6 +9120,10 @@ PrefabInstance:
     - target: {fileID: 1818520758701248, guid: 83e1e9cc14b60df4c98cfd0ae8a818d8, type: 3}
       propertyPath: m_Name
       value: fence_stick (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1818520758701248, guid: 83e1e9cc14b60df4c98cfd0ae8a818d8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4874726471669478, guid: 83e1e9cc14b60df4c98cfd0ae8a818d8, type: 3}
       propertyPath: m_RootOrder
@@ -8827,6 +9271,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: boat_03 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1372221035203834, guid: 6feceae911d87fa43973eb944d04162f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4357582649928072, guid: 6feceae911d87fa43973eb944d04162f, type: 3}
       propertyPath: m_RootOrder
       value: 42
@@ -8892,6 +9340,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1434488237}
     m_Modifications:
+    - target: {fileID: 1401219410458876, guid: f4a0e82704596ec4cb1fb2b1fb1e6285, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4324213081175612, guid: f4a0e82704596ec4cb1fb2b1fb1e6285, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -8962,6 +9414,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1064628415274188, guid: fe5f6dadf632f254c8bb93da3fc1cd3c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4438314433760626, guid: fe5f6dadf632f254c8bb93da3fc1cd3c, type: 3}
       propertyPath: m_RootOrder
       value: 61
@@ -9031,6 +9487,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle_tower_round (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1356718791037878, guid: d4bbfcf82f1bd6f43a1ef19c811777fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4287106826267920, guid: d4bbfcf82f1bd6f43a1ef19c811777fa, type: 3}
       propertyPath: m_RootOrder
       value: 63
@@ -9079,6 +9539,10 @@ PrefabInstance:
     - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_Name
       value: port_wall_a (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4216007349902218, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_RootOrder
@@ -9154,6 +9618,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 259597858}
     m_Modifications:
+    - target: {fileID: 1738962427993832, guid: 3be38c9ef3e505c43a61e68ff07fecf0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4942541058147156, guid: 3be38c9ef3e505c43a61e68ff07fecf0, type: 3}
       propertyPath: m_RootOrder
       value: 65
@@ -9219,6 +9687,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1603693235873990, guid: e00fb5961dc8e904e9be161fb731e2bb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4240220571686920, guid: e00fb5961dc8e904e9be161fb731e2bb, type: 3}
       propertyPath: m_RootOrder
       value: 55
@@ -9386,6 +9858,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrel_group (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1174801331850410, guid: 84573fa2e72500d49835406b46d71622, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4737221221444376, guid: 84573fa2e72500d49835406b46d71622, type: 3}
       propertyPath: m_RootOrder
       value: 32
@@ -9456,6 +9932,10 @@ PrefabInstance:
     - target: {fileID: 1210640465679106, guid: 4d4f3743a7b39904aa665563fe459249, type: 3}
       propertyPath: m_Name
       value: fence (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1210640465679106, guid: 4d4f3743a7b39904aa665563fe459249, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4801404025615432, guid: 4d4f3743a7b39904aa665563fe459249, type: 3}
       propertyPath: m_RootOrder
@@ -9535,6 +10015,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain_06 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1259544212071048, guid: e0bdb26ae5b35e247aa29e160391211b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4837619193826508, guid: e0bdb26ae5b35e247aa29e160391211b, type: 3}
       propertyPath: m_RootOrder
       value: 42
@@ -9605,6 +10089,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 259597858}
     m_Modifications:
+    - target: {fileID: 1858145983789274, guid: dee1f1bc8c892874aac53e339eb2157c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4197340716557962, guid: dee1f1bc8c892874aac53e339eb2157c, type: 3}
       propertyPath: m_RootOrder
       value: 63
@@ -9666,6 +10154,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pine_b (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 1238566819580450, guid: 5db841ccc057fc54d896da56796529ba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4489991088389626, guid: 5db841ccc057fc54d896da56796529ba, type: 3}
       propertyPath: m_RootOrder
       value: 139
@@ -9719,6 +10211,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1549379402043942, guid: a90cc27293c58c44c83f5a7f398da629, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4726774469447468, guid: a90cc27293c58c44c83f5a7f398da629, type: 3}
       propertyPath: m_RootOrder
       value: 82
@@ -9775,6 +10271,10 @@ PrefabInstance:
     - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_Name
       value: port_wall_a (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4216007349902218, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_RootOrder
@@ -9850,6 +10350,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 309667719}
     m_Modifications:
+    - target: {fileID: 1309858671379660, guid: 78f32741cff7dcd4f86eeb972929b6f4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4376031979868920, guid: 78f32741cff7dcd4f86eeb972929b6f4, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -9920,6 +10424,10 @@ PrefabInstance:
     - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_Name
       value: port_wall_a (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4216007349902218, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_RootOrder
@@ -10004,6 +10512,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: port_wooden_bridge_a (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1025149723992568, guid: ac0b82ef4876a594ba785dd5e0eb94df, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4946449613594062, guid: ac0b82ef4876a594ba785dd5e0eb94df, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -10083,6 +10595,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sentinel_tower_a (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1912811048901870, guid: e4dbccd50e884234ea67e66b28a5573d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4000576896827364, guid: e4dbccd50e884234ea67e66b28a5573d, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -10148,6 +10664,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1912811048901870, guid: e4dbccd50e884234ea67e66b28a5573d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4000576896827364, guid: e4dbccd50e884234ea67e66b28a5573d, type: 3}
       propertyPath: m_RootOrder
       value: 81
@@ -10213,6 +10733,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: stone_stairs_1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bd72cb0da4523894aa69559d8ccd3a45, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bd72cb0da4523894aa69559d8ccd3a45, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -10275,6 +10799,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 249031079}
     m_Modifications:
+    - target: {fileID: 1210640465679106, guid: 4d4f3743a7b39904aa665563fe459249, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4801404025615432, guid: 4d4f3743a7b39904aa665563fe459249, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -10346,6 +10874,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1220621047368518, guid: e133deccc311ef44f8ac7727eb92438a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4837575965592774, guid: e133deccc311ef44f8ac7727eb92438a, type: 3}
       propertyPath: m_RootOrder
       value: 54
@@ -10410,6 +10942,10 @@ PrefabInstance:
     - target: {fileID: 1005178250782678, guid: c5042e1d4f5ffbe4c8df6e094869f4c2, type: 3}
       propertyPath: m_Name
       value: port_wall_b (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1005178250782678, guid: c5042e1d4f5ffbe4c8df6e094869f4c2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4148390154443938, guid: c5042e1d4f5ffbe4c8df6e094869f4c2, type: 3}
       propertyPath: m_RootOrder
@@ -10481,6 +11017,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: stone_stairs_1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bd72cb0da4523894aa69559d8ccd3a45, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bd72cb0da4523894aa69559d8ccd3a45, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -10546,6 +11086,10 @@ PrefabInstance:
     - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_Name
       value: port_wall_a (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4216007349902218, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_RootOrder
@@ -10621,6 +11165,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1762127276}
     m_Modifications:
+    - target: {fileID: 1307057663251330, guid: 4dd10cce757d82345b46b93c96d330d9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4214719968254642, guid: 4dd10cce757d82345b46b93c96d330d9, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -10695,6 +11243,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrel_group (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1174801331850410, guid: 84573fa2e72500d49835406b46d71622, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4737221221444376, guid: 84573fa2e72500d49835406b46d71622, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -10759,6 +11311,10 @@ PrefabInstance:
     - target: {fileID: 1498762358669688, guid: 430f6f101fc52be4d9169a97e35a8355, type: 3}
       propertyPath: m_Name
       value: castle_wall_2,5m (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498762358669688, guid: 430f6f101fc52be4d9169a97e35a8355, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4816324731834090, guid: 430f6f101fc52be4d9169a97e35a8355, type: 3}
       propertyPath: m_RootOrder
@@ -10834,6 +11390,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain_02 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1798976162230584, guid: 3306dfac563d1fd4695f3019b0b7d041, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4963252242268252, guid: 3306dfac563d1fd4695f3019b0b7d041, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -10902,6 +11462,10 @@ PrefabInstance:
     - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_Name
       value: port_wall_a (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4216007349902218, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_RootOrder
@@ -10981,6 +11545,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pine_b (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 1238566819580450, guid: 5db841ccc057fc54d896da56796529ba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4489991088389626, guid: 5db841ccc057fc54d896da56796529ba, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -11037,6 +11605,10 @@ PrefabInstance:
     - target: {fileID: 1798976162230584, guid: 3306dfac563d1fd4695f3019b0b7d041, type: 3}
       propertyPath: m_Name
       value: terrain_02 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798976162230584, guid: 3306dfac563d1fd4695f3019b0b7d041, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4963252242268252, guid: 3306dfac563d1fd4695f3019b0b7d041, type: 3}
       propertyPath: m_RootOrder
@@ -11107,6 +11679,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1039628868491950, guid: b685843e757502a4b83db9964e0096c0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4016960225343446, guid: b685843e757502a4b83db9964e0096c0, type: 3}
       propertyPath: m_RootOrder
       value: 50
@@ -11167,6 +11743,10 @@ PrefabInstance:
     - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_Name
       value: port_wall_a (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4216007349902218, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_RootOrder
@@ -11246,6 +11826,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: boat_02 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1200368573225118, guid: 571a69f902adb9846a5eabd744415ecc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4525129552197150, guid: 571a69f902adb9846a5eabd744415ecc, type: 3}
       propertyPath: m_RootOrder
       value: 37
@@ -11315,6 +11899,10 @@ PrefabInstance:
     - target: {fileID: 1697430801981060, guid: 280948f6a746a8e4881e0cbf06959cbc, type: 3}
       propertyPath: m_Name
       value: port_wooden_bridge_a_corner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697430801981060, guid: 280948f6a746a8e4881e0cbf06959cbc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4274309702161388, guid: 280948f6a746a8e4881e0cbf06959cbc, type: 3}
       propertyPath: m_RootOrder
@@ -11386,6 +11974,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1625593755}
     m_Modifications:
+    - target: {fileID: 1697430801981060, guid: 280948f6a746a8e4881e0cbf06959cbc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4274309702161388, guid: 280948f6a746a8e4881e0cbf06959cbc, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -11504,7 +12096,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2
   m_IsActive: 1
 --- !u!23 &1194469600
 MeshRenderer:
@@ -11609,6 +12201,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle_wall_15m (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1017104576938822, guid: 52b2dd90b973b4b4cae0206dc54205e3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4501903411537258, guid: 52b2dd90b973b4b4cae0206dc54205e3, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -11679,6 +12275,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 136976586}
     m_Modifications:
+    - target: {fileID: 1598071947681218, guid: 91f1d84678abb9c4898d530e4a3338ee, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4237610972782568, guid: 91f1d84678abb9c4898d530e4a3338ee, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -11740,6 +12340,10 @@ PrefabInstance:
     - target: {fileID: 1724559523853822, guid: 193b5b75d0e6d874a87f6fdfa58d121d, type: 3}
       propertyPath: m_Name
       value: cliff_05 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1724559523853822, guid: 193b5b75d0e6d874a87f6fdfa58d121d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4413324714916812, guid: 193b5b75d0e6d874a87f6fdfa58d121d, type: 3}
       propertyPath: m_RootOrder
@@ -11819,6 +12423,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: port_wall_a (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4216007349902218, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -11896,6 +12504,10 @@ PrefabInstance:
     - target: {fileID: 1697450319673640, guid: 429b354257073ae40ad51c100a60a6be, type: 3}
       propertyPath: m_Name
       value: terrain_standard (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697450319673640, guid: 429b354257073ae40ad51c100a60a6be, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4469824444545462, guid: 429b354257073ae40ad51c100a60a6be, type: 3}
       propertyPath: m_RootOrder
@@ -11987,6 +12599,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pine_c (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1876142201406200, guid: f6a029b9b005e3b48ba76000f8c2b62a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4901453242022314, guid: f6a029b9b005e3b48ba76000f8c2b62a, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -12040,6 +12656,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 950140230}
     m_Modifications:
+    - target: {fileID: 1704131493938926, guid: 563c8921ad00daa4e91c88a663e8ab8e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4133159981152172, guid: 563c8921ad00daa4e91c88a663e8ab8e, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -12115,6 +12735,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: banner (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1905082359077414, guid: 195ee2530fc763341a03f3df4b50ed56, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4731890663447788, guid: 195ee2530fc763341a03f3df4b50ed56, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -12180,6 +12804,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1893920872311520, guid: 0330970413202a342ab1ce0af4c067cc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4632742511478980, guid: 0330970413202a342ab1ce0af4c067cc, type: 3}
       propertyPath: m_RootOrder
       value: 71
@@ -12246,6 +12874,10 @@ PrefabInstance:
     - target: {fileID: 1705617060535366, guid: a90ee5c6394650e4eb64c18fa8ac3928, type: 3}
       propertyPath: m_Name
       value: port_wooden_bridge_a_short (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705617060535366, guid: a90ee5c6394650e4eb64c18fa8ac3928, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4929407485943282, guid: a90ee5c6394650e4eb64c18fa8ac3928, type: 3}
       propertyPath: m_RootOrder
@@ -12317,6 +12949,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1913801600083186, guid: 707154249749d2049b8a900deaa78cf3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4642836491438226, guid: 707154249749d2049b8a900deaa78cf3, type: 3}
       propertyPath: m_RootOrder
       value: 49
@@ -12381,6 +13017,10 @@ PrefabInstance:
     - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_Name
       value: port_wall_a (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4216007349902218, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_RootOrder
@@ -12459,6 +13099,10 @@ PrefabInstance:
     - target: {fileID: 1818520758701248, guid: 83e1e9cc14b60df4c98cfd0ae8a818d8, type: 3}
       propertyPath: m_Name
       value: fence_stick (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1818520758701248, guid: 83e1e9cc14b60df4c98cfd0ae8a818d8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4874726471669478, guid: 83e1e9cc14b60df4c98cfd0ae8a818d8, type: 3}
       propertyPath: m_RootOrder
@@ -12540,6 +13184,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fence_stick (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 1818520758701248, guid: 83e1e9cc14b60df4c98cfd0ae8a818d8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4874726471669478, guid: 83e1e9cc14b60df4c98cfd0ae8a818d8, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -12610,6 +13258,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fire_cage (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1235266061306044, guid: 4a24c2abcf3d91547bdeff629e1532c3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4608479110816418, guid: 4a24c2abcf3d91547bdeff629e1532c3, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -12670,6 +13322,10 @@ PrefabInstance:
     - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_Name
       value: port_wall_a (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4216007349902218, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_RootOrder
@@ -12745,6 +13401,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1200368573225118, guid: 571a69f902adb9846a5eabd744415ecc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4525129552197150, guid: 571a69f902adb9846a5eabd744415ecc, type: 3}
       propertyPath: m_RootOrder
       value: 46
@@ -12833,6 +13493,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1964917225155542, guid: 52ee6da1a8e1d9f4aa6148e483b2e1da, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4834554208136952, guid: 52ee6da1a8e1d9f4aa6148e483b2e1da, type: 3}
       propertyPath: m_RootOrder
       value: 53
@@ -12927,6 +13591,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1625593755}
     m_Modifications:
+    - target: {fileID: 1549572522181326, guid: 5ecb87e016574fc409879b08c324c178, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4775032223373926, guid: 5ecb87e016574fc409879b08c324c178, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -13000,6 +13668,10 @@ PrefabInstance:
     - target: {fileID: 1210640465679106, guid: 4d4f3743a7b39904aa665563fe459249, type: 3}
       propertyPath: m_Name
       value: fence (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1210640465679106, guid: 4d4f3743a7b39904aa665563fe459249, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4801404025615432, guid: 4d4f3743a7b39904aa665563fe459249, type: 3}
       propertyPath: m_RootOrder
@@ -13075,6 +13747,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1762127276}
     m_Modifications:
+    - target: {fileID: 1005178250782678, guid: c5042e1d4f5ffbe4c8df6e094869f4c2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4148390154443938, guid: c5042e1d4f5ffbe4c8df6e094869f4c2, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -13141,6 +13817,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 259597858}
     m_Modifications:
+    - target: {fileID: 1675079169142442, guid: ffbc74fb0bbcfde41861fd2317cf65e7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4101243545272836, guid: ffbc74fb0bbcfde41861fd2317cf65e7, type: 3}
       propertyPath: m_RootOrder
       value: 43
@@ -13243,6 +13923,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1625593755}
     m_Modifications:
+    - target: {fileID: 1025149723992568, guid: ac0b82ef4876a594ba785dd5e0eb94df, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4946449613594062, guid: ac0b82ef4876a594ba785dd5e0eb94df, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -13316,6 +14000,10 @@ PrefabInstance:
     - target: {fileID: 1593276013875166, guid: 6a09f0a2ff9b5e74190cfdbf69b6be22, type: 3}
       propertyPath: m_Name
       value: port_chains (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1593276013875166, guid: 6a09f0a2ff9b5e74190cfdbf69b6be22, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4717222801277990, guid: 6a09f0a2ff9b5e74190cfdbf69b6be22, type: 3}
       propertyPath: m_RootOrder
@@ -13411,6 +14099,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1576697918698894, guid: 168c487a338c14c44a05a44dc9b5fee7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4536844227098552, guid: 168c487a338c14c44a05a44dc9b5fee7, type: 3}
       propertyPath: m_RootOrder
       value: 78
@@ -13489,6 +14181,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 136976586}
     m_Modifications:
+    - target: {fileID: 1401219410458876, guid: f4a0e82704596ec4cb1fb2b1fb1e6285, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4324213081175612, guid: f4a0e82704596ec4cb1fb2b1fb1e6285, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -13568,6 +14264,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle_wall_15m (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1017104576938822, guid: 52b2dd90b973b4b4cae0206dc54205e3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4501903411537258, guid: 52b2dd90b973b4b4cae0206dc54205e3, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -13638,6 +14338,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1237186405678342, guid: ce6d0eda755266e4d85c532f7dc62628, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4074108683802570, guid: ce6d0eda755266e4d85c532f7dc62628, type: 3}
       propertyPath: m_RootOrder
       value: 62
@@ -13707,6 +14411,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: box (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1097295525789290, guid: 07a4904133d4b4142b6e071d776d66e4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4034821135538622, guid: 07a4904133d4b4142b6e071d776d66e4, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -13767,6 +14475,10 @@ PrefabInstance:
     - target: {fileID: 1818520758701248, guid: 83e1e9cc14b60df4c98cfd0ae8a818d8, type: 3}
       propertyPath: m_Name
       value: fence_stick (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1818520758701248, guid: 83e1e9cc14b60df4c98cfd0ae8a818d8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4874726471669478, guid: 83e1e9cc14b60df4c98cfd0ae8a818d8, type: 3}
       propertyPath: m_RootOrder
@@ -13837,6 +14549,10 @@ PrefabInstance:
     - target: {fileID: 1372221035203834, guid: 6feceae911d87fa43973eb944d04162f, type: 3}
       propertyPath: m_Name
       value: boat_03 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1372221035203834, guid: 6feceae911d87fa43973eb944d04162f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4357582649928072, guid: 6feceae911d87fa43973eb944d04162f, type: 3}
       propertyPath: m_RootOrder
@@ -13912,6 +14628,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 100000, guid: bd72cb0da4523894aa69559d8ccd3a45, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bd72cb0da4523894aa69559d8ccd3a45, type: 3}
       propertyPath: m_RootOrder
       value: 67
@@ -13980,6 +14700,10 @@ PrefabInstance:
     - target: {fileID: 1210640465679106, guid: 4d4f3743a7b39904aa665563fe459249, type: 3}
       propertyPath: m_Name
       value: fence (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1210640465679106, guid: 4d4f3743a7b39904aa665563fe459249, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4801404025615432, guid: 4d4f3743a7b39904aa665563fe459249, type: 3}
       propertyPath: m_RootOrder
@@ -14059,6 +14783,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle_tower_round (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1356718791037878, guid: d4bbfcf82f1bd6f43a1ef19c811777fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4287106826267920, guid: d4bbfcf82f1bd6f43a1ef19c811777fa, type: 3}
       propertyPath: m_RootOrder
       value: 83
@@ -14129,6 +14857,10 @@ PrefabInstance:
     - target: {fileID: 1200368573225118, guid: 571a69f902adb9846a5eabd744415ecc, type: 3}
       propertyPath: m_Name
       value: boat_02 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200368573225118, guid: 571a69f902adb9846a5eabd744415ecc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4525129552197150, guid: 571a69f902adb9846a5eabd744415ecc, type: 3}
       propertyPath: m_RootOrder
@@ -14203,6 +14935,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cliff_big_a (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1545783907101060, guid: dc129977b326a4e489f7b296c5c110c5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4488660275346138, guid: dc129977b326a4e489f7b296c5c110c5, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -14273,6 +15009,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain_02 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1798976162230584, guid: 3306dfac563d1fd4695f3019b0b7d041, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4963252242268252, guid: 3306dfac563d1fd4695f3019b0b7d041, type: 3}
       propertyPath: m_RootOrder
       value: 45
@@ -14335,6 +15075,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2088676570}
     m_Modifications:
+    - target: {fileID: 1498762358669688, guid: 430f6f101fc52be4d9169a97e35a8355, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4816324731834090, guid: 430f6f101fc52be4d9169a97e35a8355, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -14507,6 +15251,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 259597858}
     m_Modifications:
+    - target: {fileID: 1407032505953960, guid: da6278f84675c054fa2ff4da9555db84, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4938527707757722, guid: da6278f84675c054fa2ff4da9555db84, type: 3}
       propertyPath: m_RootOrder
       value: 48
@@ -14572,6 +15320,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1204793252515830, guid: 2ae16399f9f71cd49a385e59aa119a58, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4598511649334936, guid: 2ae16399f9f71cd49a385e59aa119a58, type: 3}
       propertyPath: m_RootOrder
       value: 63
@@ -14637,6 +15389,10 @@ PrefabInstance:
     - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_Name
       value: port_wall_a (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4216007349902218, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_RootOrder
@@ -14704,6 +15460,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1523440281481712, guid: 9882662ad781bc746b59d726239c0532, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4760621260561076, guid: 9882662ad781bc746b59d726239c0532, type: 3}
       propertyPath: m_RootOrder
       value: 47
@@ -14884,6 +15644,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain_standard (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1697450319673640, guid: 429b354257073ae40ad51c100a60a6be, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4469824444545462, guid: 429b354257073ae40ad51c100a60a6be, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -14953,6 +15717,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pine_b (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1238566819580450, guid: 5db841ccc057fc54d896da56796529ba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4489991088389626, guid: 5db841ccc057fc54d896da56796529ba, type: 3}
       propertyPath: m_RootOrder
       value: 141
@@ -15015,7 +15783,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2
   m_IsActive: 1
 --- !u!4 &1689020061
 Transform:
@@ -15115,6 +15883,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrel (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1319930702440686, guid: 55eac99f5049e5045a42f2528f476504, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4411153278471130, guid: 55eac99f5049e5045a42f2528f476504, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -15188,6 +15960,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain_02 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1798976162230584, guid: 3306dfac563d1fd4695f3019b0b7d041, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4963252242268252, guid: 3306dfac563d1fd4695f3019b0b7d041, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -15257,6 +16033,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1426769608828836, guid: 398a6f9bbb6267643bbbfdbeae09ead3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4145467918966126, guid: 398a6f9bbb6267643bbbfdbeae09ead3, type: 3}
       propertyPath: m_RootOrder
       value: 75
@@ -15321,6 +16101,10 @@ PrefabInstance:
     - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_Name
       value: port_wall_a (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4216007349902218, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_RootOrder
@@ -15396,6 +16180,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1261654463819430, guid: 854bd093006f58e448ae906b73363cb8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4340520170073926, guid: 854bd093006f58e448ae906b73363cb8, type: 3}
       propertyPath: m_RootOrder
       value: 56
@@ -15464,6 +16252,10 @@ PrefabInstance:
     - target: {fileID: 1704131493938926, guid: 563c8921ad00daa4e91c88a663e8ab8e, type: 3}
       propertyPath: m_Name
       value: port_wall_corner_c (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1704131493938926, guid: 563c8921ad00daa4e91c88a663e8ab8e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4133159981152172, guid: 563c8921ad00daa4e91c88a663e8ab8e, type: 3}
       propertyPath: m_RootOrder
@@ -15535,6 +16327,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: castle_tower_round (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1356718791037878, guid: d4bbfcf82f1bd6f43a1ef19c811777fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4287106826267920, guid: d4bbfcf82f1bd6f43a1ef19c811777fa, type: 3}
       propertyPath: m_RootOrder
       value: 59
@@ -15587,6 +16383,10 @@ PrefabInstance:
     - target: {fileID: 1350702289086684, guid: b69752a82e7ff7e4e9cb774059c3cc75, type: 3}
       propertyPath: m_Name
       value: port_wall_corner_a (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1350702289086684, guid: b69752a82e7ff7e4e9cb774059c3cc75, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4656468585487302, guid: b69752a82e7ff7e4e9cb774059c3cc75, type: 3}
       propertyPath: m_RootOrder
@@ -15646,6 +16446,10 @@ PrefabInstance:
     - target: {fileID: 1025149723992568, guid: ac0b82ef4876a594ba785dd5e0eb94df, type: 3}
       propertyPath: m_Name
       value: port_wooden_bridge_a (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025149723992568, guid: ac0b82ef4876a594ba785dd5e0eb94df, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4946449613594062, guid: ac0b82ef4876a594ba785dd5e0eb94df, type: 3}
       propertyPath: m_RootOrder
@@ -15784,6 +16588,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 100000, guid: a1653b28994f24c4e8b05de7a14bd606, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a1653b28994f24c4e8b05de7a14bd606, type: 3}
       propertyPath: m_RootOrder
       value: 68
@@ -15901,6 +16709,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: box (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1097295525789290, guid: 07a4904133d4b4142b6e071d776d66e4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4034821135538622, guid: 07a4904133d4b4142b6e071d776d66e4, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -15974,6 +16786,10 @@ PrefabInstance:
     - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_Name
       value: port_wall_a (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4216007349902218, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_RootOrder
@@ -16192,6 +17008,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain_standard (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1697450319673640, guid: 429b354257073ae40ad51c100a60a6be, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4469824444545462, guid: 429b354257073ae40ad51c100a60a6be, type: 3}
       propertyPath: m_RootOrder
       value: 44
@@ -16258,6 +17078,10 @@ PrefabInstance:
     - target: {fileID: 1818520758701248, guid: 83e1e9cc14b60df4c98cfd0ae8a818d8, type: 3}
       propertyPath: m_Name
       value: fence_stick (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1818520758701248, guid: 83e1e9cc14b60df4c98cfd0ae8a818d8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4874726471669478, guid: 83e1e9cc14b60df4c98cfd0ae8a818d8, type: 3}
       propertyPath: m_RootOrder
@@ -16328,6 +17152,10 @@ PrefabInstance:
     - target: {fileID: 1549572522181326, guid: 5ecb87e016574fc409879b08c324c178, type: 3}
       propertyPath: m_Name
       value: port_wooden_bridge_b (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549572522181326, guid: 5ecb87e016574fc409879b08c324c178, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4775032223373926, guid: 5ecb87e016574fc409879b08c324c178, type: 3}
       propertyPath: m_RootOrder
@@ -16466,6 +17294,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 249031079}
     m_Modifications:
+    - target: {fileID: 1818520758701248, guid: 83e1e9cc14b60df4c98cfd0ae8a818d8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4874726471669478, guid: 83e1e9cc14b60df4c98cfd0ae8a818d8, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -16536,6 +17368,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: stone_stairs_1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bd72cb0da4523894aa69559d8ccd3a45, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bd72cb0da4523894aa69559d8ccd3a45, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -16598,6 +17434,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 136976586}
     m_Modifications:
+    - target: {fileID: 1498762358669688, guid: 430f6f101fc52be4d9169a97e35a8355, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4816324731834090, guid: 430f6f101fc52be4d9169a97e35a8355, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -16659,6 +17499,10 @@ PrefabInstance:
     - target: {fileID: 1210640465679106, guid: 4d4f3743a7b39904aa665563fe459249, type: 3}
       propertyPath: m_Name
       value: fence (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1210640465679106, guid: 4d4f3743a7b39904aa665563fe459249, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4801404025615432, guid: 4d4f3743a7b39904aa665563fe459249, type: 3}
       propertyPath: m_RootOrder
@@ -16738,6 +17582,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrel (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1319930702440686, guid: 55eac99f5049e5045a42f2528f476504, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4411153278471130, guid: 55eac99f5049e5045a42f2528f476504, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -16798,6 +17646,10 @@ PrefabInstance:
     - target: {fileID: 1017104576938822, guid: 52b2dd90b973b4b4cae0206dc54205e3, type: 3}
       propertyPath: m_Name
       value: castle_wall_15m (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1017104576938822, guid: 52b2dd90b973b4b4cae0206dc54205e3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4501903411537258, guid: 52b2dd90b973b4b4cae0206dc54205e3, type: 3}
       propertyPath: m_RootOrder
@@ -16878,6 +17730,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: port_wall_a (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4216007349902218, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -16947,6 +17803,10 @@ PrefabInstance:
     - target: {fileID: 1005178250782678, guid: c5042e1d4f5ffbe4c8df6e094869f4c2, type: 3}
       propertyPath: m_Name
       value: port_wall_b (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1005178250782678, guid: c5042e1d4f5ffbe4c8df6e094869f4c2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4148390154443938, guid: c5042e1d4f5ffbe4c8df6e094869f4c2, type: 3}
       propertyPath: m_RootOrder
@@ -17018,6 +17878,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: port_wooden_bridge_b (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1549572522181326, guid: 5ecb87e016574fc409879b08c324c178, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4775032223373926, guid: 5ecb87e016574fc409879b08c324c178, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -17088,6 +17952,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 100000, guid: e23e514ed6a52a64184507a15e7f6a61, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e23e514ed6a52a64184507a15e7f6a61, type: 3}
       propertyPath: m_RootOrder
       value: 65
@@ -17150,6 +18018,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 259597858}
     m_Modifications:
+    - target: {fileID: 1697450319673640, guid: 429b354257073ae40ad51c100a60a6be, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4469824444545462, guid: 429b354257073ae40ad51c100a60a6be, type: 3}
       propertyPath: m_RootOrder
       value: 76
@@ -17234,6 +18106,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1434488237}
     m_Modifications:
+    - target: {fileID: 1017104576938822, guid: 52b2dd90b973b4b4cae0206dc54205e3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4501903411537258, guid: 52b2dd90b973b4b4cae0206dc54205e3, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -17300,6 +18176,10 @@ PrefabInstance:
     - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_Name
       value: port_wall_a (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4216007349902218, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_RootOrder
@@ -17379,6 +18259,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fence (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1210640465679106, guid: 4d4f3743a7b39904aa665563fe459249, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4801404025615432, guid: 4d4f3743a7b39904aa665563fe459249, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -17457,6 +18341,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fence (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1210640465679106, guid: 4d4f3743a7b39904aa665563fe459249, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4801404025615432, guid: 4d4f3743a7b39904aa665563fe459249, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -17527,6 +18415,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wagon (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1274427780239302, guid: 03b1309872253d94b8de63b29d7e1f1e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4797983681325758, guid: 03b1309872253d94b8de63b29d7e1f1e, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -17595,6 +18487,10 @@ PrefabInstance:
     - target: {fileID: 1697430801981060, guid: 280948f6a746a8e4881e0cbf06959cbc, type: 3}
       propertyPath: m_Name
       value: port_wooden_bridge_a_corner (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1697430801981060, guid: 280948f6a746a8e4881e0cbf06959cbc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4274309702161388, guid: 280948f6a746a8e4881e0cbf06959cbc, type: 3}
       propertyPath: m_RootOrder
@@ -17680,6 +18576,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: port_wall_a (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4216007349902218, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -17763,7 +18663,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2
   m_IsActive: 0
 --- !u!4 &1997149229
 Transform:
@@ -17859,6 +18759,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 213926408}
     m_Modifications:
+    - target: {fileID: 1704131493938926, guid: 563c8921ad00daa4e91c88a663e8ab8e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4133159981152172, guid: 563c8921ad00daa4e91c88a663e8ab8e, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -17939,6 +18843,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fence_stick (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1818520758701248, guid: 83e1e9cc14b60df4c98cfd0ae8a818d8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4874726471669478, guid: 83e1e9cc14b60df4c98cfd0ae8a818d8, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -18008,6 +18916,10 @@ PrefabInstance:
     - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_Name
       value: port_wall_a (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4216007349902218, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_RootOrder
@@ -18087,6 +18999,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pine_c (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1876142201406200, guid: f6a029b9b005e3b48ba76000f8c2b62a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4901453242022314, guid: f6a029b9b005e3b48ba76000f8c2b62a, type: 3}
       propertyPath: m_RootOrder
       value: 140
@@ -18143,6 +19059,10 @@ PrefabInstance:
     - target: {fileID: 1726796179362542, guid: 2a7be97057e016840ac411d94757feb0, type: 3}
       propertyPath: m_Name
       value: cliff_06 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1726796179362542, guid: 2a7be97057e016840ac411d94757feb0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4492570095594020, guid: 2a7be97057e016840ac411d94757feb0, type: 3}
       propertyPath: m_RootOrder
@@ -18213,6 +19133,10 @@ PrefabInstance:
     - target: {fileID: 1798976162230584, guid: 3306dfac563d1fd4695f3019b0b7d041, type: 3}
       propertyPath: m_Name
       value: terrain_02 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798976162230584, guid: 3306dfac563d1fd4695f3019b0b7d041, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4963252242268252, guid: 3306dfac563d1fd4695f3019b0b7d041, type: 3}
       propertyPath: m_RootOrder
@@ -18322,6 +19246,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrel_group (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1174801331850410, guid: 84573fa2e72500d49835406b46d71622, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4737221221444376, guid: 84573fa2e72500d49835406b46d71622, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -18396,6 +19324,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1434488237}
     m_Modifications:
+    - target: {fileID: 1498762358669688, guid: 430f6f101fc52be4d9169a97e35a8355, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4816324731834090, guid: 430f6f101fc52be4d9169a97e35a8355, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -18458,6 +19390,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 259597858}
     m_Modifications:
+    - target: {fileID: 1344927731099078, guid: 26d164a32bdfbdd4994ed8c78b1aed29, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4403990402549532, guid: 26d164a32bdfbdd4994ed8c78b1aed29, type: 3}
       propertyPath: m_RootOrder
       value: 64
@@ -18523,6 +19459,10 @@ PrefabInstance:
     - target: {fileID: 1818520758701248, guid: 83e1e9cc14b60df4c98cfd0ae8a818d8, type: 3}
       propertyPath: m_Name
       value: fence_stick (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1818520758701248, guid: 83e1e9cc14b60df4c98cfd0ae8a818d8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4874726471669478, guid: 83e1e9cc14b60df4c98cfd0ae8a818d8, type: 3}
       propertyPath: m_RootOrder
@@ -18599,6 +19539,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cliff_06 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1726796179362542, guid: 2a7be97057e016840ac411d94757feb0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4492570095594020, guid: 2a7be97057e016840ac411d94757feb0, type: 3}
       propertyPath: m_RootOrder
       value: 29
@@ -18673,6 +19617,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: port_wooden_bridge_b (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1549572522181326, guid: 5ecb87e016574fc409879b08c324c178, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4775032223373926, guid: 5ecb87e016574fc409879b08c324c178, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -18743,6 +19691,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1815823627200208, guid: 149ade3f960250d459e0d974e753f70c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4416759245185678, guid: 149ade3f960250d459e0d974e753f70c, type: 3}
       propertyPath: m_RootOrder
       value: 58
@@ -18801,6 +19753,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1174801331850410, guid: 84573fa2e72500d49835406b46d71622, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4737221221444376, guid: 84573fa2e72500d49835406b46d71622, type: 3}
       propertyPath: m_RootOrder
       value: 33
@@ -18901,6 +19857,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1671746290}
     m_Modifications:
+    - target: {fileID: 1605505815187340, guid: bce5fc2f859a0234baae5543a7f5e668, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4011869252857842, guid: bce5fc2f859a0234baae5543a7f5e668, type: 3}
       propertyPath: m_RootOrder
       value: 77
@@ -18966,6 +19926,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 213926408}
     m_Modifications:
+    - target: {fileID: 1828159152814562, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4216007349902218, guid: 054a9c568cb242643994f3f0ed0eaed0, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -19044,6 +20008,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fence (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1210640465679106, guid: 4d4f3743a7b39904aa665563fe459249, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4801404025615432, guid: 4d4f3743a7b39904aa665563fe459249, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -19118,6 +20086,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 259597858}
     m_Modifications:
+    - target: {fileID: 1902770365646634, guid: 36888e805d00a0b4b82757e3692ede9b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4509780323381818, guid: 36888e805d00a0b4b82757e3692ede9b, type: 3}
       propertyPath: m_RootOrder
       value: 75
@@ -19217,6 +20189,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 259597858}
     m_Modifications:
+    - target: {fileID: 1798976162230584, guid: 3306dfac563d1fd4695f3019b0b7d041, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4963252242268252, guid: 3306dfac563d1fd4695f3019b0b7d041, type: 3}
       propertyPath: m_RootOrder
       value: 66
@@ -19335,6 +20311,54 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 244820035647361724, guid: d35784e0e9bbffb44912ca7d85a2d915, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 244820035647361724, guid: d35784e0e9bbffb44912ca7d85a2d915, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 269965727332237449, guid: d35784e0e9bbffb44912ca7d85a2d915, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 269965727332237449, guid: d35784e0e9bbffb44912ca7d85a2d915, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 638576130808345620, guid: d35784e0e9bbffb44912ca7d85a2d915, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2771505366390706321, guid: d35784e0e9bbffb44912ca7d85a2d915, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 2771505366390706321, guid: d35784e0e9bbffb44912ca7d85a2d915, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 3549498167779642114, guid: d35784e0e9bbffb44912ca7d85a2d915, type: 3}
+      propertyPath: m_text
+      value: "\uBBF8\uAD81(\uBBF8\uAD6C\uD604)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834851456284905586, guid: d35784e0e9bbffb44912ca7d85a2d915, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 748cc0516d3ff7c4396b4daffa00988b, type: 3}
+    - target: {fileID: 4189416106399993357, guid: d35784e0e9bbffb44912ca7d85a2d915, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 017effce3f0dafb41a87a4086613729f, type: 3}
+    - target: {fileID: 5080408617733440340, guid: d35784e0e9bbffb44912ca7d85a2d915, type: 3}
+      propertyPath: m_text
+      value: "\uC0AC\uB9C9(\uBBF8\uAD6C\uD604)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5629239744293373429, guid: d35784e0e9bbffb44912ca7d85a2d915, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 11f13a7ec63dcae4eabdcc0056b6cbad, type: 3}
     - target: {fileID: 5820369217840152281, guid: d35784e0e9bbffb44912ca7d85a2d915, type: 3}
       propertyPath: m_Name
       value: Canvas
