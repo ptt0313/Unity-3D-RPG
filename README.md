@@ -13,7 +13,9 @@
 ### 1. 플레이어 이동
 <details><summary>접기/펼치기</summary>
 플레이어의 이동은 유니티의 Input System을 사용해서 만들었습니다.
+    
 먼저 GetAxisRaw를 사용하여 Horizontal과 Vertical의 값을 Vector2로 가져옵니다.
+
 가져온 Vector2의 값의 벡터를 정규화해준 뒤 입력받은 키값의 방향으로 캐릭터가 바라보게하고
 바라본 방향으로 캐릭터가 움직일수 있게 했습니다.
 
@@ -57,8 +59,10 @@ private void Move()
 ### 2. 시네머신 카메라
 <details><summary>접기/펼치기</summary>
 씬을 보여줄수 있는 카메라는 시네머신 카메라의 버추얼 카메라를 사용했습니다.
+    
 버추얼 카메라를 사용하여 플레이어를 따라오는 카메라를 쉽게 구현할수 있었으며
 마우스의 입력값에 따라 카메라도 같이 회전되도록 했습니다.
+
 시네머신 콜라이더를 사용하여 카메라가 오브젝트와 충돌할시 화면을 더욱 자연스럽게 연출했습니다.
     
 ![시네머신카메라](https://github.com/user-attachments/assets/3d3c5904-ac67-4918-82aa-3ec96ef6d16f)
@@ -67,7 +71,9 @@ private void Move()
 ### 3. 캐릭터 애니메이션
 <details><summary>접기/펼치기</summary>
 플레이어의 애니메이션은 플레이어 매니저에서 현재 상태에 따라 애니메이션이 나오도록 구현했습니다.
+    
 공격,구르기,달리기 등의 애니메이션이 플레이어가 입력한 값에 따라 실행될 경우
+
 다른 애니메이션이 재생되지 못하도록 플레이어의 상태를 애니메이션 컨트롤러의 bool값으로 넣어 StateMachineBehaviour를 통해 관리했습니다.
     
 ![애니메이터](https://github.com/user-attachments/assets/1d2940a1-1ea1-476c-ada6-95e59f5c917f)
@@ -118,7 +124,9 @@ void Update()
 ### 4. 플레이어 데이터
 <details><summary>접기/펼치기</summary>
 게임내에서 데이터를 저장하는 용도로 스크립터블 오브젝트를 사용했습니다.
+    
 스크립터블 오브젝트는 데이터를 중복으로 생성하는 것을 방지하여 프로젝트의 메모리를 줄이는데 이점으로 발생합니다.
+
 또한 빌드후 스크립터블 오브젝트는 데이터를 수정할 수 없고 스크립터블 오브젝트는 에셋으로 관리되기에 에셋 업데이트를 통해 수정이 가능합니다.
 
 ![스크립터블오브젝트](https://github.com/user-attachments/assets/91704279-9080-488a-91a0-248947cb2a59)
@@ -160,7 +168,9 @@ public class ItemData : ScriptableObject
 ### 6. 인벤토리
 <details><summary>접기/펼치기</summary>
 인벤토리는 싱글톤 패턴을 통해 인벤토리 매니저로 클래스를 관리했습니다.
+    
 인벤토리를 열때마다 인벤토리 칸의 각 아이템의 정보를 업데이트하고
+
 아이템에 마우스 커서를 가져다댈시 아이템의 정보가 하이라이트창에서 따로 표시가 되게 했습니다.
 
 ![인벤토리와 하이라이트창](https://github.com/user-attachments/assets/c6fb883f-0a99-4529-b780-5abffad99df0)
@@ -272,8 +282,11 @@ public void HilightItem(ItemData itemData)
 ### 7. 인벤토리 슬롯
 <details><summary>접기/펼치기</summary>
 인벤토리 슬롯은 인벤토리 칸마다의 기능을 구현했습니다.
+    
 IPointerEnterHandler,IPointerExitHandler,IPointerClickHandler 3개의 인터페이스를 상속받았습니다.
+
 IPointerEnterHandler,IPointerExitHandler의 기능으로 슬롯에 커서를 가져다댈시 인벤토리 매니저에 해당 아이템의 정보를 전달함으로써 아이템 정보창이 열리게 닫히게 됩니다.
+
 IPointerClickHandler의 경우 아이템 사용 및 장비의 장착 해제를 구현했습니다.
 
 <details><summary>코드 보기</summary>
@@ -378,7 +391,7 @@ IPointerClickHandler의 경우 아이템 사용 및 장비의 장착 해제를 �
 
 ### 8. 상점
 <details><summary>접기/펼치기</summary>
-상점은 스크롤바와 버티컬 레이아웃을 사용하여 아이템을 정렬한뒤
+상점은 스크롤바와 버티컬 레이아웃을 사용하여 아이템을 정렬한뒤,
 각각의 아이템의 정보를 넣고 구매 버튼으로 아이템에 해당하는 가격을 지불하여
 인벤토리에 아이템이 추가되도록 구현했습니다.
 
@@ -449,6 +462,7 @@ public void BuyItem()
 ### 9. UI 핸들러
 <details><summary>접기/펼치기</summary>
 UI 핸들러는 인벤토리,상점,플레이어 정보창 등 UI를 드래그 앤 드랍으로 위치를 옮길수 있는 기능입니다.
+    
 IPointerDownHandler, IDragHandler를 인터페이스로 상속받아 구현했습니다.
 <details><summary>코드 보기</summary>
     
@@ -489,11 +503,15 @@ IPointerDownHandler, IDragHandler를 인터페이스로 상속받아 구현했�
 ### 10. 몬스터 상태 패턴
 <details><summary>접기/펼치기</summary>
 몬스터의 기본이 되는 스크립트를 만들면서 상태 패턴을 사용했습니다.
+    
 각각의 상태마다 조건을 달리하며 몬스터의 상태를 관리할 수 있고 유지,관리가 쉬워지는 장점이 있습니다.
+
 이후 몬스터마다 해당 스크립트를 상속받은 뒤 각 몬스터의 정보는 스크립터블 오브젝트를 통해 가져왔습니다.
+
 이때 스크립터블 오브젝트에 몬스터의 정보를 스크립터블 오브젝트에 바로 연결할 경우
 해당 스크립터블 오브젝트를 상속받는 다른 몬스터에게도 영향이 가기 때문에
 몬스터의 변수를 따로 선언하여 스크립터블 오브젝트의 데이터를 넣어줬습니다.
+
 상속과 상태패턴,스크립터블 오브젝트를 통해 여러 종류의 몬스터를 구현하기 쉽도록 설계했습니다.
 
 
@@ -646,7 +664,9 @@ IPointerDownHandler, IDragHandler를 인터페이스로 상속받아 구현했�
 ### 11. 비동기 씬 로드
 <details><summary>접기/펼치기</summary>
 유니티에서는 비동기 씬 로드를 위해서 AasyncOperation 함수를 지원하고 있습니다.
+    
 AasyncOperation는 코루틴을 이용해서 비동기적 로드를 구현할 수 있게 해줍니다.
+
 이를 이용하여 비동기 씬 로드를 구현했습니다.
 <details><summary>접기/펼치기</summary>
     
@@ -735,6 +755,7 @@ public class SceneManagement : Singleton<SceneManagement>
 ### 12. 파티클 재생
 <details><summary>접기/펼치기</summary>
 파티클은 플레이어 캐릭터의 애니메이션 타이밍에 맞춰서 재생되도록 만들었습니다.
+    
 공격을 휘두르는 애니메이션에 이벤트를 등록하여 해당 파티클의 함수명과 List 인덱스를 호출하여
 애니메이션이 동작중에 파티클이 같이 플레이 되도록 만들었습니다.
 
@@ -818,6 +839,7 @@ public class ParticleManager : Singleton<ParticleManager>
 ### 1. 오클루전 컬링
 <details><summary>접기/펼치기</summary>
 오클루전 컬링은 다른 오브젝트에 가려진 카메라에 보이지않는 오브젝트를 렌더링하지 않음으로써 렌더링속도를 향상 시켜주는 최적화 기법입니다.
+    
 오브젝트는 오클루더와 오클루디로 나누어지며 오클루더는 가려진 오브젝트와 오브젝트를 가리는 오브젝트 두개를 포함하며
 오클루디는 다른 오브젝트를 가리는 오브젝트만을 의미합니다.
 
@@ -828,6 +850,7 @@ public class ParticleManager : Singleton<ParticleManager>
 ### 2. LOD(Level of Detail)
 <details><summary>접기/펼치기</summary>
 LOD는 오브젝트를 카메라에서 렌더링하는 거리에 따라 여러 단계로 나눠서 렌더링하는 기술입니다.
+    
 오브젝트가 카메라와 거리가 멀 경우 디테일한 렌더링이 요구되지 않기 때문에 낮은 텍스쳐로 렌더링을 하면서
 렌더링 속도를 향상시키는 기법입니다.
 
@@ -839,6 +862,7 @@ LOD는 오브젝트를 카메라에서 렌더링하는 거리에 따라 여러 �
 <details><summary>접기/펼치기</summary>
 
 GPU 인스턴싱은 유니티에서 드로아 콜을 줄이기 위해 사용하는 최적화 기법 중 하나입니다.
+
 씬내에서 같은 메시를 동시에 렌더링 하여 렌더링 속도를 향상시켜줍니다.
 
 메테리얼 인스펙터 창 하단의 어드밴스 옵션에서 GPU 인스턴싱을 사용할 수 있습니다.
