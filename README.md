@@ -735,7 +735,7 @@ public class SceneManagement : Singleton<SceneManagement>
 ### 12. 파티클 재생
 <details><summary>접기/펼치기</summary>
 파티클은 플레이어 캐릭터의 애니메이션 타이밍에 맞춰서 재생되도록 만들었습니다.
-공격을 휘두르는 애니메이션에 이벤트를 등록하여 해당 파티클의 함수명과 List 번호를 호출하여
+공격을 휘두르는 애니메이션에 이벤트를 등록하여 해당 파티클의 함수명과 List 인덱스를 호출하여
 애니메이션이 동작중에 파티클이 같이 플레이 되도록 만들었습니다.
 
 ![애니메이션이벤트파티클](https://github.com/user-attachments/assets/6064e6bf-9365-414d-a401-e44ef6c0a150)
@@ -752,6 +752,66 @@ public class ParticleManager : Singleton<ParticleManager>
 }
 ```
 
+</details>
+
+### 13. 사운드 매니저
+<details><summary>접기/펼치기</summary>
+사운드 매니저는 싱글톤으로 클래스를 관리하였으며 리소스 폴더에 있는 사운드클립을 딕셔너리에 저장하여 전역에서 오디오클립을 플레이할 수 있도록 했습니다.
+
+```C#
+    [SerializeField] private AudioSource musicSource;
+    [SerializeField] private AudioSource effectsSource;
+    [SerializeField] private AudioSource footstepSource;
+    private Dictionary<string, AudioClip> audioClips = new Dictionary<string, AudioClip>();
+    private void Start()
+    {
+        LoadAudioClips();
+    }
+    public void PlayMusic(string clipName)
+    {
+        if (audioClips.ContainsKey(clipName))
+        {
+            musicSource.clip = audioClips[clipName];
+            musicSource.loop = true;
+            musicSource.Play();
+        }
+    }
+    public void PlayEffect(string clipName)
+    {
+        if (audioClips.ContainsKey(clipName))
+        {
+            effectsSource.PlayOneShot(audioClips[clipName]);
+        }
+    }
+    private void LoadAudioClips()
+    {
+        AudioClip[] clips = Resources.LoadAll<AudioClip>("Sounds");
+        foreach (AudioClip clip in clips)
+        {
+            if (!audioClips.ContainsKey(clip.name))
+            {
+                audioClips.Add(clip.name, clip);
+            }
+        }
+    }
+    public void PlayFootstep(string clipName)
+    {
+        if (audioClips.ContainsKey(clipName))
+        {
+            footstepSource.clip = audioClips[clipName];
+            footstepSource.loop = true;
+            if (!footstepSource.isPlaying) footstepSource.Play();
+        }
+    }
+
+    public void StopFootstep()
+    {
+        if (footstepSource.isPlaying)
+        {
+            footstepSource.Stop();
+        }
+    }
+```
 </details>
 
 ## 4. 최적화 기능
