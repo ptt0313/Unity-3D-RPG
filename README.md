@@ -60,7 +60,7 @@ private void Move()
 마우스의 입력값에 따라 카메라도 같이 회전되도록 했습니다.
 시네머신 콜라이더를 사용하여 카메라가 오브젝트와 충돌할시 화면을 더욱 자연스럽게 연출했습니다.
     
-(유니티 시네머신 카메라 인스펙터 사진 첨부)  
+![시네머신카메라](https://github.com/user-attachments/assets/3d3c5904-ac67-4918-82aa-3ec96ef6d16f)
 </details>
 
 ### 3. 캐릭터 애니메이션
@@ -68,7 +68,8 @@ private void Move()
 플레이어의 애니메이션은 플레이어 매니저에서 현재 상태에 따라 애니메이션이 나오도록 구현했습니다.
 공격,구르기,달리기 등의 애니메이션이 플레이어가 입력한 값에 따라 실행될 경우
 다른 애니메이션이 재생되지 못하도록 플레이어의 상태를 애니메이션 컨트롤러의 bool값으로 넣어 StateMachineBehaviour를 통해 관리했습니다.
-(플레이어 애니메이터 컨트롤러 사진 첨부)
+    
+![애니메이터](https://github.com/user-attachments/assets/1d2940a1-1ea1-476c-ada6-95e59f5c917f)
 
 ```C#
 private void Die()
@@ -119,7 +120,7 @@ void Update()
 스크립터블 오브젝트는 데이터를 중복으로 생성하는 것을 방지하여 프로젝트의 메모리를 줄이는데 이점으로 발생합니다.
 또한 빌드후 스크립터블 오브젝트는 데이터를 수정할 수 없고 스크립터블 오브젝트는 에셋으로 관리되기에 에셋 업데이트를 통해 수정이 가능합니다.
 
-(플레이어 데이터 스크립터블 오브젝트 사진 첨부)
+![스크립터블오브젝트](https://github.com/user-attachments/assets/91704279-9080-488a-91a0-248947cb2a59)
 
 </details>
 
@@ -127,7 +128,7 @@ void Update()
 <details><summary>접기/펼치기</summary>
 아이템 데이터는 스크립터블 오브젝트를 사용하여 각 아이템의 타입과 아이템의 정보들을 저장했습니다.
     
-(HP포션의 스크립터블 오브젝트 사진 첨부)
+![아이템데이터](https://github.com/user-attachments/assets/c71f64c9-57af-4b11-9b90-2b0369922bb0)
   
 ```C#
 public enum ItemType
@@ -160,8 +161,9 @@ public class ItemData : ScriptableObject
 인벤토리는 싱글톤 패턴을 통해 인벤토리 매니저로 클래스를 관리했습니다.
 인벤토리를 열때마다 인벤토리 칸의 각 아이템의 정보를 업데이트하고
 아이템에 마우스 커서를 가져다댈시 아이템의 정보가 하이라이트창에서 따로 표시가 되게 했습니다.
-(인벤토리와 하이라이트창 첨부)
-    
+
+![인벤토리와 하이라이트창](https://github.com/user-attachments/assets/c6fb883f-0a99-4529-b780-5abffad99df0)
+
 <details><summary>코드 보기</summary>
         
 ```C#
@@ -734,7 +736,8 @@ public class SceneManagement : Singleton<SceneManagement>
 파티클은 플레이어 캐릭터의 애니메이션 타이밍에 맞춰서 재생되도록 만들었습니다.
 공격을 휘두르는 애니메이션에 이벤트를 등록하여 해당 파티클의 함수명과 List 번호를 호출하여
 애니메이션이 동작중에 파티클이 같이 플레이 되도록 만들었습니다.
-(애니메이션 이벤트에 파티클 등록된 사진 첨부)
+
+![애니메이션이벤트파티클](https://github.com/user-attachments/assets/6064e6bf-9365-414d-a401-e44ef6c0a150)
 
 ```C#
 public class ParticleManager : Singleton<ParticleManager>
@@ -756,6 +759,9 @@ public class ParticleManager : Singleton<ParticleManager>
 오클루전 컬링은 다른 오브젝트에 가려진 카메라에 보이지않는 오브젝트를 렌더링하지 않음으로써 렌더링속도를 향상 시켜주는 최적화 기법입니다.
 오브젝트는 오클루더와 오클루디로 나누어지며 오클루더는 가려진 오브젝트와 오브젝트를 가리는 오브젝트 두개를 포함하며
 오클루디는 다른 오브젝트를 가리는 오브젝트만을 의미합니다.
+
+![오클루전컬링](https://github.com/user-attachments/assets/c6ea8a3c-c47f-44c9-b04f-6ecaf4854850)
+    
 </details>
 
 ### 2. LOD(Level of Detail)
@@ -764,7 +770,8 @@ LOD는 오브젝트를 카메라에서 렌더링하는 거리에 따라 여러 �
 오브젝트가 카메라와 거리가 멀 경우 디테일한 렌더링이 요구되지 않기 때문에 낮은 텍스쳐로 렌더링을 하면서
 렌더링 속도를 향상시키는 기법입니다.
 
-(LOD 사용 예시 사진 첨부)    
+![LOD](https://github.com/user-attachments/assets/44e36b5b-4a1b-46ac-865a-a53a3649d95c)
+
 </details>
 
 ### 3. GPU Instancing
@@ -776,4 +783,7 @@ GPU 인스턴싱은 유니티에서 드로아 콜을 줄이기 위해 사용하�
 메테리얼 인스펙터 창 하단의 어드밴스 옵션에서 GPU 인스턴싱을 사용할 수 있습니다.
 
 단, RenderPipe에서 SRP Batcher와 동시에 사용이 불가능하니 둘 중 하나만 사용할 수 있습니다.
+
+![GPU인스턴싱](https://github.com/user-attachments/assets/021a1cac-4b49-426b-b232-2423e7be8c2a)
+
 </details>
