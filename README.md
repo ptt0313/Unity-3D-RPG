@@ -650,7 +650,7 @@ AasyncOperation는 코루틴을 이용해서 비동기적 로드를 구현할 �
 이를 이용하여 비동기 씬 로드를 구현했습니다.
 <details><summary>접기/펼치기</summary>
     
-```
+```C#
 public class SceneManagement : Singleton<SceneManagement>
 {
     [SerializeField] Image screenImage;
