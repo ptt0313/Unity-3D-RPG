@@ -20,6 +20,7 @@ public class Monster : MonoBehaviour
     [SerializeField] protected BasePlayerState playerState;
     [SerializeField] protected Collider playerHitBox;
 
+    private bool isInteracting;
     State state;
 
     void Start()
@@ -35,6 +36,7 @@ public class Monster : MonoBehaviour
 
     void Update()
     {
+        isInteracting = animator.GetBool("isInteracting");
         switch (state)
         {
             case State.Idle: Idle();
@@ -60,7 +62,7 @@ public class Monster : MonoBehaviour
         animator.SetTrigger("Attack");
         navMeshAgent.SetDestination(transform.position);
         transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
-        if (Vector3.Distance(transform.position, player.transform.position) >= 2)
+        if (Vector3.Distance(transform.position, player.transform.position) >= 1.5f && isInteracting == false)
         {
             state = State.Move;
         }
@@ -71,7 +73,7 @@ public class Monster : MonoBehaviour
         animator.SetTrigger("Move");
         navMeshAgent.SetDestination(player.transform.position);
         transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
-        if (Vector3.Distance(transform.position, player.transform.position) < 2)
+        if (Vector3.Distance(transform.position, player.transform.position) < 1.5f)
         {
             state = State.Attack;
         }

@@ -10,6 +10,7 @@ public class ComboAttack : StateMachineBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             animator.SetTrigger("Attack");
+            
         }
     }
 

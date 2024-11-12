@@ -14,7 +14,7 @@ public class MonsterSpawnManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(15f);
+            yield return new WaitForSeconds(10f);
 
             random = Random.Range(0,monsterSpawnPoint.Count);
             randomMonster = Random.Range(0, monster.Length);

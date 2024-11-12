@@ -10,6 +10,8 @@ public class Wolf : Monster
     [SerializeField] int defence;
     [SerializeField] int rewardExp;
     [SerializeField] int rewardGold;
+
+    private BoxCollider boxCollider;
     void Awake()
     {
         hp = monsterStatus.Hp;
@@ -17,7 +19,9 @@ public class Wolf : Monster
         defence = monsterStatus.DefencePoint;
         rewardExp = monsterStatus.rewardExp;
         rewardGold = monsterStatus.rewardGold;
+        boxCollider = GetComponent<BoxCollider>();
     }
+    
     private void OnTriggerEnter(Collider other)
     {
         if (player.GetComponent<Animator>().GetBool("isAttacking") == true && other == playerWeapon)
@@ -35,6 +39,8 @@ public class Wolf : Monster
                 {
                     Die();
                     Reward();
+                    SoundManager.Instance.PlayEffect("WolfDie");
+                    boxCollider.enabled = false;
                 }
             }
         }
@@ -57,5 +63,10 @@ public class Wolf : Monster
     {
         playerState.currentExp += rewardExp;
         playerState.gold += rewardGold;
+    }
+    new void Attack()
+    {
+        base.Attack();
+        SoundManager.Instance.PlayEffect("WolfAttack");
     }
 }

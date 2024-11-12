@@ -29,6 +29,7 @@ public class GameManager : Singleton<GameManager>
             state.maxStamina += 5;
             state.maxExp = state.level * 100;
             ParticleManager.Instance.ParticlePlay(2);
+            SoundManager.Instance.PlayEffect("LevelUp");
         }
     }
 }

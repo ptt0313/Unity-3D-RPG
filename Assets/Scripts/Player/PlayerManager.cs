@@ -52,11 +52,13 @@ public class PlayerManager : MonoBehaviour
         if (input != Vector2.zero)
         {
             animator.Play("Run");
+            SoundManager.Instance.PlayFootstep("FootStep");
         }
         
         else
         {
             animator.Play("Idle");
+            SoundManager.Instance.StopFootstep();
         }
 
     }
@@ -76,6 +78,9 @@ public class PlayerManager : MonoBehaviour
         if (isInteracting == false && Input.GetMouseButtonDown(0) && Cursor.visible == false)
         {
             animator.Play("Attack");
+            SoundManager.Instance.PlayEffect("Attack1");
+            SoundManager.Instance.PlayEffect("Sword1");
+
         }
     }
     private void Roll()
@@ -101,6 +106,7 @@ public class PlayerManager : MonoBehaviour
     void Respawn()
     {
         SceneManagement.Instance.StartLoadScene(0);
+        SoundManager.Instance.PlayMusic("Town");
         PlayerInfomationManager.Instance.playerState.hp = 1;
         animator.Play("Idle");
         playerHitBox.SetActive (true);

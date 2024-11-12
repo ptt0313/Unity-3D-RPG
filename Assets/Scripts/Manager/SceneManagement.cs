@@ -51,7 +51,7 @@ public class SceneManagement : Singleton<SceneManagement>
         // 장면이 준비된 즉시 장면이 활성화되는 것을 허용하는 변수입니다.
         Color color = screenImage.color;
         color.a = 0;
-
+        
         // <asyncOperation.isDone>
         // 해당 동작이 완료되었는지를 나타내는 변수입니다.(읽기전용)
         while (asyncOperation.isDone == false)
@@ -71,6 +71,7 @@ public class SceneManagement : Singleton<SceneManagement>
                 {
                     asyncOperation.allowSceneActivation = true;
                     Debug.Log("SceneLoad");
+
                     yield break;
                 }
             }

@@ -10,6 +10,8 @@ public class Spider : Monster
     [SerializeField] int defence;
     [SerializeField] int rewardExp;
     [SerializeField] int rewardGold;
+
+    private Collider capsuleCollider;
     void Awake()
     {
         hp = monsterStatus.Hp;
@@ -17,6 +19,7 @@ public class Spider : Monster
         defence = monsterStatus.DefencePoint;
         rewardExp = monsterStatus.rewardExp;
         rewardGold = monsterStatus.rewardGold;
+        capsuleCollider = GetComponent<Collider>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -35,6 +38,8 @@ public class Spider : Monster
                 {
                     Die();
                     Reward();
+                    SoundManager.Instance.PlayEffect("SpiderDie");
+                    capsuleCollider.enabled = false;
                 }
             }
         }
@@ -57,5 +62,10 @@ public class Spider : Monster
     {
         playerState.currentExp += rewardExp;
         playerState.gold += rewardGold;
+    }
+    new void Attack()
+    {
+        base.Attack();
+        SoundManager.Instance.PlayEffect("SpiderAttack");
     }
 }

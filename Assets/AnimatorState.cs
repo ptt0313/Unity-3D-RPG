@@ -34,4 +34,9 @@ public class AnimatorState : MonoBehaviour
     {
         animator.SetBool("isInteracting", false);
     }
+    void OnAttackSount()
+    {
+        SoundManager.Instance.PlayEffect("Attack2");
+        SoundManager.Instance.PlayEffect("Sword2");
+    }
 }

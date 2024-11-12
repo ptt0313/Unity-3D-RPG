@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100140, guid: bc600cce01eb57a409f4e69025868a2c, type: 3}
       propertyPath: m_Name
-      value: spider_myOldOne
+      value: spider
       objectReference: {fileID: 0}
     - target: {fileID: 100140, guid: bc600cce01eb57a409f4e69025868a2c, type: 3}
       propertyPath: m_IsActive
@@ -84,6 +84,10 @@ PrefabInstance:
       propertyPath: m_Animation
       value: 
       objectReference: {fileID: 7400024, guid: bc600cce01eb57a409f4e69025868a2c, type: 3}
+    - target: {fileID: 13700000, guid: bc600cce01eb57a409f4e69025868a2c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11100000, guid: bc600cce01eb57a409f4e69025868a2c, type: 3}
     m_RemovedGameObjects: []
