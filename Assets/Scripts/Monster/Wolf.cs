@@ -24,6 +24,10 @@ public class Wolf : Monster
     
     private void OnTriggerEnter(Collider other)
     {
+        if(isDie == true)
+        {
+            return;
+        }
         if (player.GetComponent<Animator>().GetBool("isAttacking") == true && other == playerWeapon)
         {
             animator.Play("Hit");
@@ -47,7 +51,7 @@ public class Wolf : Monster
         if (player.GetComponent<Animator>().GetBool("isRolling") == false && animator.GetBool("isAttacking") == true &&other == playerHitBox)
         {
             player.GetComponent<Animator>().Play("Hit");
-
+            
             if ((attack - playerState.defencePoint) < 0)
             {
                 return;
@@ -64,7 +68,7 @@ public class Wolf : Monster
         playerState.currentExp += rewardExp;
         playerState.gold += rewardGold;
     }
-    new void Attack()
+    void Attack()
     {
         base.Attack();
         SoundManager.Instance.PlayEffect("WolfAttack");

@@ -20,7 +20,8 @@ public class Monster : MonoBehaviour
     [SerializeField] protected BasePlayerState playerState;
     [SerializeField] protected Collider playerHitBox;
 
-    private bool isInteracting;
+    protected bool isInteracting;
+    protected bool isDie;
     State state;
 
     void Start()
@@ -54,12 +55,16 @@ public class Monster : MonoBehaviour
         state = State.Die;
         animator.Play("Die");
         StartCoroutine(Remove());
+        isDie = true;
     }
 
 
     protected void Attack()
     {
-        animator.SetTrigger("Attack");
+        if(isInteracting == false)
+        {
+            animator.Play("Attack");
+        }
         navMeshAgent.SetDestination(transform.position);
         transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
         if (Vector3.Distance(transform.position, player.transform.position) >= 1.5f && isInteracting == false)
@@ -70,7 +75,7 @@ public class Monster : MonoBehaviour
 
     protected void Move()
     {
-        animator.SetTrigger("Move");
+        animator.Play("Move");
         navMeshAgent.SetDestination(player.transform.position);
         transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
         if (Vector3.Distance(transform.position, player.transform.position) < 1.5f)
@@ -86,7 +91,7 @@ public class Monster : MonoBehaviour
     protected void Idle()
     {
         navMeshAgent.SetDestination(transform.position);
-        animator.SetTrigger("Idle");
+        animator.Play("Idle");
         if (Vector3.Distance(transform.position, player.transform.position) < 15)
         {
             state = State.Move;

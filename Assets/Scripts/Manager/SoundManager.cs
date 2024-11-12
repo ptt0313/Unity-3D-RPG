@@ -20,20 +20,12 @@ public class SoundManager : Singleton<SoundManager>
             musicSource.loop = true;
             musicSource.Play();
         }
-        else
-        {
-            Debug.LogWarning("음악 클립을 찾을 수 없습니다: " + clipName);
-        }
     }
     public void PlayEffect(string clipName)
     {
         if (audioClips.ContainsKey(clipName))
         {
             effectsSource.PlayOneShot(audioClips[clipName]);
-        }
-        else
-        {
-            Debug.LogWarning("효과음 클립을 찾을 수 없습니다: " + clipName);
         }
     }
     // 오디오 클립 추가
@@ -55,10 +47,6 @@ public class SoundManager : Singleton<SoundManager>
             footstepSource.clip = audioClips[clipName];
             footstepSource.loop = true;
             if (!footstepSource.isPlaying) footstepSource.Play();
-        }
-        else
-        {
-            Debug.LogWarning("발소리 클립을 찾을 수 없습니다: " + clipName);
         }
     }
 

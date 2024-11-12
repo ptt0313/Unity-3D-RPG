@@ -23,6 +23,10 @@ public class Spider : Monster
     }
     private void OnTriggerEnter(Collider other)
     {
+        if(isDie == true)
+        {
+            return;
+        }
         if (player.GetComponent<Animator>().GetBool("isAttacking") == true && other == playerWeapon)
         {
             animator.Play("Hit");
@@ -63,7 +67,7 @@ public class Spider : Monster
         playerState.currentExp += rewardExp;
         playerState.gold += rewardGold;
     }
-    new void Attack()
+    void Attack()
     {
         base.Attack();
         SoundManager.Instance.PlayEffect("SpiderAttack");
