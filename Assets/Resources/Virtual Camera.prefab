@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0f0d1deae3cc1b4da861c94c4e6e1b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraPosition: {fileID: 723566995579702227, guid: 3d651cb5cbd7bd44f88f1b60aaf6be28, type: 3}
+  cinemachineFreeLook: {fileID: 0}
 --- !u!1 &1178243490292198715
 GameObject:
   m_ObjectHideFlags: 0

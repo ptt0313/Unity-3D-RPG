@@ -32,6 +32,10 @@ public class InventoryManager : Singleton<InventoryManager>
             // 인벤토리가 활성화되면 마우스 커서를 잠그지 않고, 그렇지 않으면 잠급니다.
             Cursor.lockState = isActive ? CursorLockMode.None : CursorLockMode.Locked;
         }
+        if(inventory.activeSelf == false)
+        {
+            hilightItem.SetActive(false);
+        }
     }
     public void Add(ItemData newItem)
     {

@@ -69,7 +69,8 @@ public class PlayerManager : MonoBehaviour
             isDie = true;
             animator.Play("Die");
             playerHitBox.SetActive(false);
-            Invoke("Respawn", 3f);
+            Invoke("Respawn", 1f);
+
         }
     }
     
@@ -106,11 +107,12 @@ public class PlayerManager : MonoBehaviour
     void Respawn()
     {
         SceneManagement.Instance.StartLoadScene(1);
+
+        isDie = false;
         SoundManager.Instance.PlayMusic("Town");
         PlayerInfomationManager.Instance.playerState.hp = 1;
         animator.Play("Idle");
         playerHitBox.SetActive (true);
-        isDie = false;
     }
     IEnumerator RegenStamina()
     {

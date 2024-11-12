@@ -6,6 +6,7 @@ using UnityEngine;
 public class CameraManager : MonoBehaviour
 {
     CinemachineVirtualCamera virtualCamera;
+
     void Awake()
     {
         virtualCamera = GetComponent<CinemachineVirtualCamera>();
@@ -15,5 +16,4 @@ public class CameraManager : MonoBehaviour
         virtualCamera.LookAt = GameObject.Find("Camera Position").transform;
         virtualCamera.Follow = GameObject.Find("Camera Position").transform;
     }
-
 }
