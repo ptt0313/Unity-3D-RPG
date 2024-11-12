@@ -65,6 +65,7 @@ public class InventoryManager : Singleton<InventoryManager>
                 Debug.Log("포션이 0이 되어야 함");
                 ItemInventoryUISlots[index].gameObject.SetActive(false);
                 PlayerInfomationManager.Instance.playerState.items.Remove(itemToRemove);
+                hilightItem.SetActive(false);
             }
 
             onItemChagedCallback?.Invoke();

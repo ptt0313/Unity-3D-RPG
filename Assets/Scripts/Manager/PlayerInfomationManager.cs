@@ -53,9 +53,9 @@ public class PlayerInfomationManager : Singleton<PlayerInfomationManager>
     public void UpdateStat()
     {
         level.text = "레벨 : " + playerState.level.ToString();
-        exp.text = "경험치 : " + playerState.currentExp + " / " + (playerState.maxExp * playerState.level * 2.5);
+        exp.text = "경험치 : " + playerState.currentExp + " / " + (playerState.level * 100);
         hp.text = "체력 : " + playerState.hp.ToString() + " / " + playerState.maxHp.ToString();
-        stamina.text = "스태미나 : " + playerState.maxStamina.ToString();
+        stamina.text = "스태미나 : " + playerState.stamina.ToString() + " / " + playerState.maxStamina.ToString();
         attackPoint.text = "공격력 : " + playerState.attackPoint.ToString();
         defencePoint.text = "방어력 : " + playerState.defencePoint.ToString();
     }

@@ -5,10 +5,17 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager>
 {
     [SerializeField] BasePlayerState state;
-
+    bool mouseVisible;
     void Update()
     {
         LevelUp();
+        if(Input.GetMouseButtonDown(1))
+        {
+            mouseVisible = !mouseVisible;
+            Cursor.visible = mouseVisible ? Cursor.visible = true : Cursor.visible = false;
+            Cursor.lockState = mouseVisible ? CursorLockMode.None : CursorLockMode.Locked;
+
+        }
     }
     void LevelUp()
     {

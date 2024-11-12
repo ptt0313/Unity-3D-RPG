@@ -73,7 +73,7 @@ public class PlayerManager : MonoBehaviour
     
     private void Attack()
     {
-        if (isInteracting == false && Input.GetMouseButtonDown(0))
+        if (isInteracting == false && Input.GetMouseButtonDown(0) && Cursor.visible == false)
         {
             animator.Play("Attack");
         }

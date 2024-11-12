@@ -19,9 +19,9 @@ MonoBehaviour:
   stamina: 100
   maxStamina: 100
   attackPoint: 30
-  defencePoint: 5
+  defencePoint: 15
   currentWeapon: {fileID: 0}
   currentArmor: {fileID: 0}
   currentExp: 0
   maxExp: 100
-  gold: 500
+  gold: 300

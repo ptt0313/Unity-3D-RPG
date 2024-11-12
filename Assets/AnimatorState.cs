@@ -26,4 +26,12 @@ public class AnimatorState : MonoBehaviour
     {
         animator.SetBool("isRolling", false);
     }
+    void OnIntrtacting()
+    {
+        animator.SetBool("isInteracting", true);
+    }
+    void OffInteracting()
+    {
+        animator.SetBool("isInteracting", false);
+    }
 }

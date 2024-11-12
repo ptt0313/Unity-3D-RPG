@@ -5,7 +5,6 @@ using UnityEngine;
 public class Spider : Monster
 {
     [SerializeField] BaseMonsterStatus monsterStatus;
-
     [SerializeField] int hp;
     [SerializeField] int attack;
     [SerializeField] int defence;
@@ -23,13 +22,14 @@ public class Spider : Monster
     {
         if (player.GetComponent<Animator>().GetBool("isAttacking") == true && other == playerWeapon)
         {
-            if((playerState.attackPoint - defence) < 0)
+            animator.Play("Hit");
+
+            if ((playerState.attackPoint - defence) < 0)
             {
                 return;
             }
             else
             {
-                animator.Play("Hit");
                 hp -= playerState.attackPoint - defence;
                 if (hp <= 0)
                 {
@@ -40,13 +40,14 @@ public class Spider : Monster
         }
         if (player.GetComponent<Animator>().GetBool("isRolling") == false && animator.GetBool("isAttacking") == true && other == playerHitBox)
         {
-            if((playerState.defencePoint - attack) < 0)
+            player.GetComponent<Animator>().Play("Hit");
+
+            if ((attack - playerState.defencePoint) < 0)
             {
                 return;
             }
             else
             {
-                player.GetComponent<Animator>().Play("Hit");
                 playerState.hp -= attack - playerState.defencePoint;
             }
         }
