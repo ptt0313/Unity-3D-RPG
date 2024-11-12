@@ -17,4 +17,8 @@ public class ButtonManager : MonoBehaviour
     {
         SceneManagement.Instance.StartLoadScene(2);
     }
+    public void Exit()
+    {
+        Application.Quit();
+    }
 }

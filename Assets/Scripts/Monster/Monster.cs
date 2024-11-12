@@ -43,8 +43,6 @@ public class Monster : MonoBehaviour
                 break;
             case State.Attack: Attack();
                 break;
-            case State.Die: Die();
-                break;
         }
 
     }

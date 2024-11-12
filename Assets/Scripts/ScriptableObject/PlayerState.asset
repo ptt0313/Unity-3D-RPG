@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items: []
   level: 1
-  hp: 7
+  hp: 100
   maxHp: 100
   stamina: 100
   maxStamina: 100
   attackPoint: 30
-  defencePoint: 10
+  defencePoint: 5
   currentWeapon: {fileID: 0}
   currentArmor: {fileID: 0}
   currentExp: 0

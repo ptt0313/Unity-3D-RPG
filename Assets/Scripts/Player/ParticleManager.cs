@@ -6,7 +6,7 @@ public class ParticleManager : Singleton<ParticleManager>
 {
     [SerializeField] public ParticleSystem[] particleSystems;
 
-    void ParticlePlay(int num)
+    public void ParticlePlay(int num)
     {
         particleSystems[num].Play();
     }

@@ -33,9 +33,9 @@ public class PlayerInfomationManager : Singleton<PlayerInfomationManager>
 
     void Update()
     {
+        UpdateStat();
         if (Input.GetKeyDown(KeyCode.P))
         {
-            UpdateStat();
             bool isActive = !playerStateUI.activeSelf;
             playerStateUI.SetActive(isActive); // 인벤토리 UI 활성화/비활성화 토글
                                            // 인벤토리가 활성화되면 마우스 커서를 표시하고, 그렇지 않으면 숨깁니다.

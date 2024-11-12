@@ -23,20 +23,38 @@ public class Spider : Monster
     {
         if (player.GetComponent<Animator>().GetBool("isAttacking") == true && other == playerWeapon)
         {
-            animator.Play("Hit");
-            hp -= playerState.attackPoint - defence;
+            if((playerState.attackPoint - defence) < 0)
+            {
+                return;
+            }
+            else
+            {
+                animator.Play("Hit");
+                hp -= playerState.attackPoint - defence;
+                if (hp <= 0)
+                {
+                    Die();
+                    Reward();
+                }
+            }
         }
         if (player.GetComponent<Animator>().GetBool("isRolling") == false && animator.GetBool("isAttacking") == true && other == playerHitBox)
         {
-            player.GetComponent<Animator>().Play("Hit");
-            playerState.hp -= attack - playerState.defencePoint;
+            if((playerState.defencePoint - attack) < 0)
+            {
+                return;
+            }
+            else
+            {
+                player.GetComponent<Animator>().Play("Hit");
+                playerState.hp -= attack - playerState.defencePoint;
+            }
         }
     }
-    private void LateUpdate()
+
+    void Reward()
     {
-        if (hp <= 0)
-        {
-            Die();
-        }
+        playerState.currentExp += rewardExp;
+        playerState.gold += rewardGold;
     }
 }

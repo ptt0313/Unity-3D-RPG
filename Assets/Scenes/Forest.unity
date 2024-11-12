@@ -12551,6 +12551,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5782817222601726279, guid: 51d215f9f02538f48bab8da0b76315b7, type: 3}
     - target: {fileID: 149140633078885930, guid: d9a380be10ef41b499fa747a7988ba75, type: 3}
+      propertyPath: monster.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 149140633078885930, guid: d9a380be10ef41b499fa747a7988ba75, type: 3}
+      propertyPath: monster.Array.data[0]
+      value: 
+      objectReference: {fileID: 5782817222601726279, guid: 51d215f9f02538f48bab8da0b76315b7, type: 3}
+    - target: {fileID: 149140633078885930, guid: d9a380be10ef41b499fa747a7988ba75, type: 3}
+      propertyPath: monster.Array.data[1]
+      value: 
+      objectReference: {fileID: 4814343787691238587, guid: a46f0e571ba2eca4fbb897979cdeec14, type: 3}
+    - target: {fileID: 149140633078885930, guid: d9a380be10ef41b499fa747a7988ba75, type: 3}
       propertyPath: monsterSpawnPoint.Array.data[0]
       value: 
       objectReference: {fileID: 501894964}
