@@ -752,6 +752,11 @@ public class ParticleManager : Singleton<ParticleManager>
 
 ## 4. 최적화 기능
 ### 1. 오클루전 컬링
+<details><summary>접기/펼치기</summary>
+오클루전 컬링은 다른 오브젝트에 가려진 카메라에 보이지않는 오브젝트를 렌더링하지 않음으로써 렌더링속도를 향상 시켜주는 최적화 기법입니다.
+오브젝트는 오클루더와 오클루디로 나누어지며 오클루더는 가려진 오브젝트와 오브젝트를 가리는 오브젝트 두개를 포함하며
+오클루디는 다른 오브젝트를 가리는 오브젝트만을 의미합니다.
+</details>
 
 ### 2. LOD(Level of Detail)
 <details><summary>접기/펼치기</summary>
