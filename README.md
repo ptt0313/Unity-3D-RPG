@@ -20,7 +20,7 @@
 바라본 방향으로 캐릭터가 움직일수 있게 했습니다.
 
 Input의 입력이 없을 경우 캐릭터는 제자리에 서있는 애니메이션을 플레이하고
-입력이 있을 경우 해당 방향으로 움직이며 달리는 애니메이션이 플레이됩니다.
+입력이 있을 경우 해당 방향으로 움직이며 애니메이션이 플레이됩니다.
 
 ```C#
 private void Move()
@@ -285,7 +285,7 @@ public void HilightItem(ItemData itemData)
     
 IPointerEnterHandler,IPointerExitHandler,IPointerClickHandler 3개의 인터페이스를 상속받았습니다.
 
-IPointerEnterHandler,IPointerExitHandler의 기능으로 슬롯에 커서를 가져다댈시 인벤토리 매니저에 해당 아이템의 정보를 전달함으로써 아이템 정보창이 열리게 닫히게 됩니다.
+IPointerEnterHandler,IPointerExitHandler의 기능으로 슬롯에 커서를 가져다댈시 인벤토리 매니저에 해당 아이템의 정보를 전달함으로써 아이템 정보창이 열리고 닫히게 됩니다.
 
 IPointerClickHandler의 경우 아이템 사용 및 장비의 장착 해제를 구현했습니다.
 
@@ -394,6 +394,8 @@ IPointerClickHandler의 경우 아이템 사용 및 장비의 장착 해제를 �
 상점은 스크롤바와 버티컬 레이아웃을 사용하여 아이템을 정렬한뒤,
 각각의 아이템의 정보를 넣고 구매 버튼으로 아이템에 해당하는 가격을 지불하여
 인벤토리에 아이템이 추가되도록 구현했습니다.
+
+![상점](https://github.com/user-attachments/assets/8b846a35-e438-4ea5-8bfb-d970a4d7950f)
 
 <details><summary>코드 보기</summary>
 
