@@ -1,8 +1,7 @@
 # Unity 3D RPG
 
 ## 1. 영상
-(유튜브 링크 첨부)
-
+[유튜브 링크](https://youtu.be/cLBc2iKuWCg)
 ## 2. 개발 환경 및 기간
 1. Unity 2022 3.31ver
 2. Visual Studio 2022
