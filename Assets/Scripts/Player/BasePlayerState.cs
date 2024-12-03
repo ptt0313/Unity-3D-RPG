@@ -26,4 +26,16 @@ public class BasePlayerState : ScriptableObject
     public float maxExp;
 
     public int gold;
+
+    // JSON 직렬화
+    public string ToJson()
+    {
+        return JsonUtility.ToJson(this, true);
+    }
+
+    // JSON 역직렬화
+    public void LoadFromJson(string json)
+    {
+        JsonUtility.FromJsonOverwrite(json, this);
+    }
 }

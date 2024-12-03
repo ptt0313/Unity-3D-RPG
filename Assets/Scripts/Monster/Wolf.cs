@@ -21,14 +21,32 @@ public class Wolf : Monster
         rewardGold = monsterStatus.rewardGold;
         boxCollider = GetComponent<BoxCollider>();
     }
-    
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if(isDie == true)
+        if (isDie == true)
         {
             return;
         }
-        if (player.GetComponent<Animator>().GetBool("isAttacking") == true && other == playerWeapon)
+        if (player.GetComponent<Animator>().GetBool("isRolling") == false && animator.GetBool("isAttacking") == true && other == playerHitBox && animator.GetBool("AttackCount") == false)
+        {
+            player.GetComponent<Animator>().Play("Hit");
+            animator.SetBool("AttackCount", true);
+
+            if ((attack - playerState.defencePoint) < 0)
+            {
+                return;
+            }
+            else
+            {
+                playerState.hp -= attack - playerState.defencePoint;
+            }
+        }
+        
+
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (player.GetComponent<Animator>().GetBool("isAttacking") == true && other == playerWeapon )
         {
             animator.Play("Hit");
 
@@ -48,21 +66,7 @@ public class Wolf : Monster
                 }
             }
         }
-        if (player.GetComponent<Animator>().GetBool("isRolling") == false && animator.GetBool("isAttacking") == true &&other == playerHitBox)
-        {
-            player.GetComponent<Animator>().Play("Hit");
-            
-            if ((attack - playerState.defencePoint) < 0)
-            {
-                return;
-            }
-            else
-            {
-                playerState.hp -= attack - playerState.defencePoint;
-            }
-        }
     }
-
     private void Reward()
     {
         playerState.currentExp += rewardExp;
