@@ -1,11 +1,11 @@
 # Unity 3D RPG
 
 ## 1. 영상
-[유튜브 링크](https://youtu.be/cLBc2iKuWCg)
+[유튜브 링크](https://youtu.be/2qIqSr7x2fs)
 ## 2. 개발 환경 및 기간
 1. Unity 2022 3.31ver
 2. Visual Studio 2022
-3. 개발 기간 약 6주
+3. 개발 기간 약 6주 + 추가 구현 기간 1주
 ---
 ## 3. 핵심 시스템
 
