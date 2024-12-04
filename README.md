@@ -928,7 +928,7 @@ GPU 인스턴싱은 유니티에서 드로아 콜을 줄이기 위해 사용하�
 
 ## 5. 추가 구현 사항
 
-### 서버에 데이터를 저장,로드기능
+### PlayFab 서버에 데이터를 저장,로드
 <details><summary>접기/펼치기</summary>
 Unity의 ScriptableObject를 사용하여 게임 내 플레이어의 상태 데이터를 관리하고, PlayFab을 이용하여 클라우드에 해당 데이터를 저장하고 로드하는 기능을 구현했습니다. ScriptableObject는 Unity에서 데이터를 관리하는 용도로 매우 유용하며, 이를 JSON 형식으로 직렬화(Serialization)하여 PlayFab 서버에 저장하는 방식으로, 게임의 클라우드 기반 데이터 관리를 처리합니다.
 
