@@ -12,15 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4047d9b7e1f3cba45bb6dfc6bbb75595, type: 3}
   m_Name: HP Potion
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  position: {x: 0, y: 0, z: 0}
-  id: 0
-  type: 2
   _name: "\uCCB4\uB825\uD3EC\uC158"
   description: "HP\uB97C 50 \uD68C\uBCF5\uC2DC\uCF1C\uC90D\uB2C8\uB2E4."
+  id: 0
+  type: 2
   value: 1
-  icon: {fileID: 21300000, guid: 4e8b35477a7fb5a46870c1973a523722, type: 3}
-  bigImage: {fileID: 21300000, guid: a20d322c5e65a6746808e67a31dfe555, type: 3}
   rarerity: 1
   price: 50
   status: 50
+  iconPath: Icons/HP Potion
+  bigImagePath: Images/HP Potion

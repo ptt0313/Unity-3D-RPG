@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class ButtonManager : MonoBehaviour
 {
-    
+    public void Title()
+    {
+        SceneManagement.Instance.StartLoadScene(0);
+        SoundManager.Instance.PlayMusic("Title");
+        Time.timeScale = 1;
+    }
     public void Town()
     {
         SceneManagement.Instance.StartLoadScene(1);

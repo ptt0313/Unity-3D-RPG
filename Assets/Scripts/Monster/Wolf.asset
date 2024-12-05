@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Wolf
   m_EditorClassIdentifier: 
   Hp: 200
-  MaxHp: 0
-  AttackPoint: 50
+  AttackPoint: 60
   DefencePoint: 25
   rewardExp: 50
   rewardGold: 50

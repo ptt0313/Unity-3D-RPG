@@ -12,16 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 759c0d0771e224e41bf0b45b488530cf, type: 3}
   m_Name: Armor B
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  position: {x: 0, y: 0, z: 0}
-  id: 11
-  type: 1
   _name: "\uAC15\uCCA0\uAC11\uC637"
   description: "\uAC15\uCCA0\uB85C \uB9CC\uB4E0 \uAC11\uC637\uC785\uB2C8\uB2E4. \uBC29\uC5B4\uB825
     +70"
+  id: 11
+  type: 1
   value: 1
-  icon: {fileID: 21300000, guid: c720139856ac0f44d894498956e1b55f, type: 3}
-  bigImage: {fileID: 21300000, guid: 9c8101d479c60d34185259c220494c61, type: 3}
   rarerity: 2
   price: 500
   status: 70
+  iconPath: Icons/Armor_B
+  bigImagePath: Images/Armor_B

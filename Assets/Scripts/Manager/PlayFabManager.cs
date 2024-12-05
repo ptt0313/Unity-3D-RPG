@@ -1,9 +1,9 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PlayFab;
 using PlayFab.ClientModels;
 using UnityEngine.UI;
+using System.IO;
 
 public class PlayFabManager : MonoBehaviour
 {
@@ -12,6 +12,9 @@ public class PlayFabManager : MonoBehaviour
     [SerializeField] Text resultText;
     [SerializeField] GameObject loginSystem;
     [SerializeField] GameObject startBtn;
+    [SerializeField] GameObject dataDeleteBtn;
+    [SerializeField] GameObject signOutBtn;
+
     public void SignUp()
     {
         var registerRequest = new RegisterPlayFabUserRequest
@@ -22,10 +25,12 @@ public class PlayFabManager : MonoBehaviour
         };
 
         PlayFabClientAPI.RegisterPlayFabUser(registerRequest,
-            result => {
+            result =>
+            {
                 resultText.text = "회원가입 성공!";
             },
-            error => {
+            error =>
+            {
                 resultText.text = "회원가입 실패: " + error.ErrorMessage;
             }
         );
@@ -40,52 +45,40 @@ public class PlayFabManager : MonoBehaviour
         };
 
         PlayFabClientAPI.LoginWithPlayFab(loginRequest,
-            result => {
+            result =>
+            {
                 resultText.text = "로그인 성공!";
                 loginSystem.SetActive(false);
                 startBtn.SetActive(true);
+                dataDeleteBtn.SetActive(true);
+                signOutBtn.SetActive(true);
+
+                // 로그인 성공 후 플레이어 상태 로드
+                GameManager.Instance.LoadPlayerStateFromPlayFab();
             },
-            error => {
+            error =>
+            {
                 resultText.text = "로그인 실패: " + error.ErrorMessage;
-            }
-        );
+            });
     }
-    public void SavePlayerState(BasePlayerState playerState)
+
+    public void SignOut()
     {
-        string json = playerState.ToJson(); // ScriptableObject를 JSON으로 변환
+        PlayFabClientAPI.ForgetAllCredentials();
 
-        var request = new UpdateUserDataRequest
-        {
-            Data = new Dictionary<string, string>
-            {
-                { "PlayerState", json } // "PlayerState"라는 키에 JSON 저장
-            }
-        };
+        Debug.Log("PlayFab 로그아웃 성공!");
 
-        PlayFabClientAPI.UpdateUserData(request,
-            result => Debug.Log("PlayerState 저장 성공!"),
-            error => Debug.LogError($"PlayerState 저장 실패: {error.GenerateErrorReport()}"));
+        ResetUIAfterSignOut();
     }
-    public void LoadPlayerState(BasePlayerState playerState)
+
+    private void ResetUIAfterSignOut()
     {
-        PlayFabClientAPI.GetUserData(new GetUserDataRequest(), result =>
-        {
-            if (result.Data != null && result.Data.ContainsKey("PlayerState"))
-            {
-                string json = result.Data["PlayerState"].Value;
-                Debug.Log($"PlayerState 데이터 로드 성공: {json}");
-
-                playerState.LoadFromJson(json); // JSON을 ScriptableObject에 덮어쓰기
-                Debug.Log($"PlayerState 로드 완료: Level {playerState.level}, HP {playerState.hp}");
-            }
-            else
-            {
-                Debug.Log("저장된 PlayerState 데이터가 없습니다.");
-            }
-        },
-        error =>
-        {
-        Debug.LogError($"PlayerState 데이터 로드 실패: {error.GenerateErrorReport()}");
-        });
+        loginSystem.SetActive(true);
+        startBtn.SetActive(false);
+        dataDeleteBtn.SetActive(false);
+        signOutBtn.SetActive(false);
+        Debug.Log("UI 상태가 초기화");
     }
+    
+    
 }
