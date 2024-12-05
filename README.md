@@ -1,11 +1,11 @@
 # Unity 3D RPG
 
 ## 1. 영상
-[유튜브 링크](https://youtu.be/cLBc2iKuWCg)
+[유튜브 링크](https://youtu.be/2qIqSr7x2fs)
 ## 2. 개발 환경 및 기간
 1. Unity 2022 3.31ver
 2. Visual Studio 2022
-3. 개발 기간 약 6주
+3. 개발 기간 약 6주 + 추가 구현 기간 1주
 ---
 ## 3. 핵심 시스템
 
@@ -519,6 +519,12 @@ IPointerDownHandler, IDragHandler를 인터페이스로 상속받아 구현했�
 <details><summary>상태패턴 코드</summary>
     
 ```C#
+    using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AI;
+
     enum State
     {
         Idle,
@@ -526,108 +532,115 @@ IPointerDownHandler, IDragHandler를 인터페이스로 상속받아 구현했�
         Attack,
         Die,
     }
-    public class Monster : MonoBehaviour
+public class Monster : MonoBehaviour
+{
+    [SerializeField] NavMeshAgent navMeshAgent;
+    [SerializeField] protected Animator animator;
+    [SerializeField] protected GameObject player;
+    [SerializeField] protected Collider playerWeapon;
+    [SerializeField] protected BasePlayerState playerState;
+    [SerializeField] protected Collider playerHitBox;
+
+    protected bool isInteracting;
+    protected bool isDie;
+    State state;
+
+    void Start()
     {
-        [SerializeField] NavMeshAgent navMeshAgent;
-        [SerializeField] protected Animator animator;
-        [SerializeField] protected GameObject player;
-        [SerializeField] protected Collider playerWeapon;
-        [SerializeField] protected BasePlayerState playerState;
-        [SerializeField] protected Collider playerHitBox;
-    
-        State state;
-    
-        void Start()
+        animator = GetComponent<Animator>();
+        navMeshAgent = GetComponent<NavMeshAgent>();
+
+        state = State.Idle;
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerWeapon = GameObject.Find("LongSwordMesh").GetComponent<Collider>();
+        playerHitBox = GameObject.FindGameObjectWithTag("Hit Box").GetComponent<Collider>();
+    }
+
+    void Update()
+    {
+        isInteracting = animator.GetBool("isInteracting");
+        switch (state)
         {
-            animator = GetComponent<Animator>();
-            navMeshAgent = GetComponent<NavMeshAgent>();
-    
-            state = State.Idle;
-            player = GameObject.FindGameObjectWithTag("Player");
-            playerWeapon = GameObject.Find("LongSwordMesh").GetComponent<Collider>();
-            playerHitBox = GameObject.FindGameObjectWithTag("Hit Box").GetComponent<Collider>();
+            case State.Idle: Idle();
+                break;
+            case State.Move: Move();
+                break;
+            case State.Attack: Attack();
+                break;
         }
-    
-        void Update()
+
+    }
+
+    protected void Die()
+    {
+        state = State.Die;
+        animator.Play("Die");
+        StartCoroutine(Remove());
+        isDie = true;
+    }
+
+
+    protected void Attack()
+    {
+        if(isInteracting == false)
         {
-            switch (state)
-            {
-                case State.Idle: Idle();
-                    break;
-                case State.Move: Move();
-                    break;
-                case State.Attack: Attack();
-                    break;
-                case State.Die: Die();
-                    break;
-            }
-    
+            animator.Play("Attack");
         }
-    
-        protected void Die()
+        navMeshAgent.SetDestination(transform.position);
+        transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
+        if (Vector3.Distance(transform.position, player.transform.position) >= 1.5f && isInteracting == false)
         {
-            state = State.Die;
-            animator.Play("Die");
-            StartCoroutine(Remove());
-        }
-    
-    
-        protected void Attack()
-        {
-            animator.SetTrigger("Attack");
-            navMeshAgent.SetDestination(transform.position);
-            transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
-            if (Vector3.Distance(transform.position, player.transform.position) >= 2)
-            {
-                state = State.Move;
-            }
-        }
-    
-        protected void Move()
-        {
-            animator.SetTrigger("Move");
-            navMeshAgent.SetDestination(player.transform.position);
-            transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
-            if (Vector3.Distance(transform.position, player.transform.position) < 2)
-            {
-                state = State.Attack;
-            }
-            else if(Vector3.Distance(transform.position, player.transform.position) >= 15)
-            {
-                state = State.Idle;
-            }
-        }
-    
-        protected void Idle()
-        {
-            navMeshAgent.SetDestination(transform.position);
-            animator.SetTrigger("Idle");
-            if (Vector3.Distance(transform.position, player.transform.position) < 15)
-            {
-                state = State.Move;
-            }
-        }
-    
-        IEnumerator Remove()
-        {
-            yield return new WaitForSeconds(10);
-            gameObject.SetActive(false);
+            state = State.Move;
         }
     }
+
+    protected void Move()
+    {
+        animator.Play("Move");
+        navMeshAgent.SetDestination(player.transform.position);
+        transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
+        if (Vector3.Distance(transform.position, player.transform.position) < 1.5f)
+        {
+            state = State.Attack;
+        }
+        else if(Vector3.Distance(transform.position, player.transform.position) >= 15)
+        {
+            state = State.Idle;
+        }
+    }
+
+    protected void Idle()
+    {
+        navMeshAgent.SetDestination(transform.position);
+        animator.Play("Idle");
+        if (Vector3.Distance(transform.position, player.transform.position) < 15)
+        {
+            state = State.Move;
+        }
+    }
+
+    IEnumerator Remove()
+    {
+        yield return new WaitForSeconds(10);
+        gameObject.SetActive(false);
+    }
+}
+
  ```
 </details>
 <details><summary>몬스터 코드</summary>
 
 ```C#
-    public class Spider : Monster
+public class Spider : Monster
 {
     [SerializeField] BaseMonsterStatus monsterStatus;
-
     [SerializeField] int hp;
     [SerializeField] int attack;
     [SerializeField] int defence;
     [SerializeField] int rewardExp;
     [SerializeField] int rewardGold;
+
+    private Collider capsuleCollider;
     void Awake()
     {
         hp = monsterStatus.Hp;
@@ -635,28 +648,67 @@ IPointerDownHandler, IDragHandler를 인터페이스로 상속받아 구현했�
         defence = monsterStatus.DefencePoint;
         rewardExp = monsterStatus.rewardExp;
         rewardGold = monsterStatus.rewardGold;
+        capsuleCollider = GetComponent<Collider>();
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (isDie == true)
+        {
+            return;
+        }
+        if (player.GetComponent<Animator>().GetBool("isRolling") == false && animator.GetBool("isAttacking") == true && other == playerHitBox && animator.GetBool("AttackCount") == false)
+        {
+            player.GetComponent<Animator>().Play("Hit");
+            animator.SetBool("AttackCount", true);
+
+            if ((attack - playerState.defencePoint) < 0)
+            {
+                return;
+            }
+            else
+            {
+                playerState.hp -= attack - playerState.defencePoint;
+            }
+        }
+
+
     }
     private void OnTriggerEnter(Collider other)
     {
         if (player.GetComponent<Animator>().GetBool("isAttacking") == true && other == playerWeapon)
         {
             animator.Play("Hit");
-            hp -= playerState.attackPoint - defence;
-        }
-        if (player.GetComponent<Animator>().GetBool("isRolling") == false && animator.GetBool("isAttacking") == true && other == playerHitBox)
-        {
-            player.GetComponent<Animator>().Play("Hit");
-            playerState.hp -= attack - playerState.defencePoint;
+
+            if ((playerState.attackPoint - defence) < 0)
+            {
+                return;
+            }
+            else
+            {
+                hp -= playerState.attackPoint - defence;
+                if (hp <= 0)
+                {
+                    Die();
+                    Reward();
+                    SoundManager.Instance.PlayEffect("WolfDie");
+                    capsuleCollider.enabled = false;
+                }
+            }
         }
     }
-    private void LateUpdate()
+
+    void Reward()
     {
-        if (hp <= 0)
-        {
-            Die();
-        }
+        playerState.currentExp += rewardExp;
+        playerState.gold += rewardGold;
+    }
+    void Attack()
+    {
+        base.Attack();
+        SoundManager.Instance.PlayEffect("SpiderAttack");
     }
 }
+
 ```
 
 </details>
@@ -874,12 +926,142 @@ GPU 인스턴싱은 유니티에서 드로아 콜을 줄이기 위해 사용하�
 
 </details>
 
-## 5. 추가 구현 예정
+## 5. 추가 구현 사항
 
-### 1. 서버에 데이터를 저장,로드기능
+### PlayFab 서버에 데이터를 저장,로드
 <details><summary>접기/펼치기</summary>
-유니티에서는 PlayerPrefs나 Json,스크립터블 오브젝트를 사용하여 데이터를 저장할 수 있습니다.
-이를 PlayFab SDK를 활용하여 PlayFab의 백엔드 서버와 연동하여 데이터를 저장,불러오기 기능을 구현할 예정입니다.
+Unity의 ScriptableObject를 사용하여 게임 내 플레이어의 상태 데이터를 관리하고, PlayFab을 이용하여 클라우드에 해당 데이터를 저장하고 로드하는 기능을 구현했습니다. ScriptableObject는 Unity에서 데이터를 관리하는 용도로 매우 유용하며, 이를 JSON 형식으로 직렬화(Serialization)하여 PlayFab 서버에 저장하는 방식으로, 게임의 클라우드 기반 데이터 관리를 처리합니다.
 
-예상 기간 : 24.11.18 ~ 24.11.30
+#### 1. ScriptableObject 데이터를 JSON으로 직렬화하여 PlayFab에 저장
+플레이어의 상태 데이터는 ToJson() 메서드를 통해 JSON 형식으로 변환되어 PlayFab에 저장됩니다. JSON 직렬화 과정을 통해 데이터를 텍스트 형식으로 변환하여, 네트워크를 통해 서버와 클라이언트 간에 쉽게 전송할 수 있습니다.
+
+~~~c#
+public string ToJson()
+{
+    var data = new PlayerStateData
+    {
+        level = level,
+        hp = hp,
+        maxHp = maxHp,
+        stamina = stamina,
+        maxStamina = maxStamina,
+        attackPoint = attackPoint,
+        defencePoint = defencePoint,
+        currentWeaponId = currentWeapon.id,
+        currentArmorId = currentArmor.id,
+        currentExp = currentExp,
+        maxExp = maxExp,
+        gold = gold,
+        items = items.ConvertAll(item => new PlayerStateData.ItemInventoryData
+        {
+            id = item.id,
+            value = item.value
+        })
+    };
+
+    return JsonUtility.ToJson(data, true);
+}
+
+~~~
+
+#### 2. PlayFab 서버에 데이터 저장
+플레이어 상태 데이터는 PlayFab 클라이언트 API를 사용하여 서버에 저장됩니다. UpdateUserDataRequest를 사용하여 PlayerState라는 키로 데이터를 저장합니다.
+
+~~~c#
+public void SavePlayerStateToPlayFab()
+{
+    string json = playerState.ToJson(); // ScriptableObject 데이터를 JSON으로 직렬화
+    var request = new UpdateUserDataRequest
+    {
+        Data = new Dictionary<string, string> { { "PlayerState", json } }
+    };
+
+    PlayFabClientAPI.UpdateUserData(request,
+        result => Debug.Log("플레이어 데이터가 PlayFab에 저장되었습니다."),
+        error => Debug.LogError("데이터 저장 실패: " + error.GenerateErrorReport()));
+}
+
+~~~
+
+#### 3. PlayFab 서버에서 데이터 로드
+저장된 데이터를 로드할 때는 GetUserDataRequest를 사용하여 PlayFab 서버에서 플레이어 데이터를 조회합니다.
+JSON 데이터를 불러온 후, LoadFromJson() 메서드를 통해 이를 BasePlayerState 객체로 다시 변환하고, 로드된 아이템과 장착 아이템을 ScriptableObject로 인스턴스화하여 게임 내에 반영합니다.
+
+~~~c#
+public void LoadPlayerStateFromPlayFab()
+{
+    PlayFabClientAPI.GetUserData(new GetUserDataRequest(),
+        result =>
+        {
+            if (result.Data != null && result.Data.ContainsKey("PlayerState"))
+            {
+                string json = result.Data["PlayerState"].Value;
+                playerState.LoadFromJson(json); // JSON 데이터를 로드하여 ScriptableObject에 적용
+            }
+        },
+        error => Debug.LogError("플레이어 상태 로드 실패: " + error.GenerateErrorReport()));
+}
+~~~
+
+#### 4. 아이템 및 장착 아이템 처리
+아이템과 장착 아이템(currentWeapon, currentArmor)은 서버에서 로드한 JSON 데이터에서 아이템 ID를 기반으로 Resources.LoadAll<ItemData>("Items")를 사용하여 아이템을 로드하고, 인스턴스화하여 장착 아이템과 인벤토리에 반영합니다.
+
+~~~c#
+ItemData[] itemDatabase = Resources.LoadAll<ItemData>("Items");
+currentWeapon = Array.Find(itemDatabase, item => item.id == data.currentWeaponId);
+currentArmor = Array.Find(itemDatabase, item => item.id == data.currentArmorId);
+
+items = new List<ItemData>();
+foreach (var itemData in data.items)
+{
+    var item = Array.Find(itemDatabase, i => i.id == itemData.id);
+    if (item != null)
+    {
+        var itemInstance = Instantiate(item);
+        itemInstance.value = itemData.value;
+        items.Add(itemInstance);
+    }
+}
+~~~
+
+### 문제 발생 및 해결 과정
+
+#### **1. 초기 프로젝트 설정과 문제 발생**
+프로젝트 초기에는 플레이어의 모든 데이터를 스크립터블 오브젝트(ScriptableObject)에 저장하는 방식으로 개발을 진행했습니다. 이때는 서버에 데이터를 저장할 필요가 없다고 판단하여 서버 연동을 고려하지 않은 설계가 이루어졌습니다.
+하지만 강사님과 멘토님의 추천으로 후속 작업에서 **PlayFab 서버와 데이터 연동**을 시도하던 중, 서버에 데이터를 저장하는 부분에서 오류가 발생했습니다. 구체적으로, 서버에 데이터를 저장하려고 할 때, 직렬화되지 않은 객체들 (예: `ItemData`클래스 또는 `Sprite` 등) 때문에 문제가 발생했습니다.
+
+#### **2. 스크립터블 오브젝트 직렬화 문제**
+서버에 데이터를 저장하기 위해서는 **스크립터블 오브젝트 데이터를 JSON 형식으로 직렬화**해야 했습니다. 그러나, `ItemData`와 `Sprite`와 같은 Unity에서만 사용하는 객체는 JSON 직렬화가 불가능했습니다.
+그 결과, **직렬화 시 에러**가 발생했고, 데이터를 PlayFab 서버에 저장할 수 없었습니다.
+
+#### **3. 해결책: 필요한 데이터만 직렬화**
+이 문제를 해결하기 위해, `ItemData`와 `Sprite` 같은 객체는 **직접 직렬화할 수 없으므로** 이를 대신할 수 있는 **고유 ID와 관련 값(value)만을 저장**하는 방식으로 수정했습니다.
+예를 들어, `ItemData` 객체에서 아이템의 고유 ID와 아이템의 수량(value)만을 저장하여, 서버와의 데이터 동기화가 가능하도록 했습니다. 이후, 서버에서 로드할 때, 아이템의 ID를 통해 로컬 리소스에서 해당 아이템을 다시 불러오는 방식으로 처리했습니다.
+
+~~~c#
+    // 아이템의 ID와 수량만 저장하는 방법
+    [System.Serializable]
+    public class ItemInventoryData
+    {
+        public int id;    // 아이템 ID
+        public int value; // 아이템 수량
+    }
+~~~
+#### **4. 리소스를 미리 로드하는 방법**
+또한, 데이터를 미리 로드하는 방법을 사용하여 한 번에 많은 데이터를 저장할 필요가 없다는 것을 알게 되었습니다.
+아이템과 같은 데이터를 고유 ID와 수량으로만 저장하면, 서버에서 데이터를 로드할 때 리소스에서 미리 로드된 아이템을 재사용할 수 있습니다. 이렇게 함으로써 아이템 정보를 한 번만 로드하고, 고유 ID를 기준으로 필요한 아이템만을 불러오는 방식으로 최적화할 수 있었습니다.
+~~~c#
+    // 고유 ID를 기준으로 아이템을 리소스에서 로드
+    ItemData[] itemDatabase = Resources.LoadAll<ItemData>("Items");
+    ItemData item = Array.Find(itemDatabase, i => i.id == itemData.id);
+~~~
+#### **5. Json과 ScriptableObject에 대한 이해 증진**
+이 과정에서 **JSON 직렬화와 ScriptableObject의 동작 원리**에 대해 더 깊이 공부할 수 있었습니다. JSON 형식은 데이터를 네트워크를 통해 효율적으로 전달하는 데 매우 유용하며, **스크립터블 오브젝트는 Unity에서 데이터를 관리하고 저장하는 데 유용한 툴**임을 확인했습니다. 하지만, **ScriptableObject를 그대로 JSON으로 직렬화할 수 없다는 제약**이 있다는 점에서 **직렬화 가능한 데이터 구조로 변환하는 과정**에 대한 이해가 필요하다는 것을 배웠습니다.
+
+#### **6. PlayFab을 이용한 데이터 동기화**
+PlayFab을 사용하여 **서버와 클라이언트 간의 데이터 동기화** 및 **플랫폼 간 데이터 공유**를 진행하는 기초적인 작업을 진행할 수 있었습니다. 이를 통해 **플레이어의 데이터**가 **서버에 저장되고, 다른 장치에서 로드**할 수 있다는 점에서 **클라우드 데이터 관리의 중요성**을 실감할 수 있었습니다.
+
+#### **7. 결론**
+이 프로젝트를 통해 **게임 데이터의 클라우드 저장 및 로드** 기능을 구현하는 과정에서 다양한 문제를 해결하였고, **스크립터블 오브젝트와 JSON 직렬화**에 대해 더 깊이 이해할 수 있었습니다. **PlayFab 서버와의 데이터 동기화**는 기초적인 부분이었지만, **데이터 관리와 플랫폼 간 데이터 공유**에 대한 중요한 경험을 얻을 수 있는 시간이었습니다.
+
 </details>
